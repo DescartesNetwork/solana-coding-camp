@@ -3,6 +3,8 @@ import { useCallback, useEffect, useState, WheelEvent } from 'react'
 import CardTimeLine from './cardTimeLine'
 import ProgressTimeline from './progressTimeline'
 
+import { MAX_WIDTH } from 'constant'
+
 const TIME_LINE = new Array(9).fill('')
 
 const WheelTimeLine = () => {
@@ -78,7 +80,7 @@ const WheelTimeLine = () => {
         style={{
           display: 'flex',
           flexWrap: 'nowrap',
-          maxWidth: 1200,
+          maxWidth: MAX_WIDTH,
           width: '100%',
           overflow: 'hidden',
           alignItems: 'center',

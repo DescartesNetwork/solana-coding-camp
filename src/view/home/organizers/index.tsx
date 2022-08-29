@@ -1,10 +1,12 @@
-import { Col, Row, Typography } from 'antd'
+import { Col, Image, Row, Typography } from 'antd'
 import InfiniteSwiper from 'components/infinteSwiper'
 import MaxWidthLayout from 'components/maxWidthLayout'
 import { GALLERYS } from 'constant'
 import Partner from './partner'
 import Ranking from './ranking'
 import Register from './register'
+
+import organizeBg from 'static/images/organizen-partner.png'
 
 const Organizers = () => {
   return (
@@ -28,8 +30,11 @@ const Organizers = () => {
         </MaxWidthLayout>
       </Col>
       <Col span={24} />
-      <Col span={24}>
+      <Col span={24} className="expand-bg-partner">
         <InfiniteSwiper data={GALLERYS} />
+        <div className="bg-expand">
+          <Image src={organizeBg} preview={false} />
+        </div>
       </Col>
       <Col span={24}>
         <MaxWidthLayout>

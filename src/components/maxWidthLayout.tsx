@@ -1,8 +1,7 @@
-import React, { CSSProperties, ReactNode } from 'react'
+import { CSSProperties, ReactNode } from 'react'
 
 import { Col, Row, RowProps } from 'antd'
-
-const DEFAULT_MAXWIDTH = 1200
+import { MAX_WIDTH } from 'constant'
 
 type MaxWidthLayoutProps = {
   gutter?: RowProps['gutter']
@@ -14,7 +13,7 @@ type MaxWidthLayoutProps = {
 }
 const MaxWidthLayout = ({
   gutter,
-  maxWidth = DEFAULT_MAXWIDTH,
+  maxWidth = MAX_WIDTH,
   colStyle,
   children,
   style,
