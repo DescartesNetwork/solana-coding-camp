@@ -3,7 +3,7 @@ import MaxWidthLayout from 'components/maxWidthLayout'
 import { GALLERYS } from 'constant'
 import Avatar from './avatar'
 
-import imgBgSpeaker from 'static/images/bg-ranking.png'
+import imgBgSpeaker from 'static/images/extra/bg-ranking.png'
 
 const Speakers = () => {
   return (

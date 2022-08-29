@@ -6,7 +6,7 @@ import Partner from './partner'
 import Ranking from './ranking'
 import Register from './register'
 
-import organizeBg from 'static/images/organizen-partner.png'
+import organizeBg from 'static/images/extra/organizen-partner.png'
 
 const Organizers = () => {
   return (

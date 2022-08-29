@@ -2,7 +2,7 @@ import Brand from 'components/brand'
 import MaxWidthLayout from 'components/maxWidthLayout'
 import { Button, Col, Image, Row, Space, Typography } from 'antd'
 
-import imgBg from 'static/images/img-footer.png'
+import imgBg from 'static/images/extra/img-footer.png'
 
 const Footer = () => {
   return (

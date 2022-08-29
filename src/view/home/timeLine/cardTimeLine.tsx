@@ -3,11 +3,23 @@ import IonIcon from 'components/ionicon'
 
 const DEFAULT_SIZE = 420
 
-type CardTimeLineProps = { width?: number; height?: number; active?: boolean }
+type CardTimeLineProps = {
+  icon?: string
+  title?: string
+  date?: string
+  width?: number
+  height?: number
+  active?: boolean
+  size?: number
+}
 const CardTimeLine = ({
   height = DEFAULT_SIZE,
   width = DEFAULT_SIZE,
   active = false,
+  date = '',
+  icon = '',
+  title = '',
+  size = 72,
 }: CardTimeLineProps) => {
   const activeBg = active
     ? { background: 'transparent' }
@@ -41,8 +53,11 @@ const CardTimeLine = ({
         align="middle"
       >
         <Col>
-          <Typography.Text style={{ fontSize: 72 }}>
-            <IonIcon name="cog-outline" />
+          <Typography.Text
+            className={active ? 'text-dark' : ''}
+            style={{ fontSize: size, fill: '#000' }}
+          >
+            <IonIcon src={icon} />
           </Typography.Text>
         </Col>
         <Col>
@@ -50,7 +65,7 @@ const CardTimeLine = ({
             level={1}
             className={active ? 'text-dark' : 'text-gradient'}
           >
-            Registration form
+            {title}
           </Typography.Title>
         </Col>
         <Col>
@@ -58,7 +73,7 @@ const CardTimeLine = ({
             className={active ? 'text-dark' : ''}
             style={{ fontSize: 26 }}
           >
-            22 Nov - 23 Nov
+            {date}
           </Typography.Text>
         </Col>
       </Row>

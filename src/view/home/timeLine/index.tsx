@@ -1,7 +1,7 @@
 import { Col, Image, Row, Typography } from 'antd'
 import WheelTimeLine from './wheelTimeLine'
 
-import bgTimeline from 'static/images/bg-timeline.png'
+import bgTimeline from 'static/images/extra/bg-timeline.png'
 
 const TimeLine = () => {
   return (

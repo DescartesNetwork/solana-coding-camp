@@ -5,7 +5,7 @@ import Brand from 'components/brand'
 import MaxWidthLayout from 'components/maxWidthLayout'
 import { Col, Image, Row, Segmented } from 'antd'
 
-import iconFlag from 'static/images/flag-vn.svg'
+import iconFlag from 'static/images/logo/flag-vn.svg'
 
 const LANGUAGES = [
   {

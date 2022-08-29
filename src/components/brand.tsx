@@ -1,8 +1,8 @@
 import { CSSProperties } from 'react'
 import { Image } from 'antd'
 
-import imgBrand from 'static/images/brand.svg'
-import imgBrandDark from 'static/images/brand-black.svg'
+import imgBrand from 'static/images/logo/brand.svg'
+import imgBrandDark from 'static/images/logo/brand-black.svg'
 
 type BrandProps = {
   lite?: boolean

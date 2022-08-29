@@ -4,8 +4,21 @@ import CardTimeLine from './cardTimeLine'
 import ProgressTimeline from './progressTimeline'
 
 import { MAX_WIDTH } from 'constant'
+import pen from 'static/images/timeline/pen.svg'
+import people from 'static/images/timeline/people.svg'
+import send from 'static/images/timeline/send.svg'
+import recorder from 'static/images/timeline/recorder.svg'
+import cup from 'static/images/timeline/cup.svg'
+import coin from 'static/images/timeline/coin.svg'
 
-const TIME_LINE = new Array(9).fill('')
+const TIME_LINE = [
+  { title: 'Registration form', date: '22 Aug - 13 Sep', icon: pen },
+  { title: 'Workshops series', date: '19 Sep - 14 Nov', icon: people },
+  { title: 'DApp submission', date: '20 Nov', icon: send },
+  { title: 'Demo day', date: '22 Nov - 23 Nov', icon: recorder },
+  { title: 'Award night', date: '26 Nov', icon: cup },
+  { title: 'Solana VentureHop', date: '05 Dec', icon: coin },
+]
 
 const WheelTimeLine = () => {
   const [activeIndex, setActiveIndex] = useState(1)
@@ -88,7 +101,7 @@ const WheelTimeLine = () => {
         }}
         id="timeline_wheel"
       >
-        {TIME_LINE.map((_, idx) => {
+        {TIME_LINE.map(({ date, icon, title }, idx) => {
           const percent = activeIndex >= idx ? 100 : 0
           return (
             <div
@@ -101,7 +114,12 @@ const WheelTimeLine = () => {
               }}
               key={idx}
             >
-              <CardTimeLine active={activeIndex + 1 === idx} />
+              <CardTimeLine
+                title={title}
+                date={date}
+                icon={icon}
+                active={activeIndex + 1 === idx}
+              />
               {idx + 1 < TIME_LINE.length && (
                 <div style={{ minWidth: 250 }} key={idx}>
                   <ProgressTimeline percent={percent} />
