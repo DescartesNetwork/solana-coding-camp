@@ -21,12 +21,10 @@ const TIME_LINE = [
 ]
 
 const WheelTimeLine = () => {
-  const [activeIndex, setActiveIndex] = useState(1)
+  const [activeIndex, setActiveIndex] = useState(0)
   const stopScroll = useCallback((evt: WheelEvent) => {
     if (!evt) return
-    evt.stopPropagation()
     evt.preventDefault()
-    return false
   }, [])
 
   const onWheel = useCallback(
