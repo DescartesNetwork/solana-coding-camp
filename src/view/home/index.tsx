@@ -10,7 +10,7 @@ import TimeLine from './timeLine'
 
 const Home = () => {
   return (
-    <Row style={{ overflow: 'hidden' }}>
+    <Row>
       <Col span={24}>
         <Header
           style={{ position: 'absolute', width: '100%', left: 0, zIndex: 9999 }}

@@ -11,7 +11,7 @@ const Partner = () => {
   return (
     <Row gutter={[12, 12]}>
       {PARTNERS.map((partner, idx) => (
-        <Col span={8} key={idx}>
+        <Col xs={24} md={8} key={idx}>
           <CardLogo src={partner} />
         </Col>
       ))}
