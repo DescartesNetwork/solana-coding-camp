@@ -1,7 +1,7 @@
 import { Button, Col, Image, Row, Space, Typography } from 'antd'
 import MaxWidthLayout from 'components/maxWidthLayout'
 
-import solMap from 'static/images/map.svg'
+import solMap from 'static/images/extra/map.svg'
 
 const Banner = () => {
   return (

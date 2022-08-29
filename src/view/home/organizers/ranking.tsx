@@ -1,13 +1,13 @@
 import { Card, Col, Image, Row, Space, Typography } from 'antd'
 
-import imgOne from 'static/images/one.svg'
-import imgTwo from 'static/images/two.svg'
-import imgThree from 'static/images/three.svg'
-import imgFour from 'static/images/four.svg'
-import glass1 from 'static/images/glass-1.png'
-import glass2 from 'static/images/glass-2.png'
-import glass3 from 'static/images/glass-3.png'
-import glass4 from 'static/images/glass-4.png'
+import imgOne from 'static/images/ranking/one.svg'
+import imgTwo from 'static/images/ranking/two.svg'
+import imgThree from 'static/images/ranking/three.svg'
+import imgFour from 'static/images/ranking/four.svg'
+import glass1 from 'static/images/ranking/glass-1.png'
+import glass2 from 'static/images/ranking/glass-2.png'
+import glass3 from 'static/images/ranking/glass-3.png'
+import glass4 from 'static/images/ranking/glass-4.png'
 
 const RANKINGS = [15000, 10000, 5000, 1000]
 const RANKING_BG: Record<

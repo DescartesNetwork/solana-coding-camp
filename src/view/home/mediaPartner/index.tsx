@@ -3,7 +3,7 @@ import React from 'react'
 import { Col, Image, Row, Typography } from 'antd'
 import ListPartners from './listPartners'
 
-import imgBgMedia from 'static/images/bg-speaker.png'
+import imgBgMedia from 'static/images/extra/bg-speaker.png'
 
 const MediaPartners = () => {
   return (
