@@ -17,7 +17,7 @@ const Speakers = () => {
           </Col>
           <Col span={24}>
             <Row gutter={[64, 64]} justify="space-between">
-              {GALLERYS.concat(GALLERYS).map((speaker, idx) => (
+              {GALLERYS.map((speaker, idx) => (
                 <Col key={idx}>
                   <Space
                     size={24}
