@@ -1,3 +1,5 @@
+import numbro from 'numbro'
+
 import { Card, Col, Image, Row, Space, Typography } from 'antd'
 
 import imgOne from 'static/images/ranking/one.svg'
@@ -68,7 +70,7 @@ const CardRanking = ({ value = 0, index = 1 }: CardRankingProps) => {
                 level={2}
                 style={{ fontSize: 72, color: `rgb(${color.join(',')})` }}
               >
-                {value}
+                {numbro(value).format('0,0.[00]$')}
               </Typography.Title>
               {value === 1000 && (
                 <Typography.Text>

@@ -1,3 +1,5 @@
+import numbro from 'numbro'
+
 import { Col, Row, Space, Typography } from 'antd'
 import MaxWidthLayout from 'components/maxWidthLayout'
 import TimeDisplay from './timeDisplay'
@@ -35,7 +37,7 @@ const CountDown = () => {
                   {price.label}
                 </Typography.Text>
                 <Typography.Title level={1} className="text-dark">
-                  ${price.value}
+                  ${numbro(price.value).format('0,0.[00]')}
                 </Typography.Title>
               </Space>
             ))}
