@@ -1,6 +1,5 @@
 import { CSSProperties } from 'react'
 
-import Menu from './menu'
 import Brand from 'components/brand'
 import MaxWidthLayout from 'components/maxWidthLayout'
 import { Col, Image, Row, Segmented } from 'antd'
@@ -30,9 +29,6 @@ const Header = ({ style }: HeaderProps) => {
       >
         <Col>
           <Brand />
-        </Col>
-        <Col>
-          <Menu />
         </Col>
         <Col>
           <Segmented className="switch-language" options={LANGUAGES} />

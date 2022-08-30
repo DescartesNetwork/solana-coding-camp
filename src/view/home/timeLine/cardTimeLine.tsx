@@ -1,16 +1,27 @@
-import { Card, Col, Row, Typography } from 'antd'
+import { Card, Col, Row, Space, Typography } from 'antd'
+import { TitleProps } from 'antd/lib/typography/Title'
 import IonIcon from 'components/ionicon'
+import { CSSProperties } from 'react'
 
 const DEFAULT_SIZE = 420
+const enum CardDirection {
+  horizontal = 'horizontal',
+  vertical = 'vertical',
+}
 
 type CardTimeLineProps = {
   icon?: string
   title?: string
   date?: string
-  width?: number
-  height?: number
+  width?: CSSProperties['width']
+  height?: CSSProperties['height']
   active?: boolean
   size?: number
+  borderRadius?: CSSProperties['borderRadius']
+  levelSize?: TitleProps['level']
+  labelSize?: number
+  direction?: 'horizontal' | 'vertical'
+  padding?: number
 }
 const CardTimeLine = ({
   height = DEFAULT_SIZE,
@@ -20,17 +31,29 @@ const CardTimeLine = ({
   icon = '',
   title = '',
   size = 72,
+  labelSize = 26,
+  levelSize = 1,
+  borderRadius = '50%',
+  direction = CardDirection.horizontal,
+  padding = 2,
 }: CardTimeLineProps) => {
   const activeBg = active
     ? { background: 'transparent' }
     : { background: '#000' }
+
+  const flexFlow =
+    direction === CardDirection.horizontal
+      ? { flexFlow: 'column', justifyContent: 'center' }
+      : { flexFlow: 'row wrap', justifyContent: 'start' }
+
+  const textAlign = direction === CardDirection.horizontal ? 'center' : 'start'
 
   return (
     <Card
       style={{
         display: 'flex',
         alignItems: 'center',
-        borderRadius: '50%',
+        borderRadius,
         width,
         height,
         background:
@@ -40,16 +63,15 @@ const CardTimeLine = ({
       bodyStyle={{
         width: '100%',
         height: '100%',
-        padding: 2,
-        borderRadius: '50%',
+        padding,
+        borderRadius,
         ...activeBg,
       }}
       bordered={!active}
     >
       <Row
         gutter={[24, 24]}
-        style={{ flexFlow: 'column', height: '100%' }}
-        justify="center"
+        style={{ ...flexFlow, height: '100%' }}
         align="middle"
       >
         <Col>
@@ -61,20 +83,20 @@ const CardTimeLine = ({
           </Typography.Text>
         </Col>
         <Col>
-          <Typography.Title
-            level={1}
-            className={active ? 'text-dark' : 'text-gradient'}
-          >
-            {title}
-          </Typography.Title>
-        </Col>
-        <Col>
-          <Typography.Text
-            className={active ? 'text-dark' : ''}
-            style={{ fontSize: 26 }}
-          >
-            {date}
-          </Typography.Text>
+          <Space style={{ textAlign }} direction="vertical" size={8}>
+            <Typography.Title
+              level={levelSize}
+              className={active ? 'text-dark' : 'text-gradient'}
+            >
+              {title}
+            </Typography.Title>
+            <Typography.Text
+              className={active ? 'text-dark' : ''}
+              style={{ fontSize: labelSize }}
+            >
+              {date}
+            </Typography.Text>
+          </Space>
         </Col>
       </Row>
     </Card>

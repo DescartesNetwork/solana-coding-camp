@@ -12,7 +12,7 @@ import cup from 'static/images/timeline/cup.svg'
 import coin from 'static/images/timeline/coin.svg'
 import useWidth from 'hooks/useWidth'
 
-const TIME_LINE = [
+export const TIME_LINE = [
   { title: 'Registration form', date: '22 Aug - 13 Sep', icon: pen },
   { title: 'Workshops series', date: '19 Sep - 14 Nov', icon: people },
   { title: 'DApp submission', date: '20 Nov', icon: send },
