@@ -10,8 +10,9 @@ import send from 'static/images/timeline/send.svg'
 import recorder from 'static/images/timeline/recorder.svg'
 import cup from 'static/images/timeline/cup.svg'
 import coin from 'static/images/timeline/coin.svg'
+import useWidth from 'hooks/useWidth'
 
-const TIME_LINE = [
+export const TIME_LINE = [
   { title: 'Registration form', date: '22 Aug - 13 Sep', icon: pen },
   { title: 'Workshops series', date: '19 Sep - 14 Nov', icon: people },
   { title: 'DApp submission', date: '20 Nov', icon: send },
@@ -22,6 +23,10 @@ const TIME_LINE = [
 
 const WheelTimeLine = () => {
   const [activeIndex, setActiveIndex] = useState(0)
+  const width = useWidth()
+  const unDeskop = width < 1200
+  const progressMinWidth = unDeskop ? 150 : 250
+
   const stopScroll = useCallback((evt: WheelEvent) => {
     if (!evt) return
     evt.preventDefault()
@@ -119,7 +124,7 @@ const WheelTimeLine = () => {
                 active={activeIndex + 1 === idx}
               />
               {idx + 1 < TIME_LINE.length && (
-                <div style={{ minWidth: 250 }} key={idx}>
+                <div style={{ minWidth: progressMinWidth }} key={idx}>
                   <ProgressTimeline percent={percent} />
                 </div>
               )}

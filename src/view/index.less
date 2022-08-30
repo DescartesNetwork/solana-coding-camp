@@ -98,6 +98,9 @@
 }
 .anima-bounce-3d {
   animation: smoothBounce 4s ease-in-out infinite normal none running;
+  @media (max-width: 1200px) {
+    display: none;
+  }
 }
 
 .wrap-amount {
@@ -155,6 +158,9 @@
     filter: blur(70px);
     opacity: 0.5;
     box-shadow: 0 0 60px 70px rgba(182, 176, 255, 0.4);
+    @media (max-width: 1200px) {
+      display: none;
+    }
   }
 }
 
@@ -168,10 +174,14 @@
   .img-timeline {
     position: absolute;
     left: 0;
-    bottom: -700px;
-    filter: drop-shadow(0 0 60px rgba(153, 69, 255, 0.7))
-      drop-shadow(0 0 100px rgba(20, 241, 149, 0.4))
-      drop-shadow(0 0 120px rgba(255, 255, 255, 0.4));
+    top: -400px;
+    // filter: drop-shadow(0 0 60px rgba(153, 69, 255, 0.7))
+    //   drop-shadow(0 0 100px rgba(20, 241, 149, 0.4))
+    //   drop-shadow(0 0 120px rgba(255, 255, 255, 0.4));
+
+    @media (max-width: 1200px) {
+      display: none;
+    }
   }
 }
 
@@ -186,6 +196,10 @@
     filter: drop-shadow(0 0 60px rgba(20, 241, 149, 0.7))
       drop-shadow(0 0 100px rgba(153, 69, 255, 0.4))
       drop-shadow(0 0 120px rgba(255, 255, 255, 0.4));
+
+    @media (max-width: 1200px) {
+      display: none;
+    }
   }
 }
 
@@ -195,6 +209,9 @@
     position: absolute;
     left: 0;
     top: -250px;
+    @media (max-width: 1200px) {
+      display: none;
+    }
   }
 }
 
@@ -207,6 +224,12 @@
     height: 400px;
     bottom: 100%;
     overflow: hidden;
+    @media (max-width: 1200px) {
+      height: 200px;
+    }
+    @media (max-width: 768px) {
+      height: 120px;
+    }
     .ant-image {
       width: 100%;
       height: 100%;
@@ -215,5 +238,15 @@
         object-fit: fill;
       }
     }
+  }
+}
+
+// Mobile step timeline
+.mobile-step-time-line {
+  .ant-steps-item-content {
+    padding-bottom: 16px;
+  }
+  .ant-steps-item-title {
+    width: 100%;
   }
 }

@@ -4,11 +4,15 @@ import { GALLERYS } from 'constant'
 import Avatar from './avatar'
 
 import imgBgSpeaker from 'static/images/extra/bg-ranking.png'
+import useWidth from 'hooks/useWidth'
 
 const Speakers = () => {
+  const width = useWidth()
+  const spacing = width < 1200 ? 126 : 256
+
   return (
     <div className="bg-speaker-gradient">
-      <MaxWidthLayout style={{ overflow: 'hidden', paddingBottom: 256 }}>
+      <MaxWidthLayout style={{ overflow: 'hidden', paddingBottom: spacing }}>
         <Row gutter={[24, 72]} justify="center">
           <Col>
             <Typography.Title level={2} className="text-title">

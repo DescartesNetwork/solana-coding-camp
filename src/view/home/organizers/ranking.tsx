@@ -2,6 +2,8 @@ import numbro from 'numbro'
 
 import { Card, Col, Image, Row, Space, Typography } from 'antd'
 
+import useWidth from 'hooks/useWidth'
+
 import imgOne from 'static/images/ranking/one.svg'
 import imgTwo from 'static/images/ranking/two.svg'
 import imgThree from 'static/images/ranking/three.svg'
@@ -42,12 +44,23 @@ const RANKING_BG: Record<
   },
 }
 
+const FLOAT_RIGHT = { width: '100%', textAlign: 'end' }
+const MOBILE_NUMBER = {
+  transform: 'scale(0.7)',
+  transformOrigin: 'left bottom',
+}
+
 type CardRankingProps = {
   value: number
   index?: number
 }
 const CardRanking = ({ value = 0, index = 1 }: CardRankingProps) => {
   const { left: imgLeft, right: imgRight, color, label } = RANKING_BG[value]
+  const width = useWidth()
+
+  const imgStyle = width < 575 ? FLOAT_RIGHT : {}
+  const numberStyle = width < 575 ? MOBILE_NUMBER : {}
+
   return (
     <Card
       style={{ background: '#26262B', overflow: 'hidden', borderRadius: 24 }}
@@ -55,8 +68,15 @@ const CardRanking = ({ value = 0, index = 1 }: CardRankingProps) => {
       bordered={false}
     >
       <Row justify="space-between" align="bottom">
-        <Col>
-          <div style={{ position: 'absolute', bottom: -10, left: 0 }}>
+        <Col xs={{ order: 2 }} sm={{ order: 1 }}>
+          <div
+            style={{
+              ...numberStyle,
+              position: 'absolute',
+              bottom: -10,
+              left: 0,
+            }}
+          >
             <Image src={imgLeft} alt="num" preview={false} />
           </div>
           <Space
@@ -83,22 +103,11 @@ const CardRanking = ({ value = 0, index = 1 }: CardRankingProps) => {
             </Space>
           </Space>
         </Col>
-        <Col style={{ height: '100%' }}>
-          <div
-            style={{
-              position: 'absolute',
-              width: 400,
-              height: 400,
-              background: `radial-gradient(circle, rgba(${color.join(
-                ',',
-              )},0.4) 0%, rgba(${color.join(',')}, 0.1) 100%)`,
-              top: -140,
-              right: -100,
-              borderRadius: '100%',
-              filter: 'blur(4px)',
-              boxShadow: `0 0 90px  rgba(${color.join(',')},0.5)`,
-            }}
-          />
+        <Col
+          xs={{ order: 1 }}
+          sm={{ order: 2 }}
+          style={{ ...imgStyle, height: '100%' }}
+        >
           <Image
             className={`anima-bounce bounce-${index}`}
             style={{ maxWidth: 360 }}
@@ -107,6 +116,21 @@ const CardRanking = ({ value = 0, index = 1 }: CardRankingProps) => {
             preview={false}
           />
         </Col>
+        <div
+          style={{
+            position: 'absolute',
+            width: 400,
+            height: 400,
+            background: `radial-gradient(circle, rgba(${color.join(
+              ',',
+            )},0.4) 0%, rgba(${color.join(',')}, 0.1) 100%)`,
+            top: -180,
+            right: -100,
+            borderRadius: '100%',
+            filter: 'blur(4px)',
+            boxShadow: `0 0 90px  rgba(${color.join(',')},0.5)`,
+          }}
+        />
       </Row>
     </Card>
   )
@@ -116,7 +140,11 @@ const Ranking = () => {
   return (
     <Row gutter={[64, 64]}>
       {RANKINGS.map((ranking, idx) => (
-        <Col xs={24} lg={18} offset={idx % 2 ? 6 : 0} key={idx}>
+        <Col
+          xs={{ span: 24, offset: 0 }}
+          xl={{ span: 18, offset: idx % 2 ? 6 : 0 }}
+          key={idx}
+        >
           <CardRanking value={ranking} index={idx + 1} />
         </Col>
       ))}
