@@ -54,7 +54,7 @@ const CardTimeLine = ({
   const formatDate = (date: string) => {
     return moment(new Date(date)).format('DD MMM')
   }
-  const _date = useMemo(() => {
+  const date = useMemo(() => {
     if (!fromDate) return
     if (!toDate) return formatDate(fromDate)
     return `${formatDate(fromDate)} - ${formatDate(toDate)}`
@@ -106,7 +106,7 @@ const CardTimeLine = ({
               className={active ? 'text-dark' : ''}
               style={{ fontSize: labelSize }}
             >
-              {_date}
+              {date}
             </Typography.Text>
           </Space>
         </Col>

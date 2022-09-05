@@ -11,12 +11,14 @@ const MobileView = () => {
       direction="vertical"
       current={2}
     >
-      {TIME_LINE.map(({ icon, title }, idx) => (
+      {TIME_LINE.map(({ fromDate, toDate, icon, title }, idx) => (
         <Steps.Step
           title={
             <CardTimeLine
-              icon={icon as any}
+              icon={icon}
               title={title}
+              fromDate={fromDate}
+              toDate={toDate}
               size={56}
               levelSize={4}
               labelSize={16}

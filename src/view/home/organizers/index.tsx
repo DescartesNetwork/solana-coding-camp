@@ -26,18 +26,6 @@ const IMAGE_ID = [
   'https://drive.google.com/uc?export=view&id=1k4gGfGFNfqRI7uWu1jzdxfkJQvxJeIND',
   'https://drive.google.com/uc?export=view&id=172zOOjOxbwO-tQrxtz1xva1GB8_M2M1X',
   // 'https://drive.google.com/uc?export=view&id=',
-  // 'https://drive.google.com/uc?export=view&id=',
-  // 'https://drive.google.com/uc?export=view&id=',
-  // 'https://drive.google.com/uc?export=view&id=',
-  // 'https://drive.google.com/uc?export=view&id=',
-  // 'https://drive.google.com/uc?export=view&id=',
-  // 'https://drive.google.com/uc?export=view&id=',
-  // 'https://drive.google.com/uc?export=view&id=',
-  // 'https://drive.google.com/uc?export=view&id=',
-  // 'https://drive.google.com/uc?export=view&id=',
-  // 'https://drive.google.com/uc?export=view&id=',
-  // 'https://drive.google.com/uc?export=view&id=',
-  // 'https://drive.google.com/uc?export=view&id=',
 ]
 
 const Organizers = () => {
@@ -79,7 +67,7 @@ const Organizers = () => {
       </Col>
       <Col span={24} />
       <Col span={24} className="expand-bg-partner">
-        <InfiniteSwiper perViews={perview} data={IMAGE_ID} />
+        <InfiniteSwiper perViews={perview} data={IMAGE_ID} autoplay={false} />
         <div className="bg-expand">
           <Image src={organizeBg} preview={false} />
         </div>

@@ -1,9 +1,8 @@
+import { CSSProperties } from 'react'
 import { Autoplay, Lazy } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-import { Image } from 'antd'
 import CardLogo from './cardLogo'
-import { CSSProperties } from 'react'
 
 type InfiniteSwiperProps = {
   perViews?: number
@@ -41,6 +40,7 @@ const InfiniteSwiper = ({
       autoplay={autoplay ? configAutoplay : autoplay}
       speed={speed}
       loop={loop}
+      lazy
       className="apps-slide-infinite"
     >
       {data.map((gallery, idx) => (
@@ -48,7 +48,11 @@ const InfiniteSwiper = ({
           {wraped ? (
             <CardLogo src={gallery} />
           ) : (
-            <Image src={gallery} alt="gallery" preview={false} />
+            <img
+              className="sw-image swiper-lazy"
+              data-src={gallery}
+              alt="gallery"
+            />
           )}
         </SwiperSlide>
       ))}
