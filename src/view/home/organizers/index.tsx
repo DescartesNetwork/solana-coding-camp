@@ -67,7 +67,7 @@ const Organizers = () => {
       </Col>
       <Col span={24} />
       <Col span={24} className="expand-bg-partner">
-        <InfiniteSwiper perViews={perview} data={IMAGE_ID} autoplay={false} />
+        <InfiniteSwiper perViews={perview} data={IMAGE_ID} speed={40000} loop />
         <div className="bg-expand">
           <Image src={organizeBg} preview={false} />
         </div>
