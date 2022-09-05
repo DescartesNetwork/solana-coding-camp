@@ -1,7 +1,8 @@
 import { Card, Col, Row, Space, Typography } from 'antd'
 import { TitleProps } from 'antd/lib/typography/Title'
 import IonIcon from 'components/IonIcon'
-import { CSSProperties } from 'react'
+import moment from 'moment'
+import { CSSProperties, useMemo } from 'react'
 
 const DEFAULT_SIZE = 420
 const enum CardDirection {
@@ -12,7 +13,6 @@ const enum CardDirection {
 type CardTimeLineProps = {
   icon?: string
   title?: string
-  date?: string
   width?: CSSProperties['width']
   height?: CSSProperties['height']
   active?: boolean
@@ -22,12 +22,13 @@ type CardTimeLineProps = {
   labelSize?: number
   direction?: 'horizontal' | 'vertical'
   padding?: number
+  fromDate?: string
+  toDate?: string
 }
 const CardTimeLine = ({
   height = DEFAULT_SIZE,
   width = DEFAULT_SIZE,
   active = false,
-  date = '',
   icon = '',
   title = '',
   size = 72,
@@ -36,6 +37,8 @@ const CardTimeLine = ({
   borderRadius = '50%',
   direction = CardDirection.horizontal,
   padding = 2,
+  fromDate,
+  toDate,
 }: CardTimeLineProps) => {
   const activeBg = active
     ? { background: 'transparent' }
@@ -47,6 +50,15 @@ const CardTimeLine = ({
       : { flexFlow: 'row wrap', justifyContent: 'start' }
 
   const textAlign = direction === CardDirection.horizontal ? 'center' : 'start'
+
+  const formatDate = (date: string) => {
+    return moment(new Date(date)).format('DD MMM')
+  }
+  const _date = useMemo(() => {
+    if (!fromDate) return
+    if (!toDate) return formatDate(fromDate)
+    return `${formatDate(fromDate)} - ${formatDate(toDate)}`
+  }, [fromDate, toDate])
 
   return (
     <Card
@@ -94,7 +106,7 @@ const CardTimeLine = ({
               className={active ? 'text-dark' : ''}
               style={{ fontSize: labelSize }}
             >
-              {date}
+              {_date}
             </Typography.Text>
           </Space>
         </Col>

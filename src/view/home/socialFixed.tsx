@@ -11,7 +11,7 @@ const SOCIAL_BTN = [
     link: '',
   },
   {
-    icon: 'logo-discord',
+    icon: 'logo-c-discord',
     link: '',
   },
 ]

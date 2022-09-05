@@ -3,23 +3,8 @@ import { useCallback, useEffect, useState, WheelEvent } from 'react'
 import CardTimeLine from './cardTimeLine'
 import ProgressTimeline from './progressTimeline'
 
-import { MAX_WIDTH } from 'constant'
-import pen from 'static/images/timeline/pen.svg'
-import people from 'static/images/timeline/people.svg'
-import send from 'static/images/timeline/send.svg'
-import recorder from 'static/images/timeline/recorder.svg'
-import cup from 'static/images/timeline/cup.svg'
-import coin from 'static/images/timeline/coin.svg'
 import useWidth from 'hooks/useWidth'
-
-export const TIME_LINE = [
-  { title: 'Registration form', date: '22 Aug - 13 Sep', icon: pen },
-  { title: 'Workshops series', date: '19 Sep - 14 Nov', icon: people },
-  { title: 'DApp submission', date: '20 Nov', icon: send },
-  { title: 'Demo day', date: '22 Nov - 23 Nov', icon: recorder },
-  { title: 'Award night', date: '26 Nov', icon: cup },
-  { title: 'Solana VentureHop', date: '05 Dec', icon: coin },
-]
+import { MAX_WIDTH, TIME_LINE } from 'constant'
 
 const WheelTimeLine = () => {
   const [activeIndex, setActiveIndex] = useState(0)
@@ -85,7 +70,6 @@ const WheelTimeLine = () => {
 
   return (
     <div
-      // onWheel={onWheel}
       style={{
         display: 'flex',
         width: '100%',
@@ -104,7 +88,7 @@ const WheelTimeLine = () => {
         }}
         id="timeline_wheel"
       >
-        {TIME_LINE.map(({ date, icon, title }, idx) => {
+        {TIME_LINE.map(({ icon, title, fromDate, toDate }, idx) => {
           const percent = activeIndex >= idx ? 100 : 0
           return (
             <div
@@ -119,7 +103,8 @@ const WheelTimeLine = () => {
             >
               <CardTimeLine
                 title={title}
-                date={date}
+                fromDate={fromDate}
+                toDate={toDate}
                 icon={icon}
                 active={activeIndex + 1 === idx}
               />

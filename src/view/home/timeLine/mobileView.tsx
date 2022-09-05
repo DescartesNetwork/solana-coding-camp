@@ -1,6 +1,7 @@
 import { Steps } from 'antd'
 import CardTimeLine from './cardTimeLine'
-import { TIME_LINE } from './wheelTimeLine'
+
+import { TIME_LINE } from 'constant'
 
 const MobileView = () => {
   return (
@@ -10,12 +11,11 @@ const MobileView = () => {
       direction="vertical"
       current={2}
     >
-      {TIME_LINE.map(({ date, icon, title }, idx) => (
+      {TIME_LINE.map(({ icon, title }, idx) => (
         <Steps.Step
           title={
             <CardTimeLine
-              date={date}
-              icon={icon}
+              icon={icon as any}
               title={title}
               size={56}
               levelSize={4}
