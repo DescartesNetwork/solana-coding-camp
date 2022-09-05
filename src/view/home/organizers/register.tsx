@@ -1,5 +1,5 @@
-import { Button, Card, Col, Row, Space, Typography } from 'antd'
-import IonIcon from 'components/ionicon'
+import { Button, Col, Row, Space, Typography } from 'antd'
+import IonIcon from 'components/IonIcon'
 
 const SUB_REGISTER = [
   'Learn the fundamentals of Solana coding through our series of online and offline workshops.',
@@ -10,11 +10,12 @@ const SUB_REGISTER = [
 const Register = () => {
   return (
     <Row gutter={[24, 24]}>
-      <Col xs={24} lg={14}>
+      <Col xs={{ span: 24, order: 2 }} lg={{ span: 12, order: 1 }}>
         <Row gutter={[32, 32]}>
           <Col span={24}>
-            <Typography.Title level={1} className="text-title">
-              What value does the{' '}
+            <Typography.Title level={1} style={{ fontSize: 64 }}>
+              What value does the
+              <br />
               <span className="text-gradient">Web3 coding camp</span> create
             </Typography.Title>
           </Col>
@@ -44,8 +45,16 @@ const Register = () => {
           </Col>
         </Row>
       </Col>
-      <Col xs={24} lg={10}>
-        <Card style={{ height: '100%' }}></Card>
+      <Col xs={{ span: 24, order: 1 }} lg={{ span: 12, order: 2 }}>
+        <iframe
+          width="100%"
+          style={{ minHeight: 400 }}
+          src="https://www.youtube.com/embed/x48VAXbAXTs"
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
       </Col>
     </Row>
   )

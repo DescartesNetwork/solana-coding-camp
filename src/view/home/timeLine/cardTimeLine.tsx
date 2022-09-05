@@ -1,6 +1,6 @@
 import { Card, Col, Row, Space, Typography } from 'antd'
 import { TitleProps } from 'antd/lib/typography/Title'
-import IonIcon from 'components/ionicon'
+import IonIcon from 'components/IonIcon'
 import { CSSProperties } from 'react'
 
 const DEFAULT_SIZE = 420

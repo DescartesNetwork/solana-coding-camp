@@ -5,6 +5,7 @@ import Footer from './footer'
 import Header from './header'
 import MediaPartners from './mediaPartner'
 import Organizers from './organizers'
+import SocialFixed from './socialFixed'
 import Speakers from './speakers'
 import TimeLine from './timeLine'
 
@@ -12,10 +13,9 @@ const Home = () => {
   return (
     <Row>
       <Col span={24}>
-        <Header
-          style={{ position: 'absolute', width: '100%', left: 0, zIndex: 9999 }}
-        />
+        <Header />
       </Col>
+      <SocialFixed />
       <Col span={24}>
         <Banner />
       </Col>

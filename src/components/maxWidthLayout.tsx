@@ -26,7 +26,16 @@ const MaxWidthLayout = ({
       style={{ ...style }}
       className={className}
     >
-      <Col span={24} style={{ maxWidth, ...colStyle }}>
+      <Col
+        span={24}
+        style={{
+          width: '100%',
+          paddingLeft: 12,
+          paddingRight: 12,
+          maxWidth,
+          ...colStyle,
+        }}
+      >
         {children}
       </Col>
     </Row>

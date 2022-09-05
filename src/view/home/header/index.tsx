@@ -25,7 +25,18 @@ const Header = ({ style }: HeaderProps) => {
     <MaxWidthLayout>
       <Row
         justify="space-between"
-        style={{ paddingTop: 24, paddingBottom: 24, ...style }}
+        style={{
+          position: 'absolute',
+          width: '100%',
+          left: 0,
+          paddingTop: 24,
+          paddingBottom: 24,
+          paddingLeft: 12,
+          paddingRight: 12,
+          zIndex: 9999,
+          ...style,
+        }}
+        align="middle"
       >
         <Col>
           <Brand />

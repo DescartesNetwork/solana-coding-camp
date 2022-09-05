@@ -8,7 +8,7 @@ const Banner = () => {
   const width = useWidth()
   const unDesktop = width < 1200
   const marginTop = unDesktop ? -280 : undefined
-  console.log(width, unDesktop)
+  const maxHeight = unDesktop ? '60vh' : undefined
 
   return (
     <MaxWidthLayout className="banner-gradient-bg">
@@ -39,7 +39,7 @@ const Banner = () => {
           xl={{ order: 2, span: 11 }}
           style={{ textAlign: 'center' }}
         >
-          <Image src={solMap} alt="map" preview={false} />
+          <Image style={{ maxHeight }} src={solMap} alt="map" preview={false} />
         </Col>
       </Row>
     </MaxWidthLayout>

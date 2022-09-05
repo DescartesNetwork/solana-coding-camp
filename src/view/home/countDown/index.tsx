@@ -8,7 +8,7 @@ import useWidth from 'hooks/useWidth'
 const PRICES = [
   { label: 'Total prizes', value: 100000, isPrice: true },
   { label: 'Registrants', value: 99999, isPrice: false },
-  { label: 'DAO members', value: 9999, isPrice: false },
+  // { label: 'DAO members', value: 9999, isPrice: false },
 ]
 const DIVIDER = '1px solid #000'
 
@@ -20,15 +20,15 @@ const CountDown = () => {
   return (
     <MaxWidthLayout style={{ background: '#B6B0FF' }}>
       <Row>
-        <Col xs={24} lg={8} xl={12}>
+        <Col xs={24} lg={12}>
           <Space direction="vertical" style={{ padding: 24 }}>
             <Typography.Text className="text-dark">
-              Close form registration in
+              Registration form closes in
             </Typography.Text>
             <TimeDisplay />
           </Space>
         </Col>
-        <Col xs={24} lg={16} xl={12}>
+        <Col xs={24} lg={12}>
           <Row className="wrap-amount">
             {PRICES.map((price, idx) => (
               <Col
