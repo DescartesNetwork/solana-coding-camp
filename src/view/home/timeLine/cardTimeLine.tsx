@@ -40,6 +40,21 @@ const CardTimeLine = ({
   fromDate,
   toDate,
 }: CardTimeLineProps) => {
+  const formatDate = (date: string) => {
+    return moment(new Date(date)).format('DD MMM')
+  }
+
+  const date = useMemo(() => {
+    if (!fromDate) return
+    if (!toDate) return formatDate(fromDate)
+    return `${formatDate(fromDate)} - ${formatDate(toDate)}`
+  }, [fromDate, toDate])
+
+  // const defaultActive = useMemo(() => {
+  //   const now = new Date()
+  //   return moment(now).isBetween(fromDate, toDate)
+  // }, [fromDate, toDate])
+
   const activeBg = active
     ? { background: 'transparent' }
     : { background: '#000' }
@@ -50,15 +65,6 @@ const CardTimeLine = ({
       : { flexFlow: 'row wrap', justifyContent: 'start' }
 
   const textAlign = direction === CardDirection.horizontal ? 'center' : 'start'
-
-  const formatDate = (date: string) => {
-    return moment(new Date(date)).format('DD MMM')
-  }
-  const date = useMemo(() => {
-    if (!fromDate) return
-    if (!toDate) return formatDate(fromDate)
-    return `${formatDate(fromDate)} - ${formatDate(toDate)}`
-  }, [fromDate, toDate])
 
   return (
     <Card

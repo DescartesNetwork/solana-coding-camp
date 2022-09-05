@@ -20,7 +20,7 @@ const CountDown = () => {
   return (
     <MaxWidthLayout style={{ background: '#B6B0FF' }}>
       <Row>
-        <Col xs={24} lg={12}>
+        <Col xs={24} lg={14}>
           <Space direction="vertical" style={{ padding: 24 }}>
             <Typography.Text className="text-dark">
               Registration form closes in
@@ -28,7 +28,7 @@ const CountDown = () => {
             <TimeDisplay />
           </Space>
         </Col>
-        <Col xs={24} lg={12}>
+        <Col xs={24} lg={10}>
           <Row className="wrap-amount">
             {PRICES.map((price, idx) => (
               <Col

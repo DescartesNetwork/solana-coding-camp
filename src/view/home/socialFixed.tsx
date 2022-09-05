@@ -4,7 +4,7 @@ import IonIcon from 'components/IonIcon'
 const SOCIAL_BTN = [
   {
     icon: 'logo-telegram',
-    link: '',
+    link: 'https://t.me/solanadevsvietnam',
   },
   {
     icon: 'logo-twitter',
