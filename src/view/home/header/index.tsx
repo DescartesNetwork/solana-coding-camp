@@ -11,6 +11,7 @@ const LANGUAGES = [
     label: 'VIE',
     value: 'vn',
     icon: <Image width={18} height={18} src={iconFlag} preview={false} />,
+    disabled: true,
   },
   {
     label: 'ENG',

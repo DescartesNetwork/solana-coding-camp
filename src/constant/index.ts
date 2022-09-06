@@ -32,7 +32,7 @@ export const TIME_LINE = [
   {
     title: 'DApp submission',
     icon: send,
-    fromDate: '12/05/2022',
+    fromDate: '09/05/2022',
     toDate: '12/11/2022',
   },
   {

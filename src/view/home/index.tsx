@@ -6,7 +6,7 @@ import Header from './header'
 import MediaPartners from './mediaPartner'
 import Organizers from './organizers'
 import SocialFixed from './socialFixed'
-import Speakers from './speakers'
+// import Speakers from './speakers'
 import TimeLine from './timeLine'
 
 const Home = () => {
@@ -28,9 +28,9 @@ const Home = () => {
       <Col span={24}>
         <Organizers />
       </Col>
-      <Col span={24}>
+      {/* <Col span={24}>
         <Speakers />
-      </Col>
+      </Col> */}
       <Col span={24}>
         <MediaPartners />
       </Col>
