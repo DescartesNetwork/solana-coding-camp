@@ -11,6 +11,7 @@ const LANGUAGES = [
     label: 'VIE',
     value: 'vn',
     icon: <Image width={18} height={18} src={iconFlag} preview={false} />,
+    disabled: true,
   },
   {
     label: 'ENG',
@@ -25,7 +26,18 @@ const Header = ({ style }: HeaderProps) => {
     <MaxWidthLayout>
       <Row
         justify="space-between"
-        style={{ paddingTop: 24, paddingBottom: 24, ...style }}
+        style={{
+          position: 'absolute',
+          width: '100%',
+          left: 0,
+          paddingTop: 24,
+          paddingBottom: 24,
+          paddingLeft: 12,
+          paddingRight: 12,
+          zIndex: 9999,
+          ...style,
+        }}
+        align="middle"
       >
         <Col>
           <Brand />

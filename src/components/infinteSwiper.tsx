@@ -1,9 +1,23 @@
+import { CSSProperties, Fragment } from 'react'
 import { Autoplay, Lazy } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-import { Image } from 'antd'
+import { Spin } from 'antd'
+import { LoadingOutlined } from '@ant-design/icons'
+
 import CardLogo from './cardLogo'
-import { CSSProperties } from 'react'
+
+type ImageSlideProps = { link?: string }
+const ImageSlide = ({ link }: ImageSlideProps) => {
+  return (
+    <Fragment>
+      <img className="sw-image swiper-lazy" data-src={link} alt="gallery" />
+      <div className="sw-image-loading">
+        <Spin indicator={<LoadingOutlined style={{ fontSize: 72 }} spin />} />
+      </div>
+    </Fragment>
+  )
+}
 
 type InfiniteSwiperProps = {
   perViews?: number
@@ -41,15 +55,12 @@ const InfiniteSwiper = ({
       autoplay={autoplay ? configAutoplay : autoplay}
       speed={speed}
       loop={loop}
+      lazy
       className="apps-slide-infinite"
     >
       {data.map((gallery, idx) => (
         <SwiperSlide key={idx} style={{ height }}>
-          {wraped ? (
-            <CardLogo src={gallery} />
-          ) : (
-            <Image src={gallery} alt="gallery" preview={false} />
-          )}
+          {wraped ? <CardLogo src={gallery} /> : <ImageSlide link={gallery} />}
         </SwiperSlide>
       ))}
     </Swiper>

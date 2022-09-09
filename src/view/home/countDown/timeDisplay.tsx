@@ -10,7 +10,9 @@ import moment from 'moment'
 
 import { Space, Typography } from 'antd'
 
-const ENDTIME = Date.now() + 1 * 24 * 60 * 60
+const END_DATE = '10/09/2022 23:59:59'
+const END_TIME_ISO = new Date(END_DATE).getTime()
+const ENDTIME_LOCAL = END_TIME_ISO - new Date(END_TIME_ISO).getTimezoneOffset()
 
 type TimeTagProps = {
   children?: ReactNode
@@ -31,8 +33,8 @@ const TimeTag = ({ children, style, label = '' }: TimeTagProps) => {
 }
 
 const TimeDisplay = () => {
-  const currentTime = Date.now()
-  const duration = moment.duration(ENDTIME - currentTime, 'seconds')
+  const currentTime = Date.now() - new Date().getTimezoneOffset()
+  const duration = moment.duration(ENDTIME_LOCAL - currentTime, 'milliseconds')
 
   const [countDown, setCountDown] = useState({
     days: Math.floor(duration.asDays()),
@@ -42,9 +44,12 @@ const TimeDisplay = () => {
   })
 
   const updateCountDown = useCallback(async () => {
-    if (!ENDTIME || ENDTIME < currentTime) return
+    if (!ENDTIME_LOCAL || ENDTIME_LOCAL < currentTime) return
 
-    const duration = moment.duration(ENDTIME - currentTime, 'seconds')
+    const duration = moment.duration(
+      ENDTIME_LOCAL - currentTime,
+      'milliseconds',
+    )
     const days = Math.floor(duration.asDays())
     const hours = duration.hours()
     const minutes = duration.minutes()

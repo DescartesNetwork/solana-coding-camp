@@ -1,31 +1,30 @@
+import moment from 'moment'
 import { useCallback, useEffect, useState, WheelEvent } from 'react'
 
 import CardTimeLine from './cardTimeLine'
 import ProgressTimeline from './progressTimeline'
 
-import { MAX_WIDTH } from 'constant'
-import pen from 'static/images/timeline/pen.svg'
-import people from 'static/images/timeline/people.svg'
-import send from 'static/images/timeline/send.svg'
-import recorder from 'static/images/timeline/recorder.svg'
-import cup from 'static/images/timeline/cup.svg'
-import coin from 'static/images/timeline/coin.svg'
 import useWidth from 'hooks/useWidth'
+import { MAX_WIDTH, TIME_LINE } from 'constant'
 
-export const TIME_LINE = [
-  { title: 'Registration form', date: '22 Aug - 13 Sep', icon: pen },
-  { title: 'Workshops series', date: '19 Sep - 14 Nov', icon: people },
-  { title: 'DApp submission', date: '20 Nov', icon: send },
-  { title: 'Demo day', date: '22 Nov - 23 Nov', icon: recorder },
-  { title: 'Award night', date: '26 Nov', icon: cup },
-  { title: 'Solana VentureHop', date: '05 Dec', icon: coin },
-]
+const TIMELINE_WHEEL_ID = 'timeline_wheel'
+const TIMELINE_WHEEL_ITEM_ID = 'timeline_wheel_item_'
+const DEFAULT_ACTIVE_CLN = 'timeline_wheel_item_default_active'
 
 const WheelTimeLine = () => {
   const [activeIndex, setActiveIndex] = useState(0)
   const width = useWidth()
   const unDeskop = width < 1200
   const progressMinWidth = unDeskop ? 150 : 250
+
+  const getDefaultActiveCln = useCallback(
+    (fromDate: string, toDate?: string) => {
+      const now = Date.now()
+      if (!moment(now).isBetween(fromDate, toDate)) return ''
+      return DEFAULT_ACTIVE_CLN
+    },
+    [],
+  )
 
   const stopScroll = useCallback((evt: WheelEvent) => {
     if (!evt) return
@@ -34,7 +33,7 @@ const WheelTimeLine = () => {
 
   const onWheel = useCallback(
     (e) => {
-      const elm = document.getElementById('timeline_wheel')
+      const elm = document.getElementById(TIMELINE_WHEEL_ID)
 
       if (!e || e.deltaY === 0 || !elm) return
       const windowWidth = window.innerWidth
@@ -51,10 +50,10 @@ const WheelTimeLine = () => {
       elm.scrollLeft += e.deltaY
 
       const nextTimeline: string[] = new Array(TIME_LINE.length).fill(
-        'timeline_wheel_item_',
+        TIMELINE_WHEEL_ITEM_ID,
       )
-      nextTimeline.forEach((item, idx) => {
-        const detectElm = document.getElementById(item + idx)
+      nextTimeline.forEach((timeline_id, idx) => {
+        const detectElm = document.getElementById(timeline_id + idx)
         const boundingElm = detectElm?.getBoundingClientRect()
 
         if (!detectElm || !boundingElm) return
@@ -76,16 +75,32 @@ const WheelTimeLine = () => {
   )
 
   useEffect(() => {
-    const elm = document.getElementById('timeline_wheel')
+    const elm = document.getElementById(TIMELINE_WHEEL_ID)
     if (!elm) return
 
     elm.addEventListener('wheel', onWheel)
     return () => elm.removeEventListener('wheel', onWheel)
   }, [onWheel])
 
+  useEffect(() => {
+    const elm = document.getElementById(TIMELINE_WHEEL_ID)
+    const defaultActiveElm = document.querySelector(`.${DEFAULT_ACTIVE_CLN}`)
+    if (!elm || !defaultActiveElm) return
+
+    const windowWidth = window.innerWidth
+    const parentWidth = elm.clientWidth
+    const offsetBrowser =
+      windowWidth > parentWidth ? (windowWidth - parentWidth) / 2 : 0
+    const boundingElm = defaultActiveElm.getBoundingClientRect()
+    console.log(boundingElm.left, '  boundingElm')
+    elm.scrollTo({
+      left: boundingElm.left - offsetBrowser,
+      behavior: 'smooth',
+    })
+  }, [])
+
   return (
     <div
-      // onWheel={onWheel}
       style={{
         display: 'flex',
         width: '100%',
@@ -102,10 +117,12 @@ const WheelTimeLine = () => {
           alignItems: 'center',
           gap: 8,
         }}
-        id="timeline_wheel"
+        id={TIMELINE_WHEEL_ID}
       >
-        {TIME_LINE.map(({ date, icon, title }, idx) => {
+        {TIME_LINE.map(({ icon, title, fromDate, toDate }, idx) => {
           const percent = activeIndex >= idx ? 100 : 0
+          const defaultActiveCln = getDefaultActiveCln(fromDate, toDate)
+
           return (
             <div
               id={`timeline_wheel_item_${idx}`}
@@ -115,11 +132,13 @@ const WheelTimeLine = () => {
                 alignItems: 'center',
                 gap: 8,
               }}
+              className={defaultActiveCln}
               key={idx}
             >
               <CardTimeLine
                 title={title}
-                date={date}
+                fromDate={fromDate}
+                toDate={toDate}
                 icon={icon}
                 active={activeIndex + 1 === idx}
               />

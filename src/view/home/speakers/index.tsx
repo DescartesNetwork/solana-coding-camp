@@ -9,6 +9,7 @@ import useWidth from 'hooks/useWidth'
 const Speakers = () => {
   const width = useWidth()
   const spacing = width < 1200 ? 126 : 256
+  const avatarJustify = width < 575 ? 'center' : 'space-between'
 
   return (
     <div className="bg-speaker-gradient">
@@ -20,7 +21,7 @@ const Speakers = () => {
             </Typography.Title>
           </Col>
           <Col span={24}>
-            <Row gutter={[64, 64]} justify="space-between">
+            <Row gutter={[64, 64]} justify={avatarJustify}>
               {GALLERYS.map((speaker, idx) => (
                 <Col key={idx}>
                   <Space

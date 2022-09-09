@@ -37,13 +37,27 @@
 .apps-slide-infinite {
   .swiper-wrapper {
     transition-timing-function: linear !important;
-    .ant-image {
+    position: relative;
+    .sw-image {
       width: 100%;
       height: 100%;
-      img {
-        height: 100%;
-        object-fit: cover;
-      }
+      object-fit: cover;
+    }
+    .sw-image-loading {
+      position: absolute;
+      background: #26262b;
+      top: 0;
+      left: 0;
+      display: none;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+      z-index: -9;
+    }
+    .sw-image:not(.swiper-lazy-loaded) + .sw-image-loading {
+      display: flex;
+      z-index: 9;
     }
   }
 }
@@ -248,5 +262,13 @@
   }
   .ant-steps-item-title {
     width: 100%;
+  }
+}
+
+// Social
+.group-btn-social {
+  position: absolute;
+  .ant-affix {
+    right: 0;
   }
 }
