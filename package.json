@@ -2,6 +2,7 @@
   "name": "solana-coding-camp",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://descartesnetwork.github.io/solana-coding-camp/",
   "dependencies": {
     "@craco/craco": "^6.3.0",
     "@reduxjs/toolkit": "^1.6.2",
@@ -58,7 +59,7 @@
   },
   "devDependencies": {
     "dotenv-cra": "^3.0.2",
-    "gh-pages": "^3.2.3",
+    "gh-pages": "^4.0.0",
     "less": "^4.1.2",
     "less-loader": "^10.2.0",
     "postcss": "^8.3.11",
