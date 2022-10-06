@@ -92,7 +92,6 @@ const WheelTimeLine = () => {
     const offsetBrowser =
       windowWidth > parentWidth ? (windowWidth - parentWidth) / 2 : 0
     const boundingElm = defaultActiveElm.getBoundingClientRect()
-    console.log(boundingElm.left, '  boundingElm')
     elm.scrollTo({
       left: boundingElm.left - offsetBrowser,
       behavior: 'smooth',

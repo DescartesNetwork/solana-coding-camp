@@ -29,6 +29,8 @@ type InfiniteSwiperProps = {
   height?: CSSProperties['height']
   reverse?: boolean
   wraped?: boolean
+  rootPath?: string
+  cardClassName?: string
 }
 const InfiniteSwiper = ({
   autoplay = true,
@@ -40,6 +42,8 @@ const InfiniteSwiper = ({
   height = 240,
   reverse = true,
   wraped = false,
+  rootPath = '',
+  cardClassName,
 }: InfiniteSwiperProps) => {
   const configAutoplay = {
     delay: 0,
@@ -60,7 +64,11 @@ const InfiniteSwiper = ({
     >
       {data.map((gallery, idx) => (
         <SwiperSlide key={idx} style={{ height }}>
-          {wraped ? <CardLogo src={gallery} /> : <ImageSlide link={gallery} />}
+          {wraped ? (
+            <CardLogo className={cardClassName} src={rootPath + gallery} />
+          ) : (
+            <ImageSlide link={rootPath + gallery} />
+          )}
         </SwiperSlide>
       ))}
     </Swiper>

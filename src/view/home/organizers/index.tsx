@@ -6,26 +6,27 @@ import MaxWidthLayout from 'components/maxWidthLayout'
 import Partner from './partner'
 import Ranking from './ranking'
 import Register from './register'
+
 import useWidth from 'hooks/useWidth'
+import { PATH_GOOGLE_VIEW_IMG } from 'constant'
 
 import organizeBg from 'static/images/extra/organizen-partner.png'
 import bgTimeline from 'static/images/extra/bg-timeline.png'
 
 const IMAGE_ID = [
-  'https://drive.google.com/uc?export=view&id=1iiz4FEjlD75Nf2s3H8XnN6ajA55mpRXv',
-  'https://drive.google.com/uc?export=view&id=1XhaLBDB_X-k7mHBKKzc-vs8iWjzEUV4W',
-  'https://drive.google.com/uc?export=view&id=1b-98WjbhHf4mNwbOu_M2gnzl7mW_CM6P',
-  'https://drive.google.com/uc?export=view&id=1f3K_fd6YPpzGNGAP-trc-rEAs5N2ZnmP',
-  'https://drive.google.com/uc?export=view&id=1Mh0HB7lG1FpkGnRDEmiEMHtLydmRYo2k',
-  'https://drive.google.com/uc?export=view&id=16uDjMfz92AhgfcIvYS_4OngOgJsdnAIo',
-  'https://drive.google.com/uc?export=view&id=1h_-VNUTc0QgfxcCqqTgYO5ZrcE6JdGtY',
-  'https://drive.google.com/uc?export=view&id=1oeuNo12KiidE-z4kzsUwieWkmhiuVYMo',
-  'https://drive.google.com/uc?export=view&id=19B67cs7Y-zwNboOI1Wgc6e9CkkFdVZFV',
-  'https://drive.google.com/uc?export=view&id=1oSTkJYIdXZSN_l2olTmowm9I5UBxGiR3',
-  'https://drive.google.com/uc?export=view&id=1Vh_VnaZtDt90LpzcDQ4ECFGKA44IGNpD',
-  'https://drive.google.com/uc?export=view&id=1k4gGfGFNfqRI7uWu1jzdxfkJQvxJeIND',
-  'https://drive.google.com/uc?export=view&id=172zOOjOxbwO-tQrxtz1xva1GB8_M2M1X',
-  // 'https://drive.google.com/uc?export=view&id=',
+  '1iiz4FEjlD75Nf2s3H8XnN6ajA55mpRXv',
+  '1XhaLBDB_X-k7mHBKKzc-vs8iWjzEUV4W',
+  '1b-98WjbhHf4mNwbOu_M2gnzl7mW_CM6P',
+  '1f3K_fd6YPpzGNGAP-trc-rEAs5N2ZnmP',
+  '1Mh0HB7lG1FpkGnRDEmiEMHtLydmRYo2k',
+  '16uDjMfz92AhgfcIvYS_4OngOgJsdnAIo',
+  '1h_-VNUTc0QgfxcCqqTgYO5ZrcE6JdGtY',
+  '1oeuNo12KiidE-z4kzsUwieWkmhiuVYMo',
+  '19B67cs7Y-zwNboOI1Wgc6e9CkkFdVZFV',
+  '1oSTkJYIdXZSN_l2olTmowm9I5UBxGiR3',
+  '1Vh_VnaZtDt90LpzcDQ4ECFGKA44IGNpD',
+  '1k4gGfGFNfqRI7uWu1jzdxfkJQvxJeIND',
+  '172zOOjOxbwO-tQrxtz1xva1GB8_M2M1X',
 ]
 
 const Organizers = () => {
@@ -68,7 +69,13 @@ const Organizers = () => {
       <Col span={24} />
       {/* Organizer gallerys */}
       <Col span={24} className="expand-bg-partner">
-        <InfiniteSwiper perViews={perview} data={IMAGE_ID} speed={40000} loop />
+        <InfiniteSwiper
+          perViews={perview}
+          data={IMAGE_ID}
+          rootPath={PATH_GOOGLE_VIEW_IMG}
+          speed={40000}
+          loop
+        />
         <div className="bg-expand">
           <Image src={organizeBg} preview={false} />
         </div>

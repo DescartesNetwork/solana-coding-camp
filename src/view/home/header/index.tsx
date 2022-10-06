@@ -4,19 +4,24 @@ import Brand from 'components/brand'
 import MaxWidthLayout from 'components/maxWidthLayout'
 import { Col, Image, Row, Segmented } from 'antd'
 
-import iconFlag from 'static/images/logo/flag-vn.svg'
+import flagVN from 'static/images/logo/flag-vn.svg'
+import flagUK from 'static/images/logo/flag-uk.svg'
 
+export enum LanguageKey {
+  VietNam = 'vn',
+  England = 'uk',
+}
 const LANGUAGES = [
   {
     label: 'VIE',
-    value: 'vn',
-    icon: <Image width={18} height={18} src={iconFlag} preview={false} />,
+    value: LanguageKey.VietNam,
+    icon: <Image width={18} height={18} src={flagVN} preview={false} />,
     disabled: true,
   },
   {
     label: 'ENG',
-    value: 'en',
-    icon: <Image width={18} height={18} src={iconFlag} preview={false} />,
+    value: LanguageKey.England,
+    icon: <Image width={18} height={18} src={flagUK} preview={false} />,
   },
 ]
 
@@ -43,7 +48,11 @@ const Header = ({ style }: HeaderProps) => {
           <Brand />
         </Col>
         <Col>
-          <Segmented className="switch-language" options={LANGUAGES} />
+          <Segmented
+            defaultValue={LanguageKey.England}
+            className="switch-language"
+            options={LANGUAGES}
+          />
         </Col>
       </Row>
     </MaxWidthLayout>

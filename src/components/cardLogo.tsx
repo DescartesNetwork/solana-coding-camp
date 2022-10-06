@@ -7,15 +7,18 @@ type CardLogoProps = {
   width?: number
   style?: CSSProperties
   children?: ReactNode
+  className?: string
 }
 const CardLogo = ({
   src = '',
   width = 240,
   style,
   children = <Image src={src} width={width} alt="partner" preview={false} />,
+  className,
 }: CardLogoProps) => {
   return (
     <Card
+      className={className}
       style={{
         background: '#26262B',
         borderRadius: 24,
@@ -25,6 +28,7 @@ const CardLogo = ({
         justifyContent: 'center',
         ...style,
       }}
+      bodyStyle={{ height: '100%' }}
       bordered={false}
     >
       {children}

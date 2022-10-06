@@ -1,8 +1,7 @@
-import { Button, Col, Image, Row, Space, Typography } from 'antd'
+import { Button, Col, Row, Space, Typography } from 'antd'
 import MaxWidthLayout from 'components/maxWidthLayout'
 import useWidth from 'hooks/useWidth'
-
-import solMap from 'static/images/extra/map.svg'
+import Map from 'static/images/extra/map-svg'
 
 const Banner = () => {
   const width = useWidth()
@@ -39,7 +38,7 @@ const Banner = () => {
           xl={{ order: 2, span: 11 }}
           style={{ textAlign: 'center' }}
         >
-          <Image style={{ maxHeight }} src={solMap} alt="map" preview={false} />
+          <Map style={{ maxHeight }} />
         </Col>
       </Row>
     </MaxWidthLayout>

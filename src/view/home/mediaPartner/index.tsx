@@ -6,6 +6,8 @@ import ListPartners from './listPartners'
 import imgBgMedia from 'static/images/extra/bg-speaker.png'
 import useWidth from 'hooks/useWidth'
 
+import './index.less'
+
 const MediaPartners = () => {
   const width = useWidth()
   const spacing = width < 1200 ? 126 : 256

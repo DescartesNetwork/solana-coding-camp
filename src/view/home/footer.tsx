@@ -32,7 +32,7 @@ const Footer = () => {
             size="small"
             onClick={() => {}}
           >
-            Join US
+            Join us
           </Button>
         </Col>
         <Col span={24} style={{ height: 40 }} />
