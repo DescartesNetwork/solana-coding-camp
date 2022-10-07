@@ -8,11 +8,11 @@ const SOCIAL_BTN = [
   },
   {
     icon: 'logo-twitter',
-    link: '',
+    link: 'https://twitter.com/SVC_DAO',
   },
   {
     icon: 'logo-c-discord',
-    link: '',
+    link: 'https://discord.com/invite/solanau',
   },
 ]
 

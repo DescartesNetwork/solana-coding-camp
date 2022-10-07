@@ -1,0 +1,24 @@
+.banner-about-gradient-bg {
+  // Banner
+  overflow: hidden;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #9945ff81 0%, #9945ff19 100%);
+    top: 140px;
+    transform: translateX(355px);
+    filter: blur(70px);
+    opacity: 0.5;
+    box-shadow: 0 0 60px 70px #9945ff78;
+  }
+}
+
+@keyframes magicBorder {
+  0% {
+  }
+  100% {
+  }
+}

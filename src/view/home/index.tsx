@@ -1,13 +1,14 @@
 import { Col, Row } from 'antd'
 import Banner from './banner'
 import CountDown from './countDown'
-import Footer from './footer'
-import Header from './header'
+import Footer from 'view/footer'
+import Header from 'view/header'
 import MediaPartners from './mediaPartner'
 import Organizers from './organizers'
-import SocialFixed from './socialFixed'
+import SocialFixed from '../socialFixed'
 import Speakers from './speakers'
 import TimeLine from './timeLine'
+import Tracks from './tracks'
 
 const Home = () => {
   return (
@@ -27,6 +28,9 @@ const Home = () => {
       </Col>
       <Col span={24}>
         <Organizers />
+      </Col>
+      <Col span={24}>
+        <Tracks />
       </Col>
       <Col span={24}>
         <Speakers />

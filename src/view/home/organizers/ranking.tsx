@@ -7,24 +7,21 @@ import useWidth from 'hooks/useWidth'
 import imgOne from 'static/images/ranking/one.svg'
 import imgTwo from 'static/images/ranking/two.svg'
 import imgThree from 'static/images/ranking/three.svg'
-import imgFour from 'static/images/ranking/four.svg'
 import glass1 from 'static/images/ranking/glass-1.png'
 import glass2 from 'static/images/ranking/glass-2.png'
 import glass3 from 'static/images/ranking/glass-3.png'
-import glass4 from 'static/images/ranking/glass-4.png'
 
-const RANKINGS = [15000, 10000, 5000, 1000]
 const RANKING_BG: Record<
-  number,
+  string,
   { left: string; right: string; color: number[]; label: string }
 > = {
-  15000: {
+  10000: {
     left: imgOne,
     right: glass1,
     color: [20, 241, 149],
     label: '1st Price',
   },
-  10000: {
+  7000: {
     left: imgTwo,
     right: glass2,
     color: [153, 69, 255],
@@ -36,12 +33,6 @@ const RANKING_BG: Record<
     color: [128, 236, 255],
     label: '3rd Price',
   },
-  1000: {
-    left: imgFour,
-    right: glass4,
-    color: [218, 97, 184],
-    label: 'Individual Prize',
-  },
 }
 
 const FLOAT_RIGHT = { width: '100%', textAlign: 'end' }
@@ -51,10 +42,13 @@ const MOBILE_NUMBER = {
 }
 
 type CardRankingProps = {
-  value: number
+  value: string
   index?: number
 }
-const CardRanking = ({ value = 0, index = 1 }: CardRankingProps) => {
+const CardRanking = ({
+  value = Object.keys(RANKING_BG)[0],
+  index = 1,
+}: CardRankingProps) => {
   const { left: imgLeft, right: imgRight, color, label } = RANKING_BG[value]
   const width = useWidth()
 
@@ -92,14 +86,14 @@ const CardRanking = ({ value = 0, index = 1 }: CardRankingProps) => {
               >
                 {numbro(value).format('0,0.[00]$')}
               </Typography.Title>
-              {value === 1000 && (
+              {/* {value === 1000 && (
                 <Typography.Text>
                   for{' '}
                   <span style={{ color: `rgb(${color.join(',')})` }}>
                     10 Developers
                   </span>
                 </Typography.Text>
-              )}
+              )} */}
             </Space>
           </Space>
         </Col>
@@ -139,15 +133,17 @@ const CardRanking = ({ value = 0, index = 1 }: CardRankingProps) => {
 const Ranking = () => {
   return (
     <Row gutter={[64, 64]}>
-      {RANKINGS.map((ranking, idx) => (
-        <Col
-          xs={{ span: 24, offset: 0 }}
-          xl={{ span: 18, offset: idx % 2 ? 6 : 0 }}
-          key={idx}
-        >
-          <CardRanking value={ranking} index={idx + 1} />
-        </Col>
-      ))}
+      {Object.keys(RANKING_BG)
+        .sort((a, b) => Number(b) - Number(a))
+        .map((ranking, idx) => (
+          <Col
+            xs={{ span: 24, offset: 0 }}
+            xl={{ span: 18, offset: idx % 2 ? 6 : 0 }}
+            key={idx}
+          >
+            <CardRanking value={ranking} index={idx + 1} />
+          </Col>
+        ))}
     </Row>
   )
 }

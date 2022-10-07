@@ -6,6 +6,7 @@ import { Col, Image, Row, Segmented } from 'antd'
 
 import flagVN from 'static/images/logo/flag-vn.svg'
 import flagUK from 'static/images/logo/flag-uk.svg'
+import Menu from './menu'
 
 export enum LanguageKey {
   VietNam = 'vn',
@@ -46,6 +47,9 @@ const Header = ({ style }: HeaderProps) => {
       >
         <Col>
           <Brand />
+        </Col>
+        <Col>
+          <Menu />
         </Col>
         <Col>
           <Segmented

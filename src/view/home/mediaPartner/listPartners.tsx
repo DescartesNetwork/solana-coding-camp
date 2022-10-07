@@ -7,18 +7,18 @@ import useWidth from 'hooks/useWidth'
 import { PATH_GOOGLE_VIEW_IMG } from 'constant'
 
 const MEDIA_PARTNER = [
-  '1l0oBeivk3TSvAeiWRbKi0r2Sh6Wcf9Pu',
-  '127uzWDnTidcs6rDkR6aiDyQ2FZQ7iV_m',
-  '17TgvU6yEnVBzhE0Uf8PNvIge5bI62wf8',
-  '1Paj_H0YMcWNGiBcOQDE_lxnHD2cgIevh',
-  '1krEdpFkKGM9ypy3a94nd5AtgdJQcoXXQ',
-  '1Fo-3nk7w3yIAXniK8EpOqzEgBr_zohQ1',
-  '1gIYM2w-X9LRTJareG8xFWBr9_-KuJDLZ',
-  '1UhEOORyPYB2W3VCT4wqrD5y-LEyWTB9U',
-  '1j-oMmGBxFw2ffN2xPcqHQbYiCTAgYh3q',
-  '1L_-Q8ovSvJDrWkV7oyoXbGxTKc6QOi8R',
-  '1_itWHo0YEfi_pbczwMk90PHGH9N88khT',
-  '1F0iD7MDIhbgcbI9AI8F3K297ywGNud-O',
+  '1TgZltv-MYe1hXaCou6EzU2vFEe57glxd', //zeta
+  '127uzWDnTidcs6rDkR6aiDyQ2FZQ7iV_m', //space falcon
+  '14i92L8YFINk00uB5BI1noN0k71uzVzcg', //solscan
+  '1Paj_H0YMcWNGiBcOQDE_lxnHD2cgIevh', //magic eden
+  '1bUSAzz5PVTiHmUIBP3DEK-PC1LqkGGgG', //kyros
+  '1LbIWdGsoE3qvZhSbnjwt8C02o8l4OVpb', // trade coind
+  '1NAq4uO2dEgmH4yQfOL5TAXefJOSRfqFR', // jupiter
+  '19Y7tfpllSmBK-O28avDSkJq022MLUynu', //jobhopin
+  '1j-oMmGBxFw2ffN2xPcqHQbYiCTAgYh3q', //defiland
+  '10CIiV_U3temDZClNf26nO-3dAklB6XxJ', // coinV consortium
+  '1_itWHo0YEfi_pbczwMk90PHGH9N88khT', //coin 68
+  '1TsizUmcOavsmg4TCoswf0HHv6QjJmxDK', // ancient8
 ]
 
 const ListPartners = () => {
