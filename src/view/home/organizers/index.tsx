@@ -53,7 +53,7 @@ const Organizers = () => {
   }, [width])
 
   return (
-    <Row gutter={[0, spacing]} style={{ paddingBottom: spacing }}>
+    <Row gutter={[0, spacing]}>
       <Col span={24} className="bg-timeline-gradient">
         <MaxWidthLayout style={{ overflow: 'hidden' }}>
           <Row gutter={[24, 72]} justify="center">

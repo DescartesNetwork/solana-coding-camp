@@ -10,15 +10,25 @@ import Speakers from './speakers'
 import TimeLine from './timeLine'
 import Tracks from './tracks'
 
+import useWidth from 'hooks/useWidth'
+
 const Home = () => {
+  const width = useWidth()
+  const isDesktop = width > 1200
+  const gap = isDesktop ? 256 : 128
+
   return (
-    <Row>
+    <Row gutter={[0, gap]}>
       <Col span={24}>
-        <Header />
-      </Col>
-      <SocialFixed />
-      <Col span={24}>
-        <Banner />
+        <Row>
+          <Col span={24}>
+            <Header />
+          </Col>
+          <SocialFixed />
+          <Col span={24}>
+            <Banner />
+          </Col>
+        </Row>
       </Col>
       <Col span={24}>
         <CountDown />

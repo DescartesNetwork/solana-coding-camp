@@ -6,7 +6,7 @@ import AboutBanner from 'static/images/extra/about-banner.png'
 const Banner = () => {
   const width = useWidth()
   const unDesktop = width < 1200
-  const marginTop = unDesktop ? -280 : undefined
+  const paddingTop = width > 1200 ? 202 : 24
   const maxHeight = unDesktop ? '60vh' : undefined
 
   return (
@@ -15,7 +15,7 @@ const Banner = () => {
         <Col
           xs={{ order: 2, span: 24 }}
           xl={{ order: 2, span: 13 }}
-          style={{ paddingTop: 202, paddingBottom: 120, marginTop }}
+          style={{ paddingTop }}
         >
           <Typography.Title
             className="text-gradient"
@@ -28,7 +28,7 @@ const Banner = () => {
         <Col
           xs={{ order: 1, span: 24 }}
           xl={{ order: 2, span: 11 }}
-          style={{ textAlign: 'center', paddingTop: 140, paddingBottom: 140 }}
+          style={{ textAlign: 'center', paddingTop: 140 }}
         >
           <Image src={AboutBanner} style={{ maxHeight }} preview={false} />
         </Col>

@@ -28,12 +28,11 @@ const SPEAKER_ID = [
 
 const Speakers = () => {
   const width = useWidth()
-  const spacing = width < 1200 ? 126 : 256
   const avatarJustify = width < 575 ? 'center' : 'space-between'
 
   return (
     <div className="bg-speaker-gradient">
-      <MaxWidthLayout style={{ overflow: 'hidden', paddingBottom: spacing }}>
+      <MaxWidthLayout style={{ overflow: 'hidden' }}>
         <Row gutter={[24, 72]} justify="center">
           <Col>
             <Typography.Title level={2} className="text-title">

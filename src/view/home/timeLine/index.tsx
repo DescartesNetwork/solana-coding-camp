@@ -6,15 +6,10 @@ import MobileView from './mobileView'
 
 const TimeLine = () => {
   const width = useWidth()
-  const spacing = width < 1200 ? 126 : 256
   const isMobile = width < 992
 
   return (
-    <Row
-      gutter={[24, 24]}
-      justify="center"
-      style={{ paddingTop: 256, paddingBottom: spacing }}
-    >
+    <Row gutter={[24, 24]} justify="center">
       <Col>
         <Typography.Title level={2} className="text-title">
           Timeline
