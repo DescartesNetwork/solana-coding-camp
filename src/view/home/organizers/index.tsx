@@ -83,7 +83,7 @@ const Organizers = () => {
           perViews={perview}
           data={IMAGE_ID}
           rootPath={PATH_GOOGLE_VIEW_IMG}
-          speed={40000}
+          speed={5000}
           loop
         />
         <div className="bg-expand">

@@ -7,18 +7,17 @@ import useWidth from 'hooks/useWidth'
 import { PATH_GOOGLE_VIEW_IMG } from 'constant'
 
 const MEDIA_PARTNER = [
-  '1TgZltv-MYe1hXaCou6EzU2vFEe57glxd', //zeta
-  '127uzWDnTidcs6rDkR6aiDyQ2FZQ7iV_m', //space falcon
-  '14i92L8YFINk00uB5BI1noN0k71uzVzcg', //solscan
+  '1IRmQsmsfq5N-B-D0T01lLtiHBjWpLEHS', //zeta
+  '194DZBJNKv-OTbSghxBRa782UNvv1ftsf', // solend
   '1Paj_H0YMcWNGiBcOQDE_lxnHD2cgIevh', //magic eden
-  '1bUSAzz5PVTiHmUIBP3DEK-PC1LqkGGgG', //kyros
   '1LbIWdGsoE3qvZhSbnjwt8C02o8l4OVpb', // trade coind
   '1NAq4uO2dEgmH4yQfOL5TAXefJOSRfqFR', // jupiter
   '19Y7tfpllSmBK-O28avDSkJq022MLUynu', //jobhopin
-  '1j-oMmGBxFw2ffN2xPcqHQbYiCTAgYh3q', //defiland
-  '10CIiV_U3temDZClNf26nO-3dAklB6XxJ', // coinV consortium
+  '1i4esm661tHI-gMrM87kUGvg8nUI8xLaq', // jump
   '1_itWHo0YEfi_pbczwMk90PHGH9N88khT', //coin 68
   '1TsizUmcOavsmg4TCoswf0HHv6QjJmxDK', // ancient8
+  '158xmYCrz84PTxVtaq7DSWfHMzke-D4NX', // Accel
+  '1mqSplWmEaSv4oKgA925lKby_jneTZchd', // sequia
 ]
 
 const ListPartners = () => {

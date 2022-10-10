@@ -19,19 +19,19 @@ const RANKING_BG: Record<
     left: imgOne,
     right: glass1,
     color: [20, 241, 149],
-    label: '1st Price',
+    label: '1st Prize',
   },
   7000: {
     left: imgTwo,
     right: glass2,
     color: [153, 69, 255],
-    label: '2nd Price',
+    label: '2nd Prize',
   },
   5000: {
     left: imgThree,
     right: glass3,
     color: [128, 236, 255],
-    label: '3rd Price',
+    label: '3rd Prize',
   },
 }
 
