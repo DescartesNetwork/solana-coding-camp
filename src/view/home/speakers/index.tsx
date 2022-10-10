@@ -80,21 +80,26 @@ const SPEAKER_ID: SpeakersData[] = [
     name: 'Kevin Tung Nguyen',
     position: 'CEO at JobHopin',
   },
-  // {
-  //   id: '1MC_haCVWj-KVEFFie-6sq-cooqRHpDWL',
-  //   name: 'Kien Vuong',
-  //   position: 'CEO at Starbots',
-  // },
   {
     id: '1QI9Rkun-ywoatA-npJEhSdzC4h7eazXY',
     name: 'Long Vuong',
     position: 'CEO at Solscan',
   },
-  // {
-  //   id: '1v7cCzeI5rRRVVXJfhL5J2ZWPOGNxy32a',
-  //   name: 'Hoang Minh Thien',
-  //   position: 'Co-Founder at TradeCoinVietNam',
-  // },
+  {
+    id: '1LxcI4FttK46d816Fqkc3QrNPe3SVm86x',
+    name: 'Anh Tran',
+    position: 'Solana Vietnam | Superteam Vietnam',
+  },
+  {
+    id: '1_7Xw7iC4P40k43MP3vQv1_LvYxV0cf3C',
+    name: 'Thach Minh',
+    position: 'Solana Vietnam | Superteam Vietnam',
+  },
+  {
+    id: '1gomNYdXQQut-ZKsYTAAjtDVJ1BZgDxCc',
+    name: 'Ryan Nguyen',
+    position: 'COO at Descartes Network',
+  },
 ]
 
 const Speakers = () => {

@@ -84,13 +84,13 @@ const CardTrack = ({ data, index = 0 }: CardTrackProps) => {
           height: '50%',
           background: `radial-gradient(circle, rgba(${COLOR_BASE[index].join(
             ',',
-          )},0.4) 0%, rgba(${COLOR_BASE[index].join(',')}, 0.1) 100%)`,
+          )},0.4) 0%, rgba(${COLOR_BASE[index].join(',')}, 0.12) 100%)`,
           bottom: '-25%',
           right: 0,
           left: 0,
           margin: 'auto',
           borderRadius: '100%',
-          filter: 'blur(4px)',
+          filter: 'blur(40px)',
           boxShadow: `0 0 90px  rgba(${COLOR_BASE[index].join(',')},0.5)`,
         }}
       />
