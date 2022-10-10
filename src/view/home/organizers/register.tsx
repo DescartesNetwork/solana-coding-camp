@@ -2,9 +2,9 @@ import { Button, Col, Row, Space, Typography } from 'antd'
 import IonIcon from 'components/IonIcon'
 
 const SUB_REGISTER = [
-  'Learn the fundamentals of Solana coding through our series of online and offline workshops.',
-  'Join an exclusive group of 150 talented builders and bring groundbreaking ideas into brilliant Web3 apps on Solana.',
-  'Win $100,000 and get a pass to our Private Pitching Date with international VCs and angel investors.',
+  'Learn the fundamentals of Solana coding through our on-site workshops, office hours and panel discussions',
+  'Join an exclusive group of talented builders and bring groundbreaking ideas into brilliant Web3 apps on Solana.',
+  'Win up to $100,000 and get a pass to our Private Pitching Date with international VCs and angel investors.',
 ]
 
 const Register = () => {

@@ -1,9 +1,15 @@
+import useWidth from 'hooks/useWidth'
+import { useHistory } from 'react-router-dom'
+
 import { Button, Col, Row, Space, Typography } from 'antd'
 import MaxWidthLayout from 'components/maxWidthLayout'
-import useWidth from 'hooks/useWidth'
+
+import { FORM_ID } from 'view/about/registration'
+import { AGENDA_ID } from 'view/about/agenda'
 import Map from 'static/images/extra/map-svg'
 
 const Banner = () => {
+  const history = useHistory()
   const width = useWidth()
   const unDesktop = width < 1200
   const marginTop = unDesktop ? -280 : undefined
@@ -26,10 +32,19 @@ const Banner = () => {
               Vietnam Web3 Coding Camp
             </Typography.Title>
             <Space>
-              <Button size="large" type="primary">
+              <Button
+                size="large"
+                type="primary"
+                onClick={() => history.push(`/about/#${FORM_ID}`)}
+              >
                 REGISTER NOW
               </Button>
-              <Button size="large">CURRICULUM</Button>
+              <Button
+                size="large"
+                onClick={() => history.push(`/about/#${AGENDA_ID}`)}
+              >
+                CURRICULUM
+              </Button>
             </Space>
           </Space>
         </Col>

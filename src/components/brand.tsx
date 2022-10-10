@@ -20,14 +20,16 @@ const Brand = ({
 }: BrandProps) => {
   const imgSrc = dark ? imgBrandDark : imgBrand
   return (
-    <Image
-      style={style}
-      src={imgSrc}
-      width={width}
-      height={height}
-      alt="brand"
-      preview={false}
-    />
+    <a href="/">
+      <Image
+        style={style}
+        src={imgSrc}
+        width={width}
+        height={height}
+        alt="brand"
+        preview={false}
+      />
+    </a>
   )
 }
 

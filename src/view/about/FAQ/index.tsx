@@ -25,12 +25,12 @@ const TAB_FAQ = [
 ]
 
 const FAQ_DATA = {
-  [TabsKey.WhyJoin]:
-    'Learn blockchain coding from scratch with on-site mentoring in real time. Build your own DApp and compete for $100,000 prizes - all in just one month! Join our 1-1 consulting sessions, Web3 business panel discussions, and get advice from top national VCs and experts to build a healthy finance system around your project.',
-  [TabsKey.WhoCanJoin]:
-    'Learn blockchain coding from scratch with on-site mentoring in real time. Build your own DApp and compete for $100,000 prizes - all in just one month! Join our 1-1 consulting sessions, Web3 business panel discussions, and get advice from top national VCs and experts to build a healthy finance system around your project. 2',
-  [TabsKey.HowToJoin]:
-    'Learn blockchain coding from scratch with on-site mentoring in real time. Build your own DApp and compete for $100,000 prizes - all in just one month! Join our 1-1 consulting sessions, Web3 business panel discussions, and get advice from top national VCs and experts to build a healthy finance system around your project. 3',
+  [TabsKey.WhyJoin]: `<p>Learn blockchain coding from scratch with on-site mentoring in real-time. Build your own DApp and compete for $100,000 prizes - all in just one month!</p>
+  <p>Join our 1-1 consulting sessions, Web3 business panel discussions, and get advice from top national VCs and experts to build a healthy finance system around your project.</p>`,
+  [TabsKey.WhoCanJoin]: `<p>The Solana Vietnam Coding Camp Season 2 is only open to participants who are Vietnamese or are able to use Vietnamese fluently.</p>
+  <p>We welcome all ages to join the camp: Students, Contractors, Freelancers, Start-up owners, etc. as long as you're in love with the Solana blockchain!</p>`,
+  [TabsKey.HowToJoin]: `<p>To participate in the camp, you need to submit the registration form below. A confirmation email will be sent to official participants before the workshop and panel series start.</p>
+  <p>If you have any other questions, drop us an email at hi@sentre.io or send a message to our official Telegram group!</p>`,
 }
 
 const FAQ = () => {
@@ -57,7 +57,7 @@ const FAQ = () => {
               active={activeKey === faq.key}
             >
               <Space direction="vertical" style={{ textAlign: 'center' }}>
-                <IonIcon name={faq.icon} />
+                <IonIcon style={{ fontSize: 28 }} name={faq.icon} />
                 <Typography.Title
                   level={level}
                   style={{ color: activeKey === faq.key ? '#000' : '#fff' }}
@@ -69,7 +69,12 @@ const FAQ = () => {
           </Col>
         ))}
         <Col span={24}>
-          <CardFAQ>{FAQ_DATA[activeKey]}</CardFAQ>
+          <CardFAQ>
+            <div
+              className="faq-content"
+              dangerouslySetInnerHTML={{ __html: FAQ_DATA[activeKey] }}
+            />
+          </CardFAQ>
         </Col>
       </Row>
     </MaxWidthLayout>
