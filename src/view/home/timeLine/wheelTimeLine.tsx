@@ -10,12 +10,15 @@ import { MAX_WIDTH, TIME_LINE } from 'constant'
 const TIMELINE_WHEEL_ID = 'timeline_wheel'
 const TIMELINE_WHEEL_ITEM_ID = 'timeline_wheel_item_'
 const DEFAULT_ACTIVE_CLN = 'timeline_wheel_item_default_active'
+const PROGRESS_MIN_WIDTH = 212
 
 const WheelTimeLine = () => {
   const [activeIndex, setActiveIndex] = useState(0)
   const width = useWidth()
   const unDeskop = width < 1200
-  const progressMinWidth = unDeskop ? 150 : 250
+  const progressMinWidth = unDeskop
+    ? PROGRESS_MIN_WIDTH - 50
+    : PROGRESS_MIN_WIDTH
 
   const getDefaultActiveCln = useCallback(
     (fromDate: string, toDate?: string) => {
@@ -38,9 +41,9 @@ const WheelTimeLine = () => {
       if (!e || e.deltaY === 0 || !elm) return
       const windowWidth = window.innerWidth
       const parentWidth = elm.clientWidth
-      const offsetBrowser =
-        windowWidth > parentWidth ? (windowWidth - parentWidth) / 2 : 0
+      const offsetBrowser = (windowWidth - parentWidth) / 2
       const wheelDown = e.deltaY > 0
+
       if (
         (wheelDown && activeIndex + 2 < TIME_LINE.length) ||
         (!wheelDown && activeIndex > 0)
@@ -61,11 +64,11 @@ const WheelTimeLine = () => {
 
         if (
           elmOffsetLeft > offsetBrowser - 428 &&
-          elmOffsetLeft < offsetBrowser + 250
+          elmOffsetLeft < offsetBrowser + PROGRESS_MIN_WIDTH
         ) {
           setActiveIndex(idx)
           elm.scrollTo({
-            left: detectElm.offsetLeft - offsetBrowser - 15,
+            left: detectElm.offsetLeft,
             behavior: 'smooth',
           })
         }

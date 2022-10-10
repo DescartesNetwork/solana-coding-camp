@@ -1,6 +1,7 @@
 import { Card, Col, Row, Space, Typography } from 'antd'
 import { TitleProps } from 'antd/lib/typography/Title'
 import IonIcon from 'components/IonIcon'
+import useWidth from 'hooks/useWidth'
 import moment from 'moment'
 import { CSSProperties, useMemo } from 'react'
 
@@ -43,6 +44,8 @@ const CardTimeLine = ({
   const formatDate = (date: string) => {
     return moment(new Date(date)).format('DD MMM')
   }
+  const screen = useWidth()
+  const isMobile = screen < 920
 
   const date = useMemo(() => {
     if (!fromDate) return
@@ -55,9 +58,9 @@ const CardTimeLine = ({
   //   return moment(now).isBetween(fromDate, toDate)
   // }, [fromDate, toDate])
 
-  const activeBg = active
-    ? { background: 'transparent' }
-    : { background: '#000' }
+  const background = isMobile ? '#000' : '#26262b'
+
+  const activeBg = active ? { background: 'transparent' } : { background }
 
   const flexFlow =
     direction === CardDirection.horizontal

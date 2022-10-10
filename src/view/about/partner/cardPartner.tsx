@@ -41,6 +41,7 @@ const CardPartner = ({ children, logo = '', socials }: CardPartnerProps) => {
                   type="text"
                   icon={<IonIcon name={social.icon} />}
                   onClick={() => {}}
+                  key={social.src}
                 />
               ))}
             </Space>

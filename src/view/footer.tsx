@@ -43,7 +43,7 @@ const Footer = () => {
           className="anima-bounce-3d"
           style={{ position: 'absolute', width: 117, top: -50, right: 0 }}
         >
-          <Image src={imgBg} />
+          <Image src={imgBg} preview={false} />
         </div>
       </Row>
     </MaxWidthLayout>

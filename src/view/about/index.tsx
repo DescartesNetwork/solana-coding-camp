@@ -1,3 +1,5 @@
+import { useEffect } from 'react'
+
 import { Col, Row } from 'antd'
 import Footer from 'view/footer'
 import Header from 'view/header'
@@ -6,6 +8,7 @@ import Banner from './banner'
 import Partner from './partner'
 import FAQ from './FAQ'
 import Agenda from './agenda'
+import Registration from './registration'
 
 import useWidth from 'hooks/useWidth'
 
@@ -15,6 +18,13 @@ const About = () => {
   const width = useWidth()
   const isDesktop = width > 1200
   const gap = isDesktop ? 256 : 128
+
+  useEffect(() => {
+    const hashId = window.location.hash
+    if (!hashId) return
+    const elm = document.querySelector(hashId)
+    elm?.scrollIntoView({ behavior: 'smooth' })
+  }, [])
 
   return (
     <Row gutter={[0, gap]}>
@@ -37,6 +47,9 @@ const About = () => {
       </Col>
       <Col span={24}>
         <FAQ />
+      </Col>
+      <Col span={24}>
+        <Registration />
       </Col>
       <Col span={24}>
         <Footer />

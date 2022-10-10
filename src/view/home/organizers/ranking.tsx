@@ -36,10 +36,10 @@ const RANKING_BG: Record<
 }
 
 const FLOAT_RIGHT = { width: '100%', textAlign: 'end' }
-const MOBILE_NUMBER = {
-  transform: 'scale(0.7)',
-  transformOrigin: 'left bottom',
-}
+// const MOBILE_NUMBER = {
+//   transform: 'scale(0.7)',
+//   transformOrigin: 'left bottom',
+// }
 
 type CardRankingProps = {
   value: string
@@ -49,11 +49,11 @@ const CardRanking = ({
   value = Object.keys(RANKING_BG)[0],
   index = 1,
 }: CardRankingProps) => {
-  const { left: imgLeft, right: imgRight, color, label } = RANKING_BG[value]
+  const { right: imgRight, color, label } = RANKING_BG[value]
   const width = useWidth()
 
   const imgStyle = width < 575 ? FLOAT_RIGHT : {}
-  const numberStyle = width < 575 ? MOBILE_NUMBER : {}
+  // const numberStyle = width < 575 ? MOBILE_NUMBER : {}
 
   return (
     <Card
@@ -63,7 +63,7 @@ const CardRanking = ({
     >
       <Row justify="space-between" align="bottom">
         <Col xs={{ order: 2 }} sm={{ order: 1 }}>
-          <div
+          {/* <div
             style={{
               ...numberStyle,
               position: 'absolute',
@@ -72,7 +72,7 @@ const CardRanking = ({
             }}
           >
             <Image src={imgLeft} alt="num" preview={false} />
-          </div>
+          </div> */}
           <Space
             direction="vertical"
             size={0}

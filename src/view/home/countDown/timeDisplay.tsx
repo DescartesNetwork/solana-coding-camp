@@ -10,7 +10,7 @@ import moment from 'moment'
 
 import { Space, Typography } from 'antd'
 
-const END_DATE = '10/09/2022 23:59:59'
+const END_DATE = '11/13/2022 23:59:59'
 const END_TIME_ISO = new Date(END_DATE).getTime()
 const ENDTIME_LOCAL = END_TIME_ISO - new Date(END_TIME_ISO).getTimezoneOffset()
 

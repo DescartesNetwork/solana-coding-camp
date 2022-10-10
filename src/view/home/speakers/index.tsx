@@ -7,23 +7,91 @@ import useWidth from 'hooks/useWidth'
 import imgBgSpeaker from 'static/images/extra/bg-ranking.png'
 import { PATH_GOOGLE_VIEW_IMG } from 'constant'
 
-const SPEAKER_ID = [
-  '1GWOLhfydqyHckElp0gVf5250cM09kG7k',
-  '1TRvD016nPQ3_6W8xIR9L03EXgmws1GtB',
-  '1_pZyCT0zQm7nLe55v96O07xwAV07p63Z',
-  '1uekV144CCFYmfhkE7cfmVI5mU-nnQE2c',
-  '1OP0gBrvm3sm9m_C77pCjBCqrhoUpmRFb',
-  '10eVqz9C9ONy-hM20YKphvdA_gj6FMx3o',
-  '1CxhvysTnJvrMeyMsmHWq4wHZbARffooU',
-  '1QI9Rkun-ywoatA-npJEhSdzC4h7eazXY',
-  '1MC_haCVWj-KVEFFie-6sq-cooqRHpDWL',
-  '1rAw4B3bmHOkHQpr29Ts0KVgZ4sfO1fbH',
-  '1OTzUdRWVf7daS75maJM38hCHqLOEpNrs',
-  '19f_NFPEYy6X2qeb2bRWj-Za1JBuUebTT',
-  '1eRF--ar-YqwOsKfXb3soVcVta1VFVhUl',
-  '1v7cCzeI5rRRVVXJfhL5J2ZWPOGNxy32a',
-  '1_uvYY3SYzimrOzmzc1rhryF7BSdHZAnW',
-  '1t7b3lb4rkFmmguefCE8o2W4ASUQG2Xoy',
+export type SpeakersData = { id: string; name: string; position: string }
+
+const SPEAKER_ID: SpeakersData[] = [
+  {
+    id: '1GWOLhfydqyHckElp0gVf5250cM09kG7k',
+    name: 'Tu Phan',
+    position: 'Founder at Sentre Protocol',
+  }, // Tu Phan
+  {
+    id: '1TRvD016nPQ3_6W8xIR9L03EXgmws1GtB',
+    name: 'Tran Khanh Han',
+    position: 'Development at Wolffun',
+  }, // Han
+  {
+    id: '1_pZyCT0zQm7nLe55v96O07xwAV07p63Z',
+    name: 'Thuat Nguyen',
+    position: 'CEO & Co-founder at Kyros Ventures',
+  }, //
+  {
+    id: '1uekV144CCFYmfhkE7cfmVI5mU-nnQE2c',
+    name: 'Thanh Le',
+    position: 'Founder at Coin98 Finance',
+  }, //
+  {
+    id: '1OP0gBrvm3sm9m_C77pCjBCqrhoUpmRFb',
+    name: 'Tamar Menteshashvili',
+    position: 'Ecosystem Growth at Solana Labs',
+  }, // Tarma
+  {
+    id: '10eVqz9C9ONy-hM20YKphvdA_gj6FMx3o',
+    name: 'Nguyen Dinh Khanh',
+    position: 'Chief Of Executive at WolfFun',
+  },
+
+  {
+    id: '1CxhvysTnJvrMeyMsmHWq4wHZbARffooU',
+    name: 'Marcus Le',
+    position: 'Ecosystem Growth at Coin98 Finance',
+  },
+  {
+    id: '1QI9Rkun-ywoatA-npJEhSdzC4h7eazXY',
+    name: 'Long Vuong',
+    position: 'CEO at Solscan',
+  },
+  {
+    id: '1MC_haCVWj-KVEFFie-6sq-cooqRHpDWL',
+    name: 'Kien Vuong',
+    position: 'CEO at Starbots',
+  },
+  {
+    id: '1rAw4B3bmHOkHQpr29Ts0KVgZ4sfO1fbH',
+    name: 'Kevin Tung Nguyen',
+    position: 'CEO at JobHopin',
+  },
+  {
+    id: '1OTzUdRWVf7daS75maJM38hCHqLOEpNrs',
+    name: 'Joo Lee',
+    position: 'Business Development Lead at Ancient8',
+  },
+  {
+    id: '19f_NFPEYy6X2qeb2bRWj-Za1JBuUebTT',
+    name: 'Jade Vo',
+    position: 'Co-lead at Coin98 Ventures',
+  },
+  {
+    id: '1eRF--ar-YqwOsKfXb3soVcVta1VFVhUl',
+    name: 'Howard Xu',
+    position: 'Co-founder at Ancient8',
+  },
+  {
+    id: '1v7cCzeI5rRRVVXJfhL5J2ZWPOGNxy32a',
+    name: 'Hoang Minh Thien',
+    position: 'Co-Founder at TradeCoinVietNam',
+  },
+
+  {
+    id: '1_uvYY3SYzimrOzmzc1rhryF7BSdHZAnW',
+    name: 'Colin Ogoo',
+    position: 'Developer Experience Engineer at Solana Foundation',
+  },
+  {
+    id: '1t7b3lb4rkFmmguefCE8o2W4ASUQG2Xoy',
+    name: 'Akshay BD',
+    position: 'Head of Emerging Markets at Solana Foundation',
+  },
 ]
 
 const Speakers = () => {
@@ -41,25 +109,25 @@ const Speakers = () => {
           </Col>
           <Col span={24}>
             <Row gutter={[64, 64]} justify={avatarJustify}>
-              {SPEAKER_ID.map((speaker, idx) => (
+              {SPEAKER_ID.map(({ id, name, position }, idx) => (
                 <Col key={idx}>
                   <Space
                     size={24}
                     direction="vertical"
                     style={{ textAlign: 'center' }}
                   >
-                    <Avatar src={PATH_GOOGLE_VIEW_IMG + speaker} center />
+                    <Avatar src={PATH_GOOGLE_VIEW_IMG + id} center />
                     <Space
                       direction="vertical"
                       style={{ maxWidth: 180 }}
                       size={0}
                     >
-                      <Typography.Title level={5}>Tu Phan</Typography.Title>
+                      <Typography.Title level={5}>{name}</Typography.Title>
                       <Typography.Text
                         type="secondary"
                         style={{ fontWeight: 300 }}
                       >
-                        CEO & Co-founder of Coin98 Finance
+                        {position}
                       </Typography.Text>
                     </Space>
                   </Space>

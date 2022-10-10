@@ -1,7 +1,12 @@
-import { forwardRef } from 'react'
+import { CSSProperties, forwardRef } from 'react'
 import { CUSTOM_ICONS } from './custom'
 
-type IonIconProps = { name?: string; className?: string; src?: string }
+type IonIconProps = {
+  name?: string
+  className?: string
+  src?: string
+  style?: CSSProperties
+}
 const IonIcon = forwardRef<HTMLElement, IonIconProps>(
   ({ name = '', className, src = '', ...props }, ref) => {
     const cln = className ? 'anticon ' + className : 'anticon'

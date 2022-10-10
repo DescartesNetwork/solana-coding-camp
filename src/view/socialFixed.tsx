@@ -1,4 +1,4 @@
-import { Affix, Button, Card, Col, Row } from 'antd'
+import { Button, Card, Col, Row } from 'antd'
 import IonIcon from 'components/IonIcon'
 
 const SOCIAL_BTN = [
@@ -18,7 +18,7 @@ const SOCIAL_BTN = [
 
 const SocialFixed = () => {
   return (
-    <Affix className="group-btn-social" offsetTop={150}>
+    <div className="group-btn-social">
       <Card
         bordered={false}
         bodyStyle={{ padding: 0 }}
@@ -46,7 +46,7 @@ const SocialFixed = () => {
           ))}
         </Row>
       </Card>
-    </Affix>
+    </div>
   )
 }
 
