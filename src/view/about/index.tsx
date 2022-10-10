@@ -3,6 +3,7 @@ import Footer from 'view/footer'
 import Header from 'view/header'
 import SocialFixed from 'view/socialFixed'
 import Banner from './banner'
+import FormRegis from './formRegis'
 
 import './index.less'
 
@@ -16,7 +17,9 @@ const About = () => {
       <Col span={24}>
         <Banner />
       </Col>
-
+      <Col span={24}>
+        <FormRegis />
+      </Col>
       <Col span={24}>
         <Footer />
       </Col>

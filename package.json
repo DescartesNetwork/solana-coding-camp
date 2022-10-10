@@ -1,11 +1,14 @@
 {
+  "proxy": "http://localhost:8000/",
   "name": "solana-coding-camp",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.2",
-    "@typeform/embed-react": "^1.16.0",
+    "@typeform/embed-react": "^2.0.0",
     "antd": "^4.16.13",
+    "axios": "^1.1.2",
+    "http-proxy-middleware": "^2.0.6",
     "numbro": "^2.3.6",
     "rc-animate": "^3.1.1",
     "rc-tween-one": "^2.7.3",
