@@ -10,11 +10,13 @@ const TRACKS: TrackData[] = [
     logo: logoSaros,
     value1st: '$6000',
     value2nd: '$2000',
+    key: 'StatusUp',
   },
   {
     logo: logoAncient8,
     value1st: '$3500',
     value2nd: '$1500',
+    key: 'Game',
   },
 ]
 

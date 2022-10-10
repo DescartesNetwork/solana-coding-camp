@@ -1,9 +1,13 @@
+import moment from 'moment'
+
 import { Steps } from 'antd'
 import CardTimeLine from './cardTimeLine'
 
 import { TIME_LINE } from 'constant'
 
 const MobileView = () => {
+  const now = Date.now()
+
   return (
     <Steps
       className="mobile-step-time-line"
@@ -22,7 +26,7 @@ const MobileView = () => {
               size={56}
               levelSize={4}
               labelSize={16}
-              active={idx === 2}
+              active={moment(now).isBetween(fromDate, toDate)}
               borderRadius={24}
               width="100%"
               height="auto"

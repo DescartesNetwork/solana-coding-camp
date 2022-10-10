@@ -44,7 +44,7 @@ const PARTNERS = [
       { src: 'https://t.me/solanadevsvietnam', icon: 'logo-telegram' },
     ],
     children:
-      "Coin98 is an all-in-one DeFi platform designed to provide DeFi's most prominent features in one place.",
+      'Solana Vietnam Coders DAO (SVC DAO) is an exclusive community providing grants, bounties, job opportunities and more for Solana builders in Vietnam.',
   },
 ]
 
