@@ -1,5 +1,6 @@
-import { Image } from 'antd'
 import { CSSProperties } from 'react'
+
+import { Image } from 'antd'
 
 type AvatarProps = {
   src?: string

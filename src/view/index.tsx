@@ -14,10 +14,10 @@ const View = () => {
   return (
     <Layout style={{ background: 'transparent', overflow: 'hidden' }}>
       <Switch>
-        <Route exact path="/" component={Home} />
+        <Route exact path="/home" component={Home} />
         <Route exact path="/about" component={About} />
         <Route path="*">
-          <Redirect to="/" />
+          <Redirect to="/home" />
         </Route>
       </Switch>
       <Watcher />

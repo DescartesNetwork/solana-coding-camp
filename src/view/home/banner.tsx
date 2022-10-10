@@ -1,9 +1,9 @@
-import useWidth from 'hooks/useWidth'
 import { useHistory } from 'react-router-dom'
 
 import { Button, Col, Row, Space, Typography } from 'antd'
 import MaxWidthLayout from 'components/maxWidthLayout'
 
+import useWidth from 'hooks/useWidth'
 import { FORM_ID } from 'view/about/registration'
 import { AGENDA_ID } from 'view/about/agenda'
 import Map from 'static/images/extra/map-svg'

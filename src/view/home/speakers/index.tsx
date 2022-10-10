@@ -3,9 +3,9 @@ import MaxWidthLayout from 'components/maxWidthLayout'
 import Avatar from './avatar'
 
 import useWidth from 'hooks/useWidth'
+import { PATH_GOOGLE_VIEW_IMG } from 'constant'
 
 import imgBgSpeaker from 'static/images/extra/bg-ranking.png'
-import { PATH_GOOGLE_VIEW_IMG } from 'constant'
 
 export type SpeakersData = { id: string; name: string; position: string }
 

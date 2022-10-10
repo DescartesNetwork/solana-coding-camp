@@ -1,9 +1,11 @@
-import { Card, Col, Row, Space, Typography } from 'antd'
-import { TitleProps } from 'antd/lib/typography/Title'
-import IonIcon from 'components/IonIcon'
-import useWidth from 'hooks/useWidth'
-import moment from 'moment'
 import { CSSProperties, useMemo } from 'react'
+import moment from 'moment'
+
+import { Card, Col, Row, Space, Typography } from 'antd'
+import IonIcon from 'components/IonIcon'
+import { TitleProps } from 'antd/lib/typography/Title'
+
+import useWidth from 'hooks/useWidth'
 
 const DEFAULT_SIZE = 420
 const enum CardDirection {

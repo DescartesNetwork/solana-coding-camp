@@ -1,5 +1,8 @@
+import { useHistory } from 'react-router-dom'
+
 import { Button, Col, Row, Space, Typography } from 'antd'
 import IonIcon from 'components/IonIcon'
+import { FORM_ID } from 'view/about/registration'
 
 const SUB_REGISTER = [
   'Learn the fundamentals of Solana coding through our on-site workshops, office hours and panel discussions',
@@ -8,6 +11,7 @@ const SUB_REGISTER = [
 ]
 
 const Register = () => {
+  const history = useHistory()
   return (
     <Row gutter={[24, 24]}>
       <Col xs={{ span: 24, order: 2 }} lg={{ span: 12, order: 1 }}>
@@ -37,10 +41,16 @@ const Register = () => {
           </Col>
           <Col span={24}>
             <Space>
-              <Button size="large" type="primary">
+              <Button
+                size="large"
+                type="primary"
+                onClick={() => history.push(`/about/#${FORM_ID}`)}
+              >
                 REGISTER NOW
               </Button>
-              <Button size="large">MORE INFO</Button>
+              <Button size="large" onClick={() => history.push('/about')}>
+                MORE INFO
+              </Button>
             </Space>
           </Col>
         </Row>

@@ -4,6 +4,8 @@ import { Button, Col, Image, Row, Space, Typography } from 'antd'
 
 import imgBg from 'static/images/extra/img-footer.png'
 
+const LINK_JOIN_US = 'https://t.me/solanadevsvietnam'
+
 const Footer = () => {
   return (
     <MaxWidthLayout
@@ -26,13 +28,12 @@ const Footer = () => {
         <Col span={24} />
         <Col span={24}>
           <Button
-            type="primary"
             ghost
             style={{ minWidth: 100 }}
             size="small"
-            onClick={() => {}}
+            onClick={() => window.open(LINK_JOIN_US, '_blank')}
           >
-            Join us
+            JOIN US
           </Button>
         </Col>
         <Col span={24} style={{ height: 40 }} />

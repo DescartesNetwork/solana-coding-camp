@@ -24,8 +24,12 @@ const CardPartner = ({ children, logo = '', socials }: CardPartnerProps) => {
       >
         <Col>
           <Row gutter={[0, 42]} justify="center">
-            <Col>
-              <Image src={logo} preview={false} />
+            <Col style={{ minHeight: 50 }} className="logo-partner-img">
+              <Image
+                style={{ maxHeight: 50, objectFit: 'contain' }}
+                src={logo}
+                preview={false}
+              />
             </Col>
             <Col span={24} style={{ textAlign: 'center' }}>
               <Typography.Text>{children}</Typography.Text>
@@ -40,7 +44,7 @@ const CardPartner = ({ children, logo = '', socials }: CardPartnerProps) => {
                   style={{ padding: 0, width: 'auto', height: 'auto' }}
                   type="text"
                   icon={<IonIcon name={social.icon} />}
-                  onClick={() => {}}
+                  onClick={() => window.open(social.src, '_blank')}
                   key={social.src}
                 />
               ))}
