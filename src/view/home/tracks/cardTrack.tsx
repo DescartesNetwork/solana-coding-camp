@@ -2,6 +2,7 @@ import { Card, Col, Image, Row, Space, Typography } from 'antd'
 import SpaceBetween from 'components/spaceBetween'
 import PriceTitle from './priceTitle'
 import IconSax from '@sentre/antd-iconsax'
+import useLanguages from 'hooks/useLanguages'
 
 const COLOR_BASE = [
   [118, 79, 255],
@@ -20,6 +21,8 @@ export type TrackData = {
 }
 export type CardTrackProps = { data: TrackData; index?: number }
 const CardTrack = ({ data, index = 0 }: CardTrackProps) => {
+  const system = useLanguages()
+
   return (
     <Card
       bordered={false}
@@ -59,7 +62,7 @@ const CardTrack = ({ data, index = 0 }: CardTrackProps) => {
                 }
               >
                 <Typography.Text style={{ fontSize: 32 }}>
-                  1st Place
+                  {system.prize1stPlace}
                 </Typography.Text>
               </SpaceBetween>
             </Col>
@@ -75,14 +78,14 @@ const CardTrack = ({ data, index = 0 }: CardTrackProps) => {
                         style={{ fontSize: 18 }}
                         type="secondary"
                       >
-                        for 2 Winners
+                        {system.for2Winners}
                       </Typography.Text>
                     )}
                   </Space>
                 }
               >
                 <Typography.Text style={{ fontSize: 32 }}>
-                  Runner-up
+                  {system.prizes2stRunner}
                 </Typography.Text>
               </SpaceBetween>
             </Col>
@@ -90,7 +93,9 @@ const CardTrack = ({ data, index = 0 }: CardTrackProps) => {
         </Col>
         <Col>
           <Space align="center">
-            <Typography.Text type="secondary">Sponsored by</Typography.Text>
+            <Typography.Text type="secondary">
+              {system.tracks.sponsored}
+            </Typography.Text>
             <Image src={data.logo} preview={false} />
           </Space>
         </Col>

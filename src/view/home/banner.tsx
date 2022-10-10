@@ -1,14 +1,18 @@
+import { useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 
 import { Button, Col, Row, Space, Typography } from 'antd'
 import MaxWidthLayout from 'components/maxWidthLayout'
 
 import useWidth from 'hooks/useWidth'
+import { AppState } from 'store'
+
 import { FORM_ID } from 'view/about/registration'
 import { AGENDA_ID } from 'view/about/agenda'
 import Map from 'static/images/extra/map-svg'
 
 const Banner = () => {
+  const { system } = useSelector((state: AppState) => state.languages)
   const history = useHistory()
   const width = useWidth()
   const unDesktop = width < 1200
@@ -29,7 +33,7 @@ const Banner = () => {
               level={1}
               style={{ fontSize: 96 }}
             >
-              Vietnam Web3 Coding Camp
+              {system.banner.title}
             </Typography.Title>
             <Space>
               <Button
@@ -37,13 +41,13 @@ const Banner = () => {
                 type="primary"
                 onClick={() => history.push(`/about/#${FORM_ID}`)}
               >
-                REGISTER NOW
+                {system.CTA.register}
               </Button>
               <Button
                 size="large"
                 onClick={() => history.push(`/about/#${AGENDA_ID}`)}
               >
-                CURRICULUM
+                {system.CTA.curriculum}
               </Button>
             </Space>
           </Space>

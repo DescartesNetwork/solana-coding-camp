@@ -10,50 +10,27 @@ import imgThree from 'static/images/ranking/three.svg'
 import glass1 from 'static/images/ranking/glass-1.png'
 import glass2 from 'static/images/ranking/glass-2.png'
 import glass3 from 'static/images/ranking/glass-3.png'
-
-const RANKING_BG: Record<
-  string,
-  { left: string; right: string; color: number[]; label: string }
-> = {
-  10000: {
-    left: imgOne,
-    right: glass1,
-    color: [20, 241, 149],
-    label: '1st Prize',
-  },
-  7000: {
-    left: imgTwo,
-    right: glass2,
-    color: [153, 69, 255],
-    label: '2nd Prize',
-  },
-  5000: {
-    left: imgThree,
-    right: glass3,
-    color: [128, 236, 255],
-    label: '3rd Prize',
-  },
-}
+import useLanguages from 'hooks/useLanguages'
 
 const FLOAT_RIGHT = { width: '100%', textAlign: 'end' }
-// const MOBILE_NUMBER = {
-//   transform: 'scale(0.7)',
-//   transformOrigin: 'left bottom',
-// }
+
+export type PrizeData = {
+  left: string
+  right: string
+  color: number[]
+  label: string
+}
+export type PrizeState = Record<string, PrizeData>
 
 type CardRankingProps = {
-  value: string
+  data: PrizeData
   index?: number
+  value?: string
 }
-const CardRanking = ({
-  value = Object.keys(RANKING_BG)[0],
-  index = 1,
-}: CardRankingProps) => {
-  const { right: imgRight, color, label } = RANKING_BG[value]
+const CardRanking = ({ data, index = 1, value = '' }: CardRankingProps) => {
+  const { right: imgRight, color, label } = data
   const width = useWidth()
-
   const imgStyle = width < 575 ? FLOAT_RIGHT : {}
-  // const numberStyle = width < 575 ? MOBILE_NUMBER : {}
 
   return (
     <Card
@@ -63,16 +40,6 @@ const CardRanking = ({
     >
       <Row justify="space-between" align="bottom">
         <Col xs={{ order: 2 }} sm={{ order: 1 }}>
-          {/* <div
-            style={{
-              ...numberStyle,
-              position: 'absolute',
-              bottom: -10,
-              left: 0,
-            }}
-          >
-            <Image src={imgLeft} alt="num" preview={false} />
-          </div> */}
           <Space
             direction="vertical"
             size={0}
@@ -86,14 +53,6 @@ const CardRanking = ({
               >
                 {numbro(value).format('0,0.[00]$')}
               </Typography.Title>
-              {/* {value === 1000 && (
-                <Typography.Text>
-                  for{' '}
-                  <span style={{ color: `rgb(${color.join(',')})` }}>
-                    10 Developers
-                  </span>
-                </Typography.Text>
-              )} */}
             </Space>
           </Space>
         </Col>
@@ -131,19 +90,45 @@ const CardRanking = ({
 }
 
 const Ranking = () => {
+  const system = useLanguages()
+
+  const rankingBg: PrizeState = {
+    10000: {
+      left: imgOne,
+      right: glass1,
+      color: [20, 241, 149],
+      label: system.prize1st,
+    },
+    7000: {
+      left: imgTwo,
+      right: glass2,
+      color: [153, 69, 255],
+      label: system.prize2nd,
+    },
+    5000: {
+      left: imgThree,
+      right: glass3,
+      color: [128, 236, 255],
+      label: system.prize3rd,
+    },
+  }
+
   return (
     <Row gutter={[64, 64]}>
-      {Object.keys(RANKING_BG)
+      {Object.keys(rankingBg)
         .sort((a, b) => Number(b) - Number(a))
-        .map((ranking, idx) => (
-          <Col
-            xs={{ span: 24, offset: 0 }}
-            xl={{ span: 18, offset: idx % 2 ? 6 : 0 }}
-            key={idx}
-          >
-            <CardRanking value={ranking} index={idx + 1} />
-          </Col>
-        ))}
+        .map((key, idx) => {
+          const data = rankingBg[key]
+          return (
+            <Col
+              xs={{ span: 24, offset: 0 }}
+              xl={{ span: 18, offset: idx % 2 ? 6 : 0 }}
+              key={key}
+            >
+              <CardRanking data={data} value={key} index={idx + 1} />
+            </Col>
+          )
+        })}
     </Row>
   )
 }

@@ -12,6 +12,7 @@ import { PATH_GOOGLE_VIEW_IMG } from 'constant'
 
 import organizeBg from 'static/images/extra/organizen-partner.png'
 import bgTimeline from 'static/images/extra/bg-timeline.png'
+import useLanguages from 'hooks/useLanguages'
 
 const IMAGE_ID = [
   '18pfR8x6yXO0EkXyCpBWBv3rUAnXKkGyQ',
@@ -41,6 +42,7 @@ const IMAGE_ID = [
 
 const Organizers = () => {
   const width = useWidth()
+  const system = useLanguages()
 
   const spacing = width < 1200 ? 126 : 256
 
@@ -59,7 +61,7 @@ const Organizers = () => {
           <Row gutter={[24, 72]} justify="center">
             <Col>
               <Typography.Title level={2} className="text-title">
-                Organizers
+                {system.organizers.title}
               </Typography.Title>
             </Col>
             <Col span={24}>

@@ -3,28 +3,29 @@ import { useHistory } from 'react-router-dom'
 import { Button, Col, Row, Space, Typography } from 'antd'
 import IonIcon from 'components/IonIcon'
 import { FORM_ID } from 'view/about/registration'
-
-const SUB_REGISTER = [
-  'Learn the fundamentals of Solana coding through our on-site workshops, office hours and panel discussions',
-  'Join an exclusive group of talented builders and bring groundbreaking ideas into brilliant Web3 apps on Solana.',
-  'Win up to $100,000 and get a pass to our Private Pitching Date with international VCs and angel investors.',
-]
+import useLanguages from 'hooks/useLanguages'
 
 const Register = () => {
+  const system = useLanguages()
   const history = useHistory()
+
+  const subRegister: string[] = [
+    system.organizers.labelLearn,
+    system.organizers.labelJoin,
+    system.organizers.labelWin,
+  ]
   return (
     <Row gutter={[24, 24]}>
       <Col xs={{ span: 24, order: 2 }} lg={{ span: 12, order: 1 }}>
         <Row gutter={[32, 32]}>
           <Col span={24}>
-            <Typography.Title level={1} style={{ fontSize: 64 }}>
-              What value does the{' '}
-              <span className="text-gradient">Web3 coding camp</span> create
+            <Typography.Title level={1} className="text-gradient">
+              {system.organizers.videoTitle}
             </Typography.Title>
           </Col>
           <Col span={24}>
             <Space direction="vertical" size={16}>
-              {SUB_REGISTER.map((sub, idx) => (
+              {subRegister.map((sub, idx) => (
                 <Space key={idx}>
                   <Typography.Text
                     style={{ color: '#14F195', fontSize: 24, fontWeight: 300 }}
@@ -45,10 +46,10 @@ const Register = () => {
                 type="primary"
                 onClick={() => history.push(`/about/#${FORM_ID}`)}
               >
-                REGISTER NOW
+                {system.CTA.register}
               </Button>
               <Button size="large" onClick={() => history.push('/about')}>
-                MORE INFO
+                {system.CTA.more}
               </Button>
             </Space>
           </Col>

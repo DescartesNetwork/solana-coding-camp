@@ -1,3 +1,6 @@
+import { enLanguage } from 'static/languages/en'
+import { vnLanguage } from 'static/languages/vn'
+
 import pen from 'static/images/timeline/pen.svg'
 import people from 'static/images/timeline/people.svg'
 import send from 'static/images/timeline/send.svg'
@@ -43,3 +46,10 @@ export const PATH_GOOGLE_VIEW_IMG =
   'https://drive.google.com/uc?export=view&id='
 
 export const TYPE_FORM_ID = 'hyibBZhP'
+
+export type LanguageType = 'en' | 'vn'
+
+export const DEFAULT_SYSTEM: Record<LanguageType, any> = {
+  en: enLanguage,
+  vn: vnLanguage,
+}

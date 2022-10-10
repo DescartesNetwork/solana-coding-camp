@@ -8,10 +8,14 @@ import useWidth from 'hooks/useWidth'
 
 import flagVN from 'static/images/logo/flag-vn.svg'
 import flagUK from 'static/images/logo/flag-uk.svg'
+import { useDispatch, useSelector } from 'react-redux'
+import { setLanguage } from 'store/languages.reducer'
+import { LanguageType } from 'constant'
+import { AppState } from 'store'
 
 export enum LanguageKey {
   VietNam = 'vn',
-  England = 'uk',
+  England = 'en',
 }
 
 const LANGUAGES = [
@@ -19,7 +23,6 @@ const LANGUAGES = [
     label: 'VIE',
     value: LanguageKey.VietNam,
     icon: <Image width={18} height={18} src={flagVN} preview={false} />,
-    disabled: true,
   },
   {
     label: 'ENG',
@@ -30,6 +33,9 @@ const LANGUAGES = [
 
 export type ContainerProps = { direction?: 'horizontal' | 'vertical' }
 const Container = ({ direction = 'horizontal' }: ContainerProps) => {
+  const dispath = useDispatch()
+  const language = useSelector((state: AppState) => state.languages.language)
+
   const isVertical = direction === 'vertical'
   const style = isVertical ? { flexFlow: 'column' } : {}
   const align = isVertical ? 'top' : 'middle'
@@ -41,9 +47,12 @@ const Container = ({ direction = 'horizontal' }: ContainerProps) => {
       </Col>
       <Col>
         <Segmented
-          defaultValue={LanguageKey.England}
+          value={language}
           className="switch-language"
           options={LANGUAGES}
+          onChange={(language) =>
+            dispath(setLanguage(language as LanguageType))
+          }
         />
       </Col>
     </Row>

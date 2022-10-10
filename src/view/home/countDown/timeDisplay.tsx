@@ -10,6 +10,8 @@ import moment from 'moment'
 
 import { Space, Typography } from 'antd'
 
+import useLanguages from 'hooks/useLanguages'
+
 const END_DATE = '11/13/2022 23:59:59'
 const END_TIME_ISO = new Date(END_DATE).getTime()
 const ENDTIME_LOCAL = END_TIME_ISO - new Date(END_TIME_ISO).getTimezoneOffset()
@@ -33,6 +35,7 @@ const TimeTag = ({ children, style, label = '' }: TimeTagProps) => {
 }
 
 const TimeDisplay = () => {
+  const system = useLanguages()
   const currentTime = Date.now() - new Date().getTimezoneOffset()
   const duration = moment.duration(ENDTIME_LOCAL - currentTime, 'milliseconds')
 
@@ -68,22 +71,26 @@ const TimeDisplay = () => {
   return (
     <Space direction="vertical" style={{ padding: 24 }}>
       <Typography.Text className="text-dark">
-        Registration form closes in
+        {system.timeline.timeLabel}
       </Typography.Text>
 
       <Space size={48} style={{ textAlign: 'center' }}>
         {!!countDown.days && (
           <Fragment>
-            <TimeTag label="Days">{isExpired ? '00' : countDown.days}</TimeTag>
+            <TimeTag label={system.timeline.days}>
+              {isExpired ? '00' : countDown.days}
+            </TimeTag>
           </Fragment>
         )}
-        <TimeTag label="Hours">{isExpired ? '00' : countDown.hours}</TimeTag>
-        <TimeTag label="Minutes">
+        <TimeTag label={system.timeline.hours}>
+          {isExpired ? '00' : countDown.hours}
+        </TimeTag>
+        <TimeTag label={system.timeline.minutes}>
           {isExpired ? '00' : countDown.minutes}
         </TimeTag>
         {!countDown.days && (
           <Fragment>
-            <TimeTag label="Seconds">
+            <TimeTag label={system.timeline.seconds}>
               {isExpired ? '00' : countDown.seconds}
             </TimeTag>
           </Fragment>

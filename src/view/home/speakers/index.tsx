@@ -6,6 +6,7 @@ import useWidth from 'hooks/useWidth'
 import { PATH_GOOGLE_VIEW_IMG } from 'constant'
 
 import imgBgSpeaker from 'static/images/extra/bg-ranking.png'
+import useLanguages from 'hooks/useLanguages'
 
 export type SpeakersData = { id: string; name: string; position: string }
 
@@ -103,6 +104,7 @@ const SPEAKER_ID: SpeakersData[] = [
 ]
 
 const Speakers = () => {
+  const system = useLanguages()
   const width = useWidth()
   const avatarJustify = width < 575 ? 'center' : 'space-between'
 
@@ -112,7 +114,7 @@ const Speakers = () => {
         <Row gutter={[24, 72]} justify="center">
           <Col>
             <Typography.Title level={2} className="text-title">
-              Speakers & Judges
+              {system.speakers.title}
             </Typography.Title>
           </Col>
           <Col span={24}>

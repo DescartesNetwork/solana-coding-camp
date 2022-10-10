@@ -8,53 +8,52 @@ import logoSolana from 'static/images/logo/logo-solana.svg'
 import logoVCS from 'static/images/logo/logo-vcs.svg'
 
 import './index.less'
-
-const PARTNERS = [
-  {
-    logo: logoSolana,
-    socials: [
-      { src: 'https://twitter.com/solana', icon: 'logo-twitter' },
-      { src: 'https://solana.com/', icon: 'globe-outline' },
-    ],
-    children:
-      'Solana is the fastest blockchain in the world and the fastest growing ecosystem in crypto, with thousands of projects spanning DeFi, NFTs, Web3 and more.',
-  },
-  {
-    logo: logoSentre,
-    socials: [
-      { src: 'https://twitter.com/sentreprotocol', icon: 'logo-twitter' },
-      { src: 'https://sentre.io', icon: 'globe-outline' },
-    ],
-    children:
-      'Sentre Protocol is a DApp Store for All Things on Solana where users can install and use their favorite DApps on a single platform.',
-  },
-  {
-    logo: logoC98,
-    socials: [
-      { src: 'https://twitter.com/coin98_finance', icon: 'logo-twitter' },
-      { src: 'https://coin98.com/', icon: 'globe-outline' },
-    ],
-    children:
-      "Coin98 is an all-in-one DeFi platform designed to provide DeFi's most prominent features in one place.",
-  },
-  {
-    logo: logoVCS,
-    socials: [
-      { src: 'https://twitter.com/SVC_DAO', icon: 'logo-twitter' },
-      { src: 'https://t.me/solanadevsvietnam', icon: 'logo-telegram' },
-    ],
-    children:
-      'Solana Vietnam Coders DAO (SVC DAO) is an exclusive community providing grants, bounties, job opportunities and more for Solana builders in Vietnam.',
-  },
-]
+import useLanguages from 'hooks/useLanguages'
 
 const Partner = () => {
+  const system = useLanguages()
+
+  const PARTNERS = [
+    {
+      logo: logoSolana,
+      socials: [
+        { src: 'https://twitter.com/solana', icon: 'logo-twitter' },
+        { src: 'https://solana.com/', icon: 'globe-outline' },
+      ],
+      children: system.about.us.solana,
+    },
+    {
+      logo: logoSentre,
+      socials: [
+        { src: 'https://twitter.com/sentreprotocol', icon: 'logo-twitter' },
+        { src: 'https://sentre.io', icon: 'globe-outline' },
+      ],
+      children: system.about.us.sentre,
+    },
+    {
+      logo: logoC98,
+      socials: [
+        { src: 'https://twitter.com/coin98_finance', icon: 'logo-twitter' },
+        { src: 'https://coin98.com/', icon: 'globe-outline' },
+      ],
+      children: system.about.us.c98,
+    },
+    {
+      logo: logoVCS,
+      socials: [
+        { src: 'https://twitter.com/SVC_DAO', icon: 'logo-twitter' },
+        { src: 'https://t.me/solanadevsvietnam', icon: 'logo-telegram' },
+      ],
+      children:
+        'Solana Vietnam Coders DAO (SVC DAO) is an exclusive community providing grants, bounties, job opportunities and more for Solana builders in Vietnam.',
+    },
+  ]
   return (
     <MaxWidthLayout>
       <Row gutter={[24, 24]} justify="center">
         <Col>
           <Typography.Title level={2} className="text-title">
-            About
+            {system.about.us.title}
           </Typography.Title>
         </Col>
         <Col span={24} />

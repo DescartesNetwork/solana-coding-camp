@@ -3,16 +3,18 @@ import React from 'react'
 import { Col, Image, Row, Typography } from 'antd'
 import ListPartners from './listPartners'
 
+import useLanguages from 'hooks/useLanguages'
 import imgBgMedia from 'static/images/extra/bg-speaker.png'
 
 import './index.less'
 
 const MediaPartners = () => {
+  const system = useLanguages()
   return (
     <Row gutter={[0, 72]} justify="center" className="bg-media-gradient">
       <Col>
         <Typography.Title level={2} className="text-title">
-          Esteemed Partners
+          {system.esteemedPartners.title}
         </Typography.Title>
       </Col>
       <Col span={24}>

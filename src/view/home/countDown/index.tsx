@@ -7,9 +7,11 @@ import MaxWidthLayout from 'components/maxWidthLayout'
 import TimeDisplay from './timeDisplay'
 
 import useWidth from 'hooks/useWidth'
+import useLanguages from 'hooks/useLanguages'
 
 const DIVIDER = '1px solid #000'
 const CountDown = () => {
+  const system = useLanguages()
   const [registrants, setRegistrants] = useState(0)
   const width = useWidth()
   const isMobile = width < 992
@@ -29,10 +31,10 @@ const CountDown = () => {
 
   const prices = useMemo(
     () => [
-      { label: 'Total prizes', value: 100000, isPrice: true },
-      { label: 'Registrants', value: registrants, isPrice: false },
+      { label: system.timeline.prizes, value: 100000, isPrice: true },
+      { label: system.timeline.registants, value: registrants, isPrice: false },
     ],
-    [registrants],
+    [registrants, system.timeline],
   )
 
   useEffect(() => {

@@ -1,9 +1,13 @@
 import { Col, Image, Row, Typography } from 'antd'
 import MaxWidthLayout from 'components/maxWidthLayout'
+
+import useLanguages from 'hooks/useLanguages'
 import useWidth from 'hooks/useWidth'
+
 import AboutBanner from 'static/images/extra/about-banner.png'
 
 const Banner = () => {
+  const system = useLanguages()
   const width = useWidth()
   const unDesktop = width < 1200
   const paddingTop = width > 1200 ? 202 : 24
@@ -22,7 +26,7 @@ const Banner = () => {
             level={1}
             style={{ fontSize: 96 }}
           >
-            Build your own Web3 Kingdom
+            {system.about.title}
           </Typography.Title>
         </Col>
         <Col

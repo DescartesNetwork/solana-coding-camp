@@ -3,10 +3,13 @@ import MaxWidthLayout from 'components/maxWidthLayout'
 import { Button, Col, Image, Row, Space, Typography } from 'antd'
 
 import imgBg from 'static/images/extra/img-footer.png'
+import useLanguages from 'hooks/useLanguages'
 
 const LINK_JOIN_US = 'https://t.me/solanadevsvietnam'
 
 const Footer = () => {
+  const system = useLanguages()
+
   return (
     <MaxWidthLayout
       style={{
@@ -18,10 +21,10 @@ const Footer = () => {
         <Col span={24}>
           <Space direction="vertical" size={0}>
             <Typography.Title style={{ fontSize: 72 }} className="text-dark">
-              Do you have more questions?
+              {system.footers.title}
             </Typography.Title>
             <Typography.Text style={{ fontSize: 22 }} className="text-dark">
-              Join other builders on our Telegram channel.
+              {system.footers.label}
             </Typography.Text>
           </Space>
         </Col>
@@ -33,7 +36,7 @@ const Footer = () => {
             size="small"
             onClick={() => window.open(LINK_JOIN_US, '_blank')}
           >
-            JOIN US
+            {system.CTA.join}
           </Button>
         </Col>
         <Col span={24} style={{ height: 40 }} />
