@@ -41,3 +41,5 @@ export const TIME_LINE = [
 
 export const PATH_GOOGLE_VIEW_IMG =
   'https://drive.google.com/uc?export=view&id='
+
+export const TYPE_FORM_ID = 'hyibBZhP'

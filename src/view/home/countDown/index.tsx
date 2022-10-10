@@ -1,22 +1,44 @@
+import { useCallback, useEffect, useMemo, useState } from 'react'
+import axios from 'axios'
 import numbro from 'numbro'
 
 import { Col, Row, Space, Typography } from 'antd'
 import MaxWidthLayout from 'components/maxWidthLayout'
 import TimeDisplay from './timeDisplay'
+
 import useWidth from 'hooks/useWidth'
 
-const PRICES = [
-  { label: 'Total prizes', value: 100000, isPrice: true },
-  { label: 'Registrants', value: 99999, isPrice: false },
-  // { label: 'DAO members', value: 9999, isPrice: false },
-]
 const DIVIDER = '1px solid #000'
-
 const CountDown = () => {
+  const [registrants, setRegistrants] = useState(0)
   const width = useWidth()
   const isMobile = width < 992
   const amountSpan = isMobile ? 24 : undefined
   const divider = isMobile ? { borderTop: DIVIDER } : { borderLeft: DIVIDER }
+
+  const fetchRegistrants = useCallback(async () => {
+    try {
+      const { data } = await axios.get(
+        `https://stat.sentre.io/codingcamp/total-registers`,
+      )
+      return setRegistrants(data)
+    } catch (error) {
+      return setRegistrants(0)
+    }
+  }, [])
+
+  const prices = useMemo(
+    () => [
+      { label: 'Total prizes', value: 100000, isPrice: true },
+      { label: 'Registrants', value: registrants, isPrice: false },
+    ],
+    [registrants],
+  )
+
+  useEffect(() => {
+    fetchRegistrants()
+  }, [fetchRegistrants])
+
   return (
     <MaxWidthLayout style={{ background: '#B6B0FF' }}>
       <Row>
@@ -30,7 +52,7 @@ const CountDown = () => {
         </Col>
         <Col xs={24} lg={10}>
           <Row className="wrap-amount">
-            {PRICES.map((price, idx) => (
+            {prices.map((price, idx) => (
               <Col
                 span={amountSpan}
                 style={{
