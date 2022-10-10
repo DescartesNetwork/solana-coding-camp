@@ -43,12 +43,7 @@ const CountDown = () => {
     <MaxWidthLayout style={{ background: '#B6B0FF' }}>
       <Row>
         <Col xs={24} lg={14}>
-          <Space direction="vertical" style={{ padding: 24 }}>
-            <Typography.Text className="text-dark">
-              Registration form closes in
-            </Typography.Text>
-            <TimeDisplay />
-          </Space>
+          <TimeDisplay />
         </Col>
         <Col xs={24} lg={10}>
           <Row className="wrap-amount">

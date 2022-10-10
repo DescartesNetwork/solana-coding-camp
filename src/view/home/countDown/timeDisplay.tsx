@@ -43,6 +43,8 @@ const TimeDisplay = () => {
     seconds: duration.seconds(),
   })
 
+  const isExpired = moment(currentTime).isAfter(ENDTIME_LOCAL)
+
   const updateCountDown = useCallback(async () => {
     if (!ENDTIME_LOCAL || ENDTIME_LOCAL < currentTime) return
 
@@ -58,23 +60,35 @@ const TimeDisplay = () => {
   }, [currentTime])
 
   useEffect(() => {
+    if (isExpired) return
     const interval = setInterval(() => updateCountDown(), 1000)
     return () => clearInterval(interval)
-  }, [updateCountDown])
+  }, [isExpired, updateCountDown])
+
   return (
-    <Space size={48} style={{ textAlign: 'center' }}>
-      {!!countDown.days && (
-        <Fragment>
-          <TimeTag label="Days">{countDown.days}</TimeTag>
-        </Fragment>
-      )}
-      <TimeTag label="Hours">{countDown.hours}</TimeTag>
-      <TimeTag label="Minutes">{countDown.minutes}</TimeTag>
-      {!countDown.days && (
-        <Fragment>
-          <TimeTag label="Seconds">{countDown.seconds}</TimeTag>
-        </Fragment>
-      )}
+    <Space direction="vertical" style={{ padding: 24 }}>
+      <Typography.Text className="text-dark">
+        Registration form closes in
+      </Typography.Text>
+
+      <Space size={48} style={{ textAlign: 'center' }}>
+        {!!countDown.days && (
+          <Fragment>
+            <TimeTag label="Days">{isExpired ? '00' : countDown.days}</TimeTag>
+          </Fragment>
+        )}
+        <TimeTag label="Hours">{isExpired ? '00' : countDown.hours}</TimeTag>
+        <TimeTag label="Minutes">
+          {isExpired ? '00' : countDown.minutes}
+        </TimeTag>
+        {!countDown.days && (
+          <Fragment>
+            <TimeTag label="Seconds">
+              {isExpired ? '00' : countDown.seconds}
+            </TimeTag>
+          </Fragment>
+        )}
+      </Space>
     </Space>
   )
 }

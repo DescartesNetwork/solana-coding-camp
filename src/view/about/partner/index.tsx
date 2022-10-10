@@ -23,7 +23,7 @@ const PARTNERS = [
     logo: logoSentre,
     socials: [
       { src: 'https://twitter.com/sentreprotocol', icon: 'logo-twitter' },
-      { src: 'https://sentre.io/home', icon: 'globe-outline' },
+      { src: 'https://sentre.io', icon: 'globe-outline' },
     ],
     children:
       'Sentre Protocol is a DApp Store for All Things on Solana where users can install and use their favorite DApps on a single platform.',

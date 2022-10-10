@@ -1,11 +1,13 @@
-import { Button, Col, Drawer, DrawerProps, Image, Row, Segmented } from 'antd'
+import { Fragment, useState } from 'react'
+
+import { Button, Col, Drawer, Image, Row, Segmented } from 'antd'
 import Navigation from './navigation'
+import IonIcon from 'components/IonIcon'
+
+import useWidth from 'hooks/useWidth'
 
 import flagVN from 'static/images/logo/flag-vn.svg'
 import flagUK from 'static/images/logo/flag-uk.svg'
-import useWidth from 'hooks/useWidth'
-import { Fragment, useState } from 'react'
-import IonIcon from 'components/IonIcon'
 
 export enum LanguageKey {
   VietNam = 'vn',

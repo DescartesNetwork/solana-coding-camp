@@ -31,6 +31,7 @@ const ListPartners = () => {
     if (width > 1200) result = 4
     return result
   }, [width])
+
   return (
     <Row gutter={[0, 24]}>
       <Col span={24}>
