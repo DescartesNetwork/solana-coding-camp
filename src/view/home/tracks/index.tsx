@@ -20,23 +20,21 @@ const TRACKS: TrackData[] = [
 
 const Tracks = () => {
   return (
-    <div style={{ paddingTop: 130, paddingBottom: 256 }}>
-      <MaxWidthLayout>
-        <Row gutter={[24, 24]} justify="center">
-          <Col>
-            <Typography.Title level={2} className="text-title">
-              Tracks
-            </Typography.Title>
+    <MaxWidthLayout>
+      <Row gutter={[24, 24]} justify="center">
+        <Col>
+          <Typography.Title level={2} className="text-title">
+            Tracks
+          </Typography.Title>
+        </Col>
+        <Col span={24} />
+        {TRACKS.map((track, idx) => (
+          <Col xs={24} md={12}>
+            <CardTrack data={track} index={idx} />
           </Col>
-          <Col span={24} />
-          {TRACKS.map((track, idx) => (
-            <Col xs={24} md={12}>
-              <CardTrack data={track} index={idx} />
-            </Col>
-          ))}
-        </Row>
-      </MaxWidthLayout>
-    </div>
+        ))}
+      </Row>
+    </MaxWidthLayout>
   )
 }
 
