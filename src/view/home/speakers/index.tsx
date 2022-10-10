@@ -31,6 +31,11 @@ const SPEAKER_ID: SpeakersData[] = [
     position: 'Founder at Sentre Protocol',
   },
   {
+    id: '1gomNYdXQQut-ZKsYTAAjtDVJ1BZgDxCc',
+    name: 'Ryan Nguyen',
+    position: 'COO at Descartes Network',
+  },
+  {
     id: '1uekV144CCFYmfhkE7cfmVI5mU-nnQE2c',
     name: 'Thanh Le',
     position: 'Founder at Coin98 Finance',
@@ -94,11 +99,6 @@ const SPEAKER_ID: SpeakersData[] = [
     id: '1_7Xw7iC4P40k43MP3vQv1_LvYxV0cf3C',
     name: 'Thach Minh',
     position: 'Solana Vietnam | Superteam Vietnam',
-  },
-  {
-    id: '1gomNYdXQQut-ZKsYTAAjtDVJ1BZgDxCc',
-    name: 'Ryan Nguyen',
-    position: 'COO at Descartes Network',
   },
 ]
 
