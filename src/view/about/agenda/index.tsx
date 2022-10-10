@@ -5,7 +5,7 @@ import useWidth from 'hooks/useWidth'
 import imgAgendaDesk from 'static/images/about/agenda-desktop.svg'
 import imgAgendaMobile from 'static/images/about/agenda-mobile.svg'
 
-export const AGENDA_ID = 'agenda_elm'
+export const AGENDA_ID = 'agenda'
 
 const Agenda = () => {
   const width = useWidth()

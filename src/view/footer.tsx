@@ -21,7 +21,7 @@ const Footer = () => {
               Do you have more questions?
             </Typography.Title>
             <Typography.Text style={{ fontSize: 22 }} className="text-dark">
-              Join other builders on our telegram channel.
+              Join other builders on our Telegram channel.
             </Typography.Text>
           </Space>
         </Col>

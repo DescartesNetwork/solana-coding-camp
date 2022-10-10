@@ -12,7 +12,7 @@ const MediaPartners = () => {
     <Row gutter={[0, 72]} justify="center" className="bg-media-gradient">
       <Col>
         <Typography.Title level={2} className="text-title">
-          Media Partners
+          Esteemed Partners
         </Typography.Title>
       </Col>
       <Col span={24}>

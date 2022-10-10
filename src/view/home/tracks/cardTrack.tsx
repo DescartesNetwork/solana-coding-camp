@@ -44,7 +44,7 @@ const CardTrack = ({ data, index = 0 }: CardTrackProps) => {
             }
           >
             <Typography.Text style={{ fontSize: 32 }}>
-              2nd Runner-up
+              Runner-up
             </Typography.Text>
           </SpaceBetween>
         </Col>
