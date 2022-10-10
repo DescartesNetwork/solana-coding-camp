@@ -23,51 +23,70 @@ const CardTrack = ({ data, index = 0 }: CardTrackProps) => {
   return (
     <Card
       bordered={false}
-      style={{ overflow: 'hidden' }}
-      bodyStyle={{ padding: 56, position: 'relative' }}
+      style={{ overflow: 'hidden', height: '100%' }}
+      bodyStyle={{ padding: 56, position: 'relative', height: '100%' }}
     >
-      <Row gutter={[24, 24]} justify="center">
+      <Row
+        gutter={[24, 24]}
+        style={{ flexFlow: 'column', height: '100%' }}
+        justify="space-between"
+        align="middle"
+      >
         <Col>
-          <Space direction="vertical" style={{ textAlign: 'center' }}>
-            <IconSax
-              name={data.key}
-              style={{
-                fontSize: 32,
-                color: `rgba(${COLOR_BASE[index].join(',')})`,
-              }}
-              variant="Outline"
-            />
-            <Typography.Title level={1} style={{ fontSize: 44 }}>
-              {TRACKS_TITLE[data.key]}
-            </Typography.Title>
-          </Space>
-        </Col>
-        <Col span={24} /> {/* safe space */}
-        <Col span={24}>
-          <SpaceBetween
-            floatContent={
-              <PriceTitle color={`rgba(${COLOR_BASE[index].join(',')})`}>
-                {data.value1st}
-              </PriceTitle>
-            }
-          >
-            <Typography.Text style={{ fontSize: 32 }}>
-              1st Place
-            </Typography.Text>
-          </SpaceBetween>
-        </Col>
-        <Col span={24}>
-          <SpaceBetween
-            floatContent={
-              <Typography.Title level={1} style={{ fontSize: 44 }}>
-                {data.value2nd}
-              </Typography.Title>
-            }
-          >
-            <Typography.Text style={{ fontSize: 32 }}>
-              Runner-up
-            </Typography.Text>
-          </SpaceBetween>
+          <Row gutter={[24, 24]} justify="center">
+            <Col>
+              <Space direction="vertical" style={{ textAlign: 'center' }}>
+                <IconSax
+                  name={data.key}
+                  style={{
+                    fontSize: 32,
+                    color: `rgba(${COLOR_BASE[index].join(',')})`,
+                  }}
+                  variant="Outline"
+                />
+                <Typography.Title level={1} style={{ fontSize: 44 }}>
+                  {TRACKS_TITLE[data.key]}
+                </Typography.Title>
+              </Space>
+            </Col>
+            <Col span={24} /> {/* safe space */}
+            <Col span={24}>
+              <SpaceBetween
+                floatContent={
+                  <PriceTitle color={`rgba(${COLOR_BASE[index].join(',')})`}>
+                    {data.value1st}
+                  </PriceTitle>
+                }
+              >
+                <Typography.Text style={{ fontSize: 32 }}>
+                  1st Place
+                </Typography.Text>
+              </SpaceBetween>
+            </Col>
+            <Col span={24}>
+              <SpaceBetween
+                floatContent={
+                  <Space direction="vertical" style={{ textAlign: 'right' }}>
+                    <Typography.Title level={1} style={{ fontSize: 44 }}>
+                      {data.value2nd}
+                    </Typography.Title>
+                    {data.key === 'StatusUp' && (
+                      <Typography.Text
+                        style={{ fontSize: 18 }}
+                        type="secondary"
+                      >
+                        for 2 Winners
+                      </Typography.Text>
+                    )}
+                  </Space>
+                }
+              >
+                <Typography.Text style={{ fontSize: 32 }}>
+                  Runner-up
+                </Typography.Text>
+              </SpaceBetween>
+            </Col>
+          </Row>
         </Col>
         <Col>
           <Space align="center">

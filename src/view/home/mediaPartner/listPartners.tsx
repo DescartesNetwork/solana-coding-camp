@@ -8,16 +8,10 @@ import { PATH_GOOGLE_VIEW_IMG } from 'constant'
 
 const MEDIA_PARTNER = [
   '1IRmQsmsfq5N-B-D0T01lLtiHBjWpLEHS', //zeta
-  '194DZBJNKv-OTbSghxBRa782UNvv1ftsf', // solend
-  '1Paj_H0YMcWNGiBcOQDE_lxnHD2cgIevh', //magic eden
   '1LbIWdGsoE3qvZhSbnjwt8C02o8l4OVpb', // trade coind
-  '1NAq4uO2dEgmH4yQfOL5TAXefJOSRfqFR', // jupiter
   '19Y7tfpllSmBK-O28avDSkJq022MLUynu', //jobhopin
-  '1cWeoMQxOXEt_Amn6z0AnMKkV9vKsR7qh', // jump
   '1_itWHo0YEfi_pbczwMk90PHGH9N88khT', //coin 68
   '1TsizUmcOavsmg4TCoswf0HHv6QjJmxDK', // ancient8
-  '1W8_iRH9FAYxmG-jJhMTC35bDDgW7QV5s', // Accel
-  '1mqSplWmEaSv4oKgA925lKby_jneTZchd', // sequia
 ]
 
 const ListPartners = () => {

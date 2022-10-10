@@ -18,8 +18,7 @@ const Register = () => {
         <Row gutter={[32, 32]}>
           <Col span={24}>
             <Typography.Title level={1} style={{ fontSize: 64 }}>
-              What value does the
-              <br />
+              What value does the{' '}
               <span className="text-gradient">Web3 coding camp</span> create
             </Typography.Title>
           </Col>
