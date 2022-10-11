@@ -10,24 +10,36 @@
 
 // Font Family ABCDiatype
 @font-face {
-  font-family: 'ABCDiatype';
-  src: url(../fonts/ABCDiatype-Light.otf) format('opentype');
-  font-weight: normal;
+  font-family: 'ABC Diatype';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(../fonts/ABCDiatype-Light.otf) format('opentype'),
+    url(../fonts/ABCDiatype-Light.woff2) format('woff2');
 }
 @font-face {
-  font-family: 'ABCDiatype';
-  src: url(../fonts/ABCDiatype-Regular.otf) format('opentype');
+  font-family: 'ABC Diatype';
+  src: url(../fonts/ABCDiatype-Regular.otf) format('opentype'),
+    url(../fonts/ABCDiatype-Regular.woff2) format('woff2');
   font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 @font-face {
-  font-family: 'ABCDiatype';
-  src: url(../fonts/ABCDiatype-Medium.otf) format('opentype');
+  font-family: 'ABC Diatype';
+  src: url(../fonts/ABCDiatype-Medium.otf) format('opentype'),
+    url(../fonts/ABCDiatype-Medium.woff2) format('woff2');
   font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 @font-face {
-  font-family: 'ABCDiatype';
-  src: url(../fonts/ABCDiatype-Bold.otf) format('opentype');
+  font-family: 'ABC Diatype';
+  src: url(../fonts/ABCDiatype-Bold.otf) format('opentype'),
+    url(../fonts/ABCDiatype-Bold.woff2) format('woff2');
   font-weight: bold;
+  font-style: normal;
+  font-display: swap;
 }
 
 // Roboto
@@ -112,18 +124,14 @@
 // Progress
 @progress-remaining-color: #333333;
 
-// Patch
+//Patch
 body .en {
-  font-family: 'ABCDiatype';
-  span,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  p,
-  div {
-    word-spacing: -0.35em;
+  font-family: 'ABC Diatype';
+  * {
+    font-feature-settings: 'liga';
+    font-feature-settings: 'liga' on;
+    font-variant: normal;
+    word-spacing: 0.06em;
   }
 }
 body .vn {

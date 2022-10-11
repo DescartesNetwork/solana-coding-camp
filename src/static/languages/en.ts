@@ -30,7 +30,7 @@ export const enLanguage = {
     seconds: 'Seconds',
     prizes: 'Total prizes',
     registants: 'Registants',
-    title: 'Timeine',
+    title: 'Timeline',
     registration: 'Registration',
     workshop: 'Workshop Series',
     dappSubmission: 'DApp Submission',
@@ -41,11 +41,11 @@ export const enLanguage = {
     title: 'Organizers',
     videoTitle: 'What value does the Web3 Coding Camp create',
     labelLearn:
-      'Learn the fundamentals of Solana coding through our series of online and offline workshops.',
+      'Learn the fundamentals of Solana coding through our on-site workshops, office hours and panel discussions',
     labelJoin:
-      'Join an exclusive group of 150 talented builders and bring groundbreaking ideas into brilliant Web3 apps on Solana.',
+      'Join an exclusive group of talented builders and bring groundbreaking ideas into brilliant Web3 apps on Solana.',
     labelWin:
-      'Win $100,000 and get a pass to our Private Pitching Date with international VCs and angel investors.',
+      'Win up to $100,000 and get a pass to our Private Pitching Date with international VCs and angel investors.',
   },
   prize1st: '1st Prize',
   prize2nd: '2nd Prize',

@@ -7,11 +7,12 @@ import useWidth from 'hooks/useWidth'
 import { PATH_GOOGLE_VIEW_IMG } from 'constant'
 
 const MEDIA_PARTNER = [
-  '1IRmQsmsfq5N-B-D0T01lLtiHBjWpLEHS', //zeta
+  '14i92L8YFINk00uB5BI1noN0k71uzVzcg', // solscan
   '1LbIWdGsoE3qvZhSbnjwt8C02o8l4OVpb', // trade coind
-  '19Y7tfpllSmBK-O28avDSkJq022MLUynu', //jobhopin
+  '1IRmQsmsfq5N-B-D0T01lLtiHBjWpLEHS', //zeta
+  '1bUSAzz5PVTiHmUIBP3DEK-PC1LqkGGgG', //kyros
+  '144MMNyGkI76HWFGUfcpygyGe77ocDTbC', //kyber
   '1_itWHo0YEfi_pbczwMk90PHGH9N88khT', //coin 68
-  '1TsizUmcOavsmg4TCoswf0HHv6QjJmxDK', // ancient8
 ]
 
 const ListPartners = () => {

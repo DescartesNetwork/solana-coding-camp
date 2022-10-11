@@ -1,12 +1,17 @@
 import { Col, Row } from 'antd'
 
+import { PATH_GOOGLE_VIEW_IMG } from 'constant'
 import logoSolana from 'static/images/logo/logo-solana.svg'
 import logoSentre from 'static/images/logo/logo-sentre.svg'
 import logoC98 from 'static/images/logo/logo-c98.svg'
-import logoVCS from 'static/images/logo/logo-vcs.svg'
 import CardLogo from 'components/cardLogo'
 
-const PARTNERS = [logoSolana, logoSentre, logoC98, logoVCS]
+const PARTNERS = [
+  logoSolana,
+  logoSentre,
+  logoC98,
+  PATH_GOOGLE_VIEW_IMG + '1X_OtNGsf0-RIU63-pjGps5vgrRRh2VUf',
+]
 
 const Partner = () => {
   return (

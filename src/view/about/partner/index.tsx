@@ -2,13 +2,14 @@ import { Col, Row, Typography } from 'antd'
 import MaxWidthLayout from 'components/maxWidthLayout'
 import CardPartner from './cardPartner'
 
+import useLanguages from 'hooks/useLanguages'
+import { PATH_GOOGLE_VIEW_IMG } from 'constant'
+
 import logoSentre from 'static/images/logo/logo-sentre.svg'
 import logoC98 from 'static/images/logo/logo-c98.svg'
 import logoSolana from 'static/images/logo/logo-solana.svg'
-import logoVCS from 'static/images/logo/logo-vcs.svg'
 
 import './index.less'
-import useLanguages from 'hooks/useLanguages'
 
 const Partner = () => {
   const system = useLanguages()
@@ -39,7 +40,7 @@ const Partner = () => {
       children: system.about.us.c98,
     },
     {
-      logo: logoVCS,
+      logo: PATH_GOOGLE_VIEW_IMG + '1X_OtNGsf0-RIU63-pjGps5vgrRRh2VUf',
       socials: [
         { src: 'https://twitter.com/SVC_DAO', icon: 'logo-twitter' },
         { src: 'https://t.me/solanadevsvietnam', icon: 'logo-telegram' },

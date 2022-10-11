@@ -1,7 +1,10 @@
+import { useSelector } from 'react-redux'
 import BgTimeline from 'static/images/timeline/bg-timeline'
+import { AppState } from 'store'
 
 const Container = () => {
-  return <BgTimeline style={{ width: '100%' }} />
+  const language = useSelector((state: AppState) => state.languages.language)
+  return <BgTimeline language={language} style={{ width: '100%' }} />
 }
 
 export default Container

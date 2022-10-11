@@ -8,6 +8,8 @@ import { PATH_GOOGLE_VIEW_IMG } from 'constant'
 import imgBgSpeaker from 'static/images/extra/bg-ranking.png'
 import useLanguages from 'hooks/useLanguages'
 
+import './index.less'
+
 export type SpeakersData = { id: string; name: string; position: string }
 
 const SPEAKER_ID: SpeakersData[] = [
@@ -118,7 +120,11 @@ const Speakers = () => {
             </Typography.Title>
           </Col>
           <Col span={24}>
-            <Row gutter={[64, 64]} justify={avatarJustify}>
+            <Row
+              gutter={[64, 64]}
+              justify={avatarJustify}
+              className="wrap-speaker"
+            >
               {SPEAKER_ID.map(({ id, name, position }, idx) => (
                 <Col key={idx}>
                   <Space
