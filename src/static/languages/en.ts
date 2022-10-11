@@ -66,7 +66,7 @@ export const enLanguage = {
   },
   footers: {
     title: 'Do you have more questions?',
-    label: 'Join other builders on our telegram channel.',
+    label: 'Join other builders on our Telegram channel.',
   },
   about: {
     title: 'Build your own Web3 Kingdom',
