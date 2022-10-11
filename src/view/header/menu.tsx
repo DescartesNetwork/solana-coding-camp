@@ -73,7 +73,8 @@ const MobileMenu = () => {
     <Fragment>
       <Button
         type="text"
-        icon={<IonIcon name="menu-outline" />}
+        style={{ padding: 0, width: 'auto', height: 'auto' }}
+        icon={<IonIcon style={{ fontSize: 32 }} name="menu-outline" />}
         onClick={() => setVisible(true)}
       />
       <Drawer
