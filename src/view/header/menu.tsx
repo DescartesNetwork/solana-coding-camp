@@ -31,8 +31,14 @@ const LANGUAGES = [
   },
 ]
 
-export type ContainerProps = { direction?: 'horizontal' | 'vertical' }
-const Container = ({ direction = 'horizontal' }: ContainerProps) => {
+export type ContainerProps = {
+  direction?: 'horizontal' | 'vertical'
+  onChange?: () => void
+}
+const Container = ({
+  direction = 'horizontal',
+  onChange = () => {},
+}: ContainerProps) => {
   const dispath = useDispatch()
   const language = useSelector((state: AppState) => state.languages.language)
 
@@ -43,16 +49,17 @@ const Container = ({ direction = 'horizontal' }: ContainerProps) => {
   return (
     <Row style={{ ...style }} justify="space-between" align={align}>
       <Col>
-        <Navigation />
+        <Navigation onChange={onChange} />
       </Col>
       <Col>
         <Segmented
           value={language}
           className="switch-language"
           options={LANGUAGES}
-          onChange={(language) =>
+          onChange={(language) => {
+            onChange()
             dispath(setLanguage(language as LanguageType))
-          }
+          }}
         />
       </Col>
     </Row>
@@ -74,11 +81,11 @@ const MobileMenu = () => {
         visible={visible}
         onClose={() => setVisible(false)}
         placement="right"
-        width={350}
+        width={320}
         style={{ zIndex: 99999 }}
         bodyStyle={{ background: '#1A1A1A' }}
       >
-        <Container direction="vertical" />
+        <Container direction="vertical" onChange={() => setVisible(false)} />
       </Drawer>
     </Fragment>
   )

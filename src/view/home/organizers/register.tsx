@@ -19,7 +19,7 @@ const Register = () => {
       <Col xs={{ span: 24, order: 2 }} lg={{ span: 12, order: 1 }}>
         <Row gutter={[32, 32]}>
           <Col span={24}>
-            <Typography.Title level={1} className="text-gradient">
+            <Typography.Title level={1} style={{ fontSize: 72 }}>
               {system.organizers.videoTitle}
             </Typography.Title>
           </Col>

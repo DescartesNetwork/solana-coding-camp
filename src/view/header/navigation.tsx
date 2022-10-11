@@ -14,7 +14,9 @@ export type MenuData = {
   key: string
 }
 
-const Navigation = () => {
+export type NavigationProps = { onChange?: () => void }
+
+const Navigation = ({ onChange = () => {} }: NavigationProps) => {
   const system = useLanguages()
   const width = useWidth()
   const history = useHistory()
@@ -36,7 +38,10 @@ const Navigation = () => {
           <Button
             type="text"
             key={menu.key}
-            onClick={() => history.push(menu.key)}
+            onClick={() => {
+              onChange()
+              return history.push(menu.key)
+            }}
             style={{ ...activeStyle, fontSize: 16 }}
             disabled={menu.key === '/blog'}
           >

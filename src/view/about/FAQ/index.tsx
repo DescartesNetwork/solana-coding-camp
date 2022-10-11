@@ -42,7 +42,7 @@ const FAQ = () => {
 
   const FAQ_DATA = {
     [TabsKey.WhyJoin]: system.about.faq.whyContent,
-    [TabsKey.WhoCanJoin]: system.about.faq.wh0Content,
+    [TabsKey.WhoCanJoin]: system.about.faq.whoContent,
     [TabsKey.HowToJoin]: system.about.faq.howContent,
   }
 

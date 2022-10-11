@@ -45,7 +45,9 @@ const CardRanking = ({ data, index = 1, value = '' }: CardRankingProps) => {
             size={0}
             style={{ position: 'relative', zIndex: 9, padding: 32 }}
           >
-            <Typography.Text style={{ fontSize: 32 }}>{label}</Typography.Text>
+            <Typography.Title level={2} style={{ fontWeight: 300 }}>
+              {label}
+            </Typography.Title>
             <Space>
               <Typography.Title
                 level={2}

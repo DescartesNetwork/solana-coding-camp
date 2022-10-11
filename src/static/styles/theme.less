@@ -11,10 +11,27 @@
 // Font Family ABCDiatype
 @font-face {
   font-family: 'ABCDiatype';
-  src: local('ABCDiatype'), url(../fonts/ABCDiatype.ttf) format('truetype');
+  src: url(../fonts/ABCDiatype-Light.otf) format('opentype');
+  font-weight: normal;
 }
-// Nunito
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&display=swap');
+@font-face {
+  font-family: 'ABCDiatype';
+  src: url(../fonts/ABCDiatype-Regular.otf) format('opentype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'ABCDiatype';
+  src: url(../fonts/ABCDiatype-Medium.otf) format('opentype');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'ABCDiatype';
+  src: url(../fonts/ABCDiatype-Bold.otf) format('opentype');
+  font-weight: bold;
+}
+
+// Roboto
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
 // Colors
 @primary-color: @PRIMARY;
@@ -98,8 +115,17 @@
 // Patch
 body .en {
   font-family: 'ABCDiatype';
-  word-spacing: -0.34rem;
+  span,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  p,
+  div {
+    word-spacing: -0.35em;
+  }
 }
 body .vn {
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }

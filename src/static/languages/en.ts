@@ -1,7 +1,7 @@
 export const enLanguage = {
   menus: [
     {
-      label: 'Hone',
+      label: 'Home',
       key: '/home',
     },
     {
