@@ -29,7 +29,7 @@ export const enLanguage = {
     minutes: 'Minutes',
     seconds: 'Seconds',
     prizes: 'Total prizes',
-    registants: 'Registants',
+    registants: 'Registrants',
     title: 'Timeline',
     registration: 'Registration',
     workshop: 'Workshop Series',

@@ -103,6 +103,11 @@ const SPEAKER_ID: SpeakersData[] = [
     name: 'Thach Minh',
     position: 'Solana Vietnam | Superteam Vietnam',
   },
+  {
+    id: '1GGBLJ5zH2TuugD33UL0nnjWw1T21rPmd',
+    name: 'Binh Tran',
+    position: 'General Partner of Ascend Vietnam',
+  },
 ]
 
 const Speakers = () => {
