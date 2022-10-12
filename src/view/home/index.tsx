@@ -28,10 +28,10 @@ const Home = () => {
           <Col span={24}>
             <Banner />
           </Col>
+          <Col span={24}>
+            <CountDown />
+          </Col>
         </Row>
-      </Col>
-      <Col span={24}>
-        <CountDown />
       </Col>
       <Col span={24}>
         <TimeLine />

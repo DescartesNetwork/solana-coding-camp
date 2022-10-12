@@ -8,7 +8,7 @@ const SOCIAL_BTN = [
   },
   {
     icon: 'logo-twitter',
-    link: 'https://twitter.com/SVC_DAO',
+    link: 'https://twitter.com/SuperteamVN',
   },
   {
     icon: 'logo-c-discord',
