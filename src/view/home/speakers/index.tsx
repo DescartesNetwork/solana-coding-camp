@@ -54,7 +54,7 @@ const SPEAKER_ID: SpeakersData[] = [
     position: 'Ecosystem Growth at Coin98 Finance',
   },
   {
-    id: '1NWE9FavNZmQ4xsnasm43pJQ_hegiK7hp',
+    id: '1m4-WjMSOcOVPddrvsvT5T249T9nieUwW',
     name: 'Ken Nguyen',
     position: 'Growth at Saros',
   },

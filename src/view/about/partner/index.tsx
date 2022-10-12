@@ -3,11 +3,11 @@ import MaxWidthLayout from 'components/maxWidthLayout'
 import CardPartner from './cardPartner'
 
 import useLanguages from 'hooks/useLanguages'
-import { PATH_GOOGLE_VIEW_IMG } from 'constant'
 
 import logoSentre from 'static/images/logo/logo-sentre.svg'
 import logoC98 from 'static/images/logo/logo-c98.svg'
 import logoSolana from 'static/images/logo/logo-solana.svg'
+import logoDao from 'static/images/logo/logo-dao.svg'
 
 import './index.less'
 
@@ -40,13 +40,12 @@ const Partner = () => {
       children: system.about.us.c98,
     },
     {
-      logo: PATH_GOOGLE_VIEW_IMG + '1X_OtNGsf0-RIU63-pjGps5vgrRRh2VUf',
+      logo: logoDao,
       socials: [
-        { src: 'https://twitter.com/SVC_DAO', icon: 'logo-twitter' },
+        { src: 'https://twitter.com/SuperteamVN', icon: 'logo-twitter' },
         { src: 'https://t.me/solanadevsvietnam', icon: 'logo-telegram' },
       ],
-      children:
-        'Solana Vietnam Coders DAO (SVC DAO) is an exclusive community providing grants, bounties, job opportunities and more for Solana builders in Vietnam.',
+      children: system.about.us.dao,
     },
   ]
   return (
