@@ -13,6 +13,9 @@ const MEDIA_PARTNER = [
   '1bUSAzz5PVTiHmUIBP3DEK-PC1LqkGGgG', //kyros
   '144MMNyGkI76HWFGUfcpygyGe77ocDTbC', //kyber
   '1_itWHo0YEfi_pbczwMk90PHGH9N88khT', //coin 68
+  '1eutyoRworLkr3fm2ZvGw-T4ry-Z_cclY', // sequio
+  '1qnSJhrEnug8WhYfqpK3uKb0E_nh5RgtL', // LSVP
+  '1DY1WG0j25oBcZ8c7NyFhNdcftY3Z3vQs', // Accel
 ]
 
 const ListPartners = () => {
