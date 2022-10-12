@@ -30,7 +30,7 @@ const CardTrack = ({ data, index = 0 }: CardTrackProps) => {
       bodyStyle={{ padding: 56, position: 'relative', height: '100%' }}
     >
       <Row
-        gutter={[24, 24]}
+        gutter={[0, 40]}
         style={{ flexFlow: 'column', height: '100%' }}
         justify="space-between"
         align="middle"
@@ -92,11 +92,11 @@ const CardTrack = ({ data, index = 0 }: CardTrackProps) => {
           </Row>
         </Col>
         <Col>
-          <Space align="center">
-            <Typography.Text type="secondary">
+          <Space align="center" size={16}>
+            <Typography.Text type="secondary" style={{ fontSize: 18 }}>
               {system.tracks.sponsored}
             </Typography.Text>
-            <Image src={data.logo} preview={false} />
+            <Image style={{ minHeight: 56 }} src={data.logo} preview={false} />
           </Space>
         </Col>
       </Row>

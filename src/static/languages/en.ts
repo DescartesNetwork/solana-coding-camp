@@ -52,7 +52,7 @@ export const enLanguage = {
   prize3rd: '3rd Prize',
   prizesChampion: 'Grand Champion',
   prizes1stRunner: '1st Runner-up',
-  prizes2stRunner: '2nd Runner-up',
+  prizes2stRunner: 'Runner-up',
   prize1stPlace: '1st Place',
   for2Winners: 'for 2 Winners',
   tracks: {
