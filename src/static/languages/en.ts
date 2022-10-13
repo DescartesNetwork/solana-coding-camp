@@ -41,11 +41,11 @@ export const enLanguage = {
     title: 'Organizers',
     videoTitle: 'What value does the Web3 Coding Camp create',
     labelLearn:
-      'Learn the fundamentals of Solana coding through our on-site workshops, office hours and panel discussions',
+      'Learn and Build on Solana through in-person workshops, office hours and panel discussions.',
     labelJoin:
-      'Join an exclusive group of talented builders and bring groundbreaking ideas into brilliant Web3 apps on Solana.',
+      'Get accreditation and win grand prizes to kickstart your project in the Web3 world.',
     labelWin:
-      'Win up to $100,000 and get a pass to our Private Pitching Date with international VCs and angel investors.',
+      'Join a Solana-focused community of top-tier devs with opportunities for grants, bounties, careers and more!',
   },
   prize1st: '1st Prize',
   prize2nd: '2nd Prize',

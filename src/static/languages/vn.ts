@@ -41,11 +41,11 @@ export const vnLanguage = {
     title: 'Đơn vị tổ chức',
     videoTitle: 'Web3 Coding Camp mang lại giá trị gì?',
     labelLearn:
-      'Nắm bắt kiến thức nền tảng về lập trình trên Solana thông qua chuỗi Workshop, Tư vấn 1-1 và Panel thảo luận cùng các chuyên gia đầu ngành',
+      'Học và Lập trình trên Solana thông qua các buổi workshop, tư vấn 1-1 và panel thảo luận trực tiếp.',
     labelJoin:
-      ' Tham gia cộng đồng độc quyền dành cho các lập trình viên tài năng tại Việt Nam và biến những ý tưởng đột phá thành các ứng dụng Web3 sáng tạo trên Solana',
+      'Nhận chứng chỉ và giành giải thưởng lớn để khởi đầu hành trình Web3 cùng dự án của bạn.',
     labelWin:
-      'Thắng giải thưởng trị giá lên đến 100.000 đô la, nhận vé tham dự Private Pitching Date với các quỹ đầu tư quốc tế và nhà đầu tư thiên thần',
+      'Tham gia cộng đồng lập trình viên Solana hàng đầu với vô vàn cơ hội nhận tài trợ, phần thưởng, phát triển sự nghiệp và hơn thế nữa!',
   },
   prize1st: 'Giải nhất',
   prize2nd: 'Giải nhì',

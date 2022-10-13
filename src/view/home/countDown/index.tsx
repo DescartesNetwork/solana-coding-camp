@@ -61,7 +61,7 @@ const CountDown = () => {
                 }}
                 key={idx}
               >
-                <Space size={0} direction="vertical">
+                <Space direction="vertical">
                   <Typography.Text className="text-dark">
                     {price.label}
                   </Typography.Text>
