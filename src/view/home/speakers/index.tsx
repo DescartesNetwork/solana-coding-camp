@@ -14,14 +14,14 @@ export type SpeakersData = { id: string; name: string; position: string }
 
 const SPEAKER_ID: SpeakersData[] = [
   {
-    id: '1FHDNV6ubcE051pWpKJkqbdyRK-qHoW6c',
-    name: 'Colin Ogoo',
-    position: 'Developer Experience Engineer at Solana Foundation',
-  },
-  {
     id: '1t7b3lb4rkFmmguefCE8o2W4ASUQG2Xoy',
     name: 'Akshay BD',
     position: 'Head of Emerging Markets at Solana Foundation',
+  },
+  {
+    id: '1eq2tY3LOPdGNh2fYs3yCi8FQv9tXcl9g',
+    name: 'Colin Ogoo',
+    position: 'Developer Experience Engineer at Solana Foundation',
   },
   {
     id: '1OP0gBrvm3sm9m_C77pCjBCqrhoUpmRFb',
@@ -29,12 +29,22 @@ const SPEAKER_ID: SpeakersData[] = [
     position: 'Ecosystem Growth at Solana Labs',
   },
   {
+    id: '1GX3SnVF92-NApf7crKXMdKYEF9QBdv9d',
+    name: 'Anh Tran',
+    position: 'Solana Vietnam | Superteam Vietnam',
+  },
+  {
+    id: '1_7Xw7iC4P40k43MP3vQv1_LvYxV0cf3C',
+    name: 'Thach Minh',
+    position: 'Solana Vietnam | Superteam Vietnam',
+  },
+  {
     id: '1GWOLhfydqyHckElp0gVf5250cM09kG7k',
     name: 'Tu Phan',
     position: 'Founder at Sentre Protocol',
   },
   {
-    id: '1gomNYdXQQut-ZKsYTAAjtDVJ1BZgDxCc',
+    id: '1oMvSu6OyOt9B7N3lTaxeLacdcuuZBRD6',
     name: 'Ryan Nguyen',
     position: 'COO at Descartes Network',
   },
@@ -69,7 +79,7 @@ const SPEAKER_ID: SpeakersData[] = [
     position: 'Co-founder at Ancient8',
   },
   {
-    id: '1OTzUdRWVf7daS75maJM38hCHqLOEpNrs',
+    id: '1B5YCKdBhNObxiAFVMtQAcuW5w1gkRAHs',
     name: 'Joo Lee',
     position: 'Business Development Lead at Ancient8',
   },
@@ -94,19 +104,14 @@ const SPEAKER_ID: SpeakersData[] = [
     position: 'CEO at Solscan',
   },
   {
-    id: '1LxcI4FttK46d816Fqkc3QrNPe3SVm86x',
-    name: 'Anh Tran',
-    position: 'Solana Vietnam | Superteam Vietnam',
-  },
-  {
-    id: '1_7Xw7iC4P40k43MP3vQv1_LvYxV0cf3C',
-    name: 'Thach Minh',
-    position: 'Solana Vietnam | Superteam Vietnam',
-  },
-  {
     id: '1GGBLJ5zH2TuugD33UL0nnjWw1T21rPmd',
     name: 'Binh Tran',
     position: 'General Partner of Ascend Vietnam',
+  },
+  {
+    id: '1RFCXUHsibsH2fe4wyz9qq9VS44yyTJLn',
+    name: 'Vishal Kankani',
+    position: 'Principal at Multicoin Capital',
   },
 ]
 
