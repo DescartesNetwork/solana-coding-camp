@@ -2,7 +2,7 @@ import { Col, Image, Row, Space, Typography } from 'antd'
 import MaxWidthLayout from 'components/maxWidthLayout'
 import Avatar from './avatar'
 
-import useWidth from 'hooks/useWidth'
+import { useWidth } from 'hooks/useUI'
 import { PATH_GOOGLE_VIEW_IMG } from 'constant'
 
 import imgBgSpeaker from 'static/images/extra/bg-ranking.png'

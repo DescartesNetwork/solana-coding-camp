@@ -11,7 +11,7 @@ const SOCIAL_BTN = [
     link: 'https://twitter.com/SuperteamVN',
   },
   {
-    icon: 'logo-c-discord',
+    icon: 'logo-discord',
     link: 'https://discord.com/invite/solanau',
   },
 ]

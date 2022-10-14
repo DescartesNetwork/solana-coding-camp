@@ -1,7 +1,8 @@
 import { Col, Image, Row, Typography } from 'antd'
 import MaxWidthLayout from 'components/maxWidthLayout'
+
 import useLanguages from 'hooks/useLanguages'
-import useWidth from 'hooks/useWidth'
+import { useWidth } from 'hooks/useUI'
 
 import imgAgendaDesk from 'static/images/about/agenda-desktop.svg'
 import imgAgendaMobile from 'static/images/about/agenda-mobile.svg'

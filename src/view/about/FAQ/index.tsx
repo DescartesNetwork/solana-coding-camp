@@ -3,10 +3,10 @@ import { useState } from 'react'
 import { Col, Row, Space, Typography } from 'antd'
 import IonIcon from '@sentre/antd-ionicon'
 import MaxWidthLayout from 'components/maxWidthLayout'
-import useWidth from 'hooks/useWidth'
 import CardFAQ from './cardFAQ'
 
 import useLanguages from 'hooks/useLanguages'
+import { useWidth } from 'hooks/useUI'
 
 import './index.less'
 

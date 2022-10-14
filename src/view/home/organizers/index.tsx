@@ -7,7 +7,7 @@ import Partner from './partner'
 import Ranking from './ranking'
 import Register from './register'
 
-import useWidth from 'hooks/useWidth'
+import { useWidth } from 'hooks/useUI'
 import { PATH_GOOGLE_VIEW_IMG } from 'constant'
 
 import organizeBg from 'static/images/extra/organizen-partner.png'

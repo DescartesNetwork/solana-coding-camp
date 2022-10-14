@@ -6,7 +6,7 @@ import { Col, Row, Space, Typography } from 'antd'
 import MaxWidthLayout from 'components/maxWidthLayout'
 import TimeDisplay from './timeDisplay'
 
-import useWidth from 'hooks/useWidth'
+import { useWidth } from 'hooks/useUI'
 import useLanguages from 'hooks/useLanguages'
 
 const DIVIDER = '1px solid #000'

@@ -4,7 +4,7 @@ import { Button, Col, Drawer, Image, Row, Segmented } from 'antd'
 import Navigation from './navigation'
 import IonIcon from '@sentre/antd-ionicon'
 
-import useWidth from 'hooks/useWidth'
+import { useWidth } from 'hooks/useUI'
 
 import flagVN from 'static/images/logo/flag-vn.svg'
 import flagUK from 'static/images/logo/flag-uk.svg'

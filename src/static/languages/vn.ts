@@ -12,6 +12,10 @@ export const vnLanguage = {
       label: 'Bài viết',
       key: '/blog',
     },
+    {
+      label: 'Dự án',
+      key: '/project',
+    },
   ],
   CTA: {
     register: 'Đăng ký ngay',
@@ -93,5 +97,11 @@ export const vnLanguage = {
       <p>Nếu bạn có bất kỳ câu hỏi nào khác, hãy gửi email cho chúng tôi tại hi@sentre.io hoặc gửi tin nhắn đến nhóm Telegram chính thức của chúng tôi nhé!</p>`,
     },
     registration: 'Đơn đăng ký',
+  },
+  project: {
+    title: 'Why build Web3 on Solana?',
+    description:
+      'Now web3 technology like open source protocols and decentralized blockchains give us the ability to take that co-creation to a new scale. The Blockchain Solana technology to fund and build digital public goods projects that serve everyone, and solve our most immediate problems.',
+    CTA: 'Nộp dự án',
   },
 }

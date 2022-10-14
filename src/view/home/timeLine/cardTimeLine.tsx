@@ -5,7 +5,7 @@ import { Card, Col, Row, Space, Typography } from 'antd'
 import IonIcon from '@sentre/antd-ionicon'
 import { TitleProps } from 'antd/lib/typography/Title'
 
-import useWidth from 'hooks/useWidth'
+import { useWidth } from 'hooks/useUI'
 
 const DEFAULT_SIZE = 420
 const enum CardDirection {
