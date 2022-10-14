@@ -11,6 +11,20 @@ const dummyProjects = [
       website: 'https://sentre.io',
       twitter: 'https://twitter.com/SentreProtocol',
       discord: 'https://discord.com/invite/VD7UBAp2HN',
+      github: 'https://github.com/DescartesNetwork',
+    },
+  },
+  {
+    name: 'Saros',
+    logo: 'https://pbs.twimg.com/profile_images/1556909169445220353/ln2Suf5b_400x400.jpg',
+    cover:
+      'https://pbs.twimg.com/profile_banners/1304982931476066304/1660031049/1500x500',
+    author: 'Coin98',
+    description: 'A DeFi Super-Network Built on S◎lana.',
+    metadata: {
+      website: 'https://saros.finance/',
+      twitter: 'https://twitter.com/Saros_Finance',
+      discord: 'http://saros.link/discord',
     },
   },
 ]
