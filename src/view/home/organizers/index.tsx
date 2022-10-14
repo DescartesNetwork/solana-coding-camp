@@ -45,7 +45,6 @@ const Organizers = () => {
   const system = useLanguages()
 
   const spacing = width < 1200 ? 126 : 256
-
   const perview = useMemo(() => {
     let result = 1
     if (width > 575) result = 2
