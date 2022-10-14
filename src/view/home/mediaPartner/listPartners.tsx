@@ -16,7 +16,6 @@ const MEDIA_PARTNER = [
   '1eutyoRworLkr3fm2ZvGw-T4ry-Z_cclY', // sequio
   '1qnSJhrEnug8WhYfqpK3uKb0E_nh5RgtL', // LSVP
   '1DY1WG0j25oBcZ8c7NyFhNdcftY3Z3vQs', // Accel
-  '1sEI0IrcJFv39n5M9EMheliG_BMxX6ywn', // Jobhopin
 ]
 
 const ListPartners = () => {

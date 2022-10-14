@@ -10,8 +10,12 @@ import logoSolana from 'static/images/logo/logo-solana.svg'
 import logoDao from 'static/images/logo/logo-dao.svg'
 
 import './index.less'
+import { PATH_GOOGLE_VIEW_IMG } from 'constant'
+import useWidth from 'hooks/useWidth'
+import { useMemo } from 'react'
 
 const Partner = () => {
+  const width = useWidth()
   const system = useLanguages()
 
   const PARTNERS = [
@@ -47,7 +51,35 @@ const Partner = () => {
       ],
       children: system.about.us.dao,
     },
+    {
+      logo: PATH_GOOGLE_VIEW_IMG + '1NaAXuRaq1A1IiIGh0eqAOJBrwqgnmQ_u',
+      socials: [
+        {
+          src: 'https://www.linkedin.com/company/jobhopin/',
+          icon: 'logo-linkedin',
+        },
+        { src: 'https://www.jobhopin.com', icon: 'globe-outline' },
+      ],
+      children: system.about.us.jh,
+    },
   ]
+
+  const colWidth = useMemo(() => {
+    if (width > 1300) return '20%'
+    if (width > 768) return '33.333333%'
+    return '100%'
+  }, [width])
+
+  const imgHeight = useMemo(() => {
+    if (width > 1300) return 42
+    return 50
+  }, [width])
+
+  const cardGap = useMemo(() => {
+    if (width > 1300) return 24
+    return 42
+  }, [width])
+
   return (
     <MaxWidthLayout>
       <Row gutter={[24, 24]} justify="center">
@@ -58,8 +90,13 @@ const Partner = () => {
         </Col>
         <Col span={24} />
         {PARTNERS.map((partner) => (
-          <Col xs={24} lg={12} xl={6} key={partner.logo}>
-            <CardPartner socials={partner.socials} logo={partner.logo}>
+          <Col style={{ flex: `0 0 ${colWidth}`, maxWidth: colWidth }}>
+            <CardPartner
+              socials={partner.socials}
+              logo={partner.logo}
+              imgStyle={{ maxHeight: imgHeight }}
+              gap={cardGap}
+            >
               {partner.children}
             </CardPartner>
           </Col>

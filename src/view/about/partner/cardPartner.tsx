@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { CSSProperties, ReactNode } from 'react'
 
 import { Button, Card, Col, Image, Row, Space, Typography } from 'antd'
 import IonIcon from 'components/IonIcon'
@@ -8,8 +8,16 @@ export type CardPartnerProps = {
   logo?: string
   children?: ReactNode
   socials?: SocialData[]
+  imgStyle?: CSSProperties
+  gap?: number
 }
-const CardPartner = ({ children, logo = '', socials }: CardPartnerProps) => {
+const CardPartner = ({
+  children,
+  logo = '',
+  socials,
+  imgStyle,
+  gap = 42,
+}: CardPartnerProps) => {
   return (
     <Card
       style={{ height: '100%' }}
@@ -17,16 +25,16 @@ const CardPartner = ({ children, logo = '', socials }: CardPartnerProps) => {
       bordered={false}
     >
       <Row
-        gutter={[0, 42]}
+        gutter={[0, gap]}
         style={{ flexDirection: 'column', height: '100%' }}
         justify="space-between"
         align="middle"
       >
         <Col>
-          <Row gutter={[0, 42]} justify="center">
+          <Row gutter={[0, gap]} justify="center">
             <Col style={{ minHeight: 50 }} className="logo-partner-img">
               <Image
-                style={{ maxHeight: 50, objectFit: 'contain' }}
+                style={{ maxHeight: 50, objectFit: 'contain', ...imgStyle }}
                 src={logo}
                 preview={false}
               />

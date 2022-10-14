@@ -62,7 +62,7 @@ export const enLanguage = {
     title: 'Speakers & Judges',
   },
   esteemedPartners: {
-    title: 'Esteemed Partners',
+    title: 'Esteemed',
   },
   footers: {
     title: 'Do you have more questions?',
@@ -78,6 +78,7 @@ export const enLanguage = {
         'Sentre Protocol is a DApp Store for All Things on Solana where users can install and use their favorite DApps on a single platform.',
       c98: "Coin98 is an all-in-one DeFi platform designed to provide DeFi's most prominent features in one place.",
       dao: 'Superteam Vietnam is an exclusive community providing grants, bounties, job opportunities and more for Solana builders in Vietnam.',
+      jh: 'Vietnam #1 AI-powered platform for job and talent market intelligence',
     },
     agenda: 'Agenda',
     faq: {
