@@ -59,7 +59,7 @@ const Register = () => {
         <iframe
           width="100%"
           style={{ minHeight: 400 }}
-          src="https://www.youtube.com/embed/x48VAXbAXTs"
+          src="https://www.youtube.com/embed/uKk6bQi_cnI"
           title="YouTube video player"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
