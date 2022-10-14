@@ -62,7 +62,7 @@ export const enLanguage = {
     title: 'Speakers & Judges',
   },
   esteemedPartners: {
-    title: 'Esteemed',
+    title: 'Partners',
   },
   footers: {
     title: 'Do you have more questions?',
