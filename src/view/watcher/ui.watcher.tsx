@@ -5,7 +5,7 @@ import { notification } from 'antd'
 
 import { AppDispatch } from 'store'
 import { resize } from 'store/ui.reducer'
-import IonIcon from 'components/IonIcon'
+import IonIcon from '@sentre/antd-ionicon'
 
 const UIWatcher = () => {
   const [api, contextHolder] = notification.useNotification()

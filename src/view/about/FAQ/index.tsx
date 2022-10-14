@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 import { Col, Row, Space, Typography } from 'antd'
-import IonIcon from 'components/IonIcon'
+import IonIcon from '@sentre/antd-ionicon'
 import MaxWidthLayout from 'components/maxWidthLayout'
 import useWidth from 'hooks/useWidth'
 import CardFAQ from './cardFAQ'

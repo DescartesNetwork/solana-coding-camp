@@ -1,7 +1,7 @@
 import { useHistory } from 'react-router-dom'
 
 import { Button, Col, Row, Space, Typography } from 'antd'
-import IonIcon from 'components/IonIcon'
+import IonIcon from '@sentre/antd-ionicon'
 import { FORM_ID } from 'view/about/registration'
 import useLanguages from 'hooks/useLanguages'
 

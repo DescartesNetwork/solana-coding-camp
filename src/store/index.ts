@@ -1,11 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
-import middleware from './middleware'
 
 import ui from './ui.reducer'
 import languages from './languages.reducer'
 
 const store = configureStore({
-  middleware,
+  devTools: process.env.NODE_ENV === 'development',
   reducer: { ui, languages },
 })
 export type AppState = ReturnType<typeof store.getState>

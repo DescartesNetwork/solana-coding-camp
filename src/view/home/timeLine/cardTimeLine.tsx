@@ -2,7 +2,7 @@ import { CSSProperties, useMemo } from 'react'
 import moment from 'moment'
 
 import { Card, Col, Row, Space, Typography } from 'antd'
-import IonIcon from 'components/IonIcon'
+import IonIcon from '@sentre/antd-ionicon'
 import { TitleProps } from 'antd/lib/typography/Title'
 
 import useWidth from 'hooks/useWidth'
