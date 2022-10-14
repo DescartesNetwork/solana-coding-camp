@@ -1,8 +1,14 @@
-import { Button, Col, Image, Row, Typography } from 'antd'
+import { Col, Image, Row, Typography } from 'antd'
+import { PopupButton } from '@typeform/embed-react'
 
+import configs from 'configs'
 import useLanguages from 'hooks/useLanguages'
 
 import BANNER from 'static/images/project/banner.png'
+
+const {
+  typeform: { submission },
+} = configs
 
 const Banner = () => {
   const { project } = useLanguages()
@@ -22,11 +28,14 @@ const Banner = () => {
           </Col>
           <Col span={24}>{project.description}</Col>
           <Col span={24}>
-            <Button type="primary" block>
+            <PopupButton
+              id={submission}
+              className="ant-btn ant-btn-primary ant-btn-block"
+            >
               <Typography.Title level={5} style={{ color: 'inherit' }}>
                 {project.CTA}
               </Typography.Title>
-            </Button>
+            </PopupButton>
           </Col>
         </Row>
       </Col>

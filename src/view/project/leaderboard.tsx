@@ -1,10 +1,12 @@
+import { Fragment } from 'react'
+
 import { Avatar, Card, Col, Divider, Row, Space, Typography } from 'antd'
 import IonIcon from '@sentre/antd-ionicon'
 
 import { ProjectCardProps } from './projectCard'
 import { useProjects } from 'hooks/useProjects'
 import { useUpvote, useUpvoters } from 'hooks/useUpvote'
-import { Fragment } from 'react'
+import useLanguages from 'hooks/useLanguages'
 
 const LeaderCard = ({
   data: { name, logo, description },
@@ -18,7 +20,7 @@ const LeaderCard = ({
         <Avatar size={48} shape="square" src={logo} />
       </Col>
       <Col flex="auto">
-        <Row gutter={[8, 8]}>
+        <Row gutter={[4, 4]}>
           <Col span={24}>
             <Typography.Text>{name}</Typography.Text>
           </Col>
@@ -56,19 +58,20 @@ const LeaderCard = ({
 
 const Leaderboard = () => {
   const projects = useProjects()
+  const { project } = useLanguages()
 
   return (
     <Row gutter={[24, 24]}>
       <Col span={24} style={{ marginTop: 18 }}>
-        <Typography.Text>Leaderboard</Typography.Text>
+        <Typography.Text>{project.leaderboard}</Typography.Text>
       </Col>
       <Col span={24}>
         <Card bordered={false}>
           <Row gutter={[24, 24]}>
-            {projects.map((project, i) => (
-              <Fragment key={project.name}>
+            {projects.map((data, i) => (
+              <Fragment key={data.name}>
                 <Col span={24}>
-                  <LeaderCard data={project} />
+                  <LeaderCard data={data} />
                 </Col>
                 {i !== projects.length - 1 && (
                   <Col span={24}>

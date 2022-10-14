@@ -102,5 +102,6 @@ export const enLanguage = {
     description:
       'Now web3 technology like open source protocols and decentralized blockchains give us the ability to take that co-creation to a new scale. The Blockchain Solana technology to fund and build digital public goods projects that serve everyone, and solve our most immediate problems.',
     CTA: 'Submit Project',
+    leaderboard: 'Leaderboard',
   },
 }

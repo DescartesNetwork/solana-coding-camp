@@ -6,9 +6,13 @@ import MaxWidthLayout from 'components/maxWidthLayout'
 import { useWidth } from 'hooks/useUI'
 import useLanguages from 'hooks/useLanguages'
 
-import { FORM_ID } from 'view/about/registration'
+import configs from 'configs'
 import { AGENDA_ID } from 'view/about/agenda'
 import Map from 'static/images/extra/map-svg'
+
+const {
+  typeform: { registration },
+} = configs
 
 const Banner = () => {
   const { banner, CTA } = useLanguages()
@@ -38,7 +42,7 @@ const Banner = () => {
               <Button
                 size="large"
                 type="primary"
-                onClick={() => history.push(`/about/#${FORM_ID}`)}
+                onClick={() => history.push(`/about/#${registration}`)}
               >
                 {CTA.register}
               </Button>
