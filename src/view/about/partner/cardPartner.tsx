@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 
 import { Button, Card, Col, Image, Row, Space, Typography } from 'antd'
-import IonIcon from 'components/IonIcon'
+import IonIcon from '@sentre/antd-ionicon'
 
 export type SocialData = { src: string; icon: string }
 export type CardPartnerProps = {

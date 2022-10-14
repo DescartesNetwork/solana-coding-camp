@@ -1,5 +1,5 @@
 import { Button, Card, Col, Row } from 'antd'
-import IonIcon from 'components/IonIcon'
+import IonIcon from '@sentre/antd-ionicon'
 
 const SOCIAL_BTN = [
   {

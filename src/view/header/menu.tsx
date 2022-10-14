@@ -2,7 +2,7 @@ import { Fragment, useState } from 'react'
 
 import { Button, Col, Drawer, Image, Row, Segmented } from 'antd'
 import Navigation from './navigation'
-import IonIcon from 'components/IonIcon'
+import IonIcon from '@sentre/antd-ionicon'
 
 import useWidth from 'hooks/useWidth'
 
@@ -47,12 +47,18 @@ const Container = ({
   const align = isVertical ? 'top' : 'middle'
 
   return (
-    <Row style={{ ...style }} justify="space-between" align={align}>
+    <Row
+      gutter={[24, 24]}
+      style={{ ...style }}
+      justify="space-between"
+      align={align}
+    >
       <Col>
         <Navigation onChange={onChange} />
       </Col>
       <Col>
         <Segmented
+          style={{ marginLeft: 16 }}
           value={language}
           className="switch-language"
           options={LANGUAGES}
@@ -86,7 +92,22 @@ const MobileMenu = () => {
         style={{ zIndex: 99999 }}
         bodyStyle={{ background: '#1A1A1A' }}
       >
-        <Container direction="vertical" onChange={() => setVisible(false)} />
+        <Row gutter={[12, 12]} justify="end">
+          <Col>
+            <Button
+              type="text"
+              size="large"
+              icon={<IonIcon name="close" />}
+              onClick={() => setVisible(false)}
+            />
+          </Col>
+          <Col span={24}>
+            <Container
+              direction="vertical"
+              onChange={() => setVisible(false)}
+            />
+          </Col>
+        </Row>
       </Drawer>
     </Fragment>
   )
