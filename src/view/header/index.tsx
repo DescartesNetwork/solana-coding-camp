@@ -1,5 +1,3 @@
-import { CSSProperties } from 'react'
-
 import Brand from 'components/brand'
 import MaxWidthLayout from 'components/maxWidthLayout'
 import { Col, Row } from 'antd'
@@ -7,29 +5,19 @@ import Menu from './menu'
 
 import './index.less'
 
-type HeaderProps = { style?: CSSProperties }
-const Header = ({ style }: HeaderProps) => {
+const Header = () => {
   return (
     <MaxWidthLayout>
       <Row
-        style={{
-          position: 'absolute',
-          width: '100%',
-          left: 0,
-          paddingTop: 24,
-          paddingBottom: 24,
-          paddingLeft: 12,
-          paddingRight: 12,
-          zIndex: 9999,
-          ...style,
-        }}
+        gutter={[24, 24]}
+        style={{ marginTop: 24, marginBottom: 24 }}
         align="middle"
         wrap={false}
       >
-        <Col span={10}>
+        <Col style={{ marginRight: 24 }}>
           <Brand />
         </Col>
-        <Col span={14} style={{ textAlign: 'right' }}>
+        <Col flex="auto">
           <Menu />
         </Col>
       </Row>

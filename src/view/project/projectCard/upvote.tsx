@@ -1,5 +1,6 @@
 import { Button } from 'antd'
 import IonIcon from '@sentre/antd-ionicon'
+
 import { useUpvote, useUpvoters } from 'hooks/useUpvote'
 
 export type UpvoteProps = { name: string; voted?: boolean }

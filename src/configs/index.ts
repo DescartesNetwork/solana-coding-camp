@@ -1,10 +1,10 @@
 import env from './env'
-import basics from './basics.config'
+import voting from './voting.config'
 import typeform from './typeform.config'
 
 const configs = {
   env,
-  basics: basics[env],
+  voting: voting[env],
   typeform: typeform[env],
 }
 

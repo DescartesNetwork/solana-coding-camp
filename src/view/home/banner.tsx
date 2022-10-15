@@ -3,12 +3,13 @@ import { useHistory } from 'react-router-dom'
 import { Button, Col, Row, Space, Typography } from 'antd'
 import MaxWidthLayout from 'components/maxWidthLayout'
 
+import configs from 'configs'
+import { AGENDA_ID } from 'view/about/agenda'
 import { useWidth } from 'hooks/useUI'
 import useLanguages from 'hooks/useLanguages'
 
-import configs from 'configs'
-import { AGENDA_ID } from 'view/about/agenda'
 import Map from 'static/images/extra/map-svg'
+import './banner.less'
 
 const {
   typeform: { registration },
@@ -18,9 +19,9 @@ const Banner = () => {
   const { banner, CTA } = useLanguages()
   const history = useHistory()
   const width = useWidth()
-  const unDesktop = width < 1200
-  const marginTop = unDesktop ? -280 : undefined
-  const maxHeight = unDesktop ? '60vh' : undefined
+  const isMobile = width < 1200
+  const marginTop = isMobile ? -280 : undefined
+  const maxHeight = isMobile ? '60vh' : undefined
 
   return (
     <MaxWidthLayout className="banner-gradient-bg">

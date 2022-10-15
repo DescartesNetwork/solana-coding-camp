@@ -14,6 +14,7 @@ import Watcher from './watcher'
 
 import { useGap } from 'hooks/useUI'
 
+import '@solana/wallet-adapter-react-ui/styles.css'
 import 'swiper/css/bundle'
 import 'static/styles/theme.less'
 import './index.less'
