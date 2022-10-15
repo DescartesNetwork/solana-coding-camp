@@ -1,14 +1,15 @@
+import { useMemo } from 'react'
+
 import { Col, Row } from 'antd'
+import CardLogo from 'components/cardLogo'
 
 import { PATH_GOOGLE_VIEW_IMG } from 'constant'
+import { useWidth } from 'hooks/useUI'
 
 import logoSolana from 'static/images/logo/logo-solana.svg'
 import logoSentre from 'static/images/logo/logo-sentre.svg'
 import logoC98 from 'static/images/logo/logo-c98.svg'
 import logoDao from 'static/images/logo/logo-dao.svg'
-import CardLogo from 'components/cardLogo'
-import useWidth from 'hooks/useWidth'
-import { useMemo } from 'react'
 
 const PARTNERS = [
   logoSolana,

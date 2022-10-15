@@ -1,18 +1,18 @@
+import { useMemo } from 'react'
+
 import { Col, Row, Typography } from 'antd'
 import MaxWidthLayout from 'components/maxWidthLayout'
 import CardPartner from './cardPartner'
 
 import useLanguages from 'hooks/useLanguages'
+import { useWidth } from 'hooks/useUI'
+import { PATH_GOOGLE_VIEW_IMG } from 'constant'
 
 import logoSentre from 'static/images/logo/logo-sentre.svg'
 import logoC98 from 'static/images/logo/logo-c98.svg'
 import logoSolana from 'static/images/logo/logo-solana.svg'
 import logoDao from 'static/images/logo/logo-dao.svg'
-
 import './index.less'
-import { PATH_GOOGLE_VIEW_IMG } from 'constant'
-import useWidth from 'hooks/useWidth'
-import { useMemo } from 'react'
 
 const Partner = () => {
   const width = useWidth()

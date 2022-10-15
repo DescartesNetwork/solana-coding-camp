@@ -17,12 +17,11 @@ export type MenuData = {
 export type NavigationProps = { onChange?: () => void }
 
 const Navigation = ({ onChange = () => {} }: NavigationProps) => {
-  const system = useLanguages()
+  const { menus } = useLanguages()
   const width = useWidth()
   const history = useHistory()
   const location = useLocation()
 
-  const menus: MenuData[] = system.menus
   const pathname = location.pathname
   const isMobile = width < 992
   const direction: SpaceProps['direction'] = isMobile
@@ -31,7 +30,7 @@ const Navigation = ({ onChange = () => {} }: NavigationProps) => {
 
   return (
     <Space direction={direction}>
-      {menus.map((menu) => {
+      {menus.map((menu: MenuData) => {
         const active = pathname === menu.key
         const activeStyle = active ? ACTIVE_COLOR : {}
         return (
@@ -43,7 +42,7 @@ const Navigation = ({ onChange = () => {} }: NavigationProps) => {
               return history.push(menu.key)
             }}
             style={{ ...activeStyle, fontSize: 16, fontWeight: 700 }}
-            disabled={menu.key === '/blog'}
+            disabled={menu.key === '/blog' || menu.key === '/project'}
           >
             {menu.label}
           </Button>
