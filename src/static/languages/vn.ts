@@ -21,6 +21,8 @@ export const vnLanguage = {
   },
   banner: {
     title: 'Vietnam Web3 Coding Camp',
+    subtitle:
+      'Chuỗi workshop đào tạo lập trình và kinh doanh giúp bạn sẵn sàng khởi nghiệp Web3 trong hệ sinh thái Solana.',
   },
   timeline: {
     timeLabel: 'Thời gian đóng cổng đăng ký',

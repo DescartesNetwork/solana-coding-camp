@@ -21,6 +21,8 @@ export const enLanguage = {
   },
   banner: {
     title: 'Vietnam Web3 Coding Camp',
+    subtitle:
+      'A series of technical and business training workshops to kickstart your Web3 project in the Solana ecosystem.',
   },
   timeline: {
     timeLabel: 'Close form registration in',
@@ -62,7 +64,7 @@ export const enLanguage = {
     title: 'Speakers & Judges',
   },
   esteemedPartners: {
-    title: 'Partners',
+    title: 'Our Partners',
   },
   footers: {
     title: 'Do you have more questions?',

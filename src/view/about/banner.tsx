@@ -11,7 +11,7 @@ const Banner = () => {
   const width = useWidth()
   const unDesktop = width < 1200
   const paddingTop = width > 1200 ? 202 : 24
-  const maxHeight = unDesktop ? '60vh' : undefined
+  const maxWidth = unDesktop ? '70vw' : undefined
 
   return (
     <MaxWidthLayout className="banner-about-gradient-bg">
@@ -34,7 +34,7 @@ const Banner = () => {
           xl={{ order: 2, span: 11 }}
           style={{ textAlign: 'center', paddingTop: 140 }}
         >
-          <Image src={AboutBanner} style={{ maxHeight }} preview={false} />
+          <Image src={AboutBanner} style={{ maxWidth }} preview={false} />
         </Col>
       </Row>
     </MaxWidthLayout>

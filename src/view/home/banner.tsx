@@ -17,7 +17,7 @@ const Banner = () => {
   const width = useWidth()
   const unDesktop = width < 1200
   const marginTop = unDesktop ? -280 : undefined
-  const maxHeight = unDesktop ? '60vh' : undefined
+  const maxHeight = unDesktop ? '100vh' : undefined
 
   return (
     <MaxWidthLayout className="banner-gradient-bg">
@@ -35,6 +35,9 @@ const Banner = () => {
             >
               {system.banner.title}
             </Typography.Title>
+            <Typography.Text type="secondary" style={{ fontSize: 20 }}>
+              {system.banner.subtitle}
+            </Typography.Text>
             <Space>
               <Button
                 size="large"

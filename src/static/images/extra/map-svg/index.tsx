@@ -5,6 +5,7 @@ export type MapProps = { style?: CSSProperties }
 const Map = ({ style }: MapProps) => {
   return (
     <svg
+      style={style}
       id="e5nqmgvQ02s1"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
