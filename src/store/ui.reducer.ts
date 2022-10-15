@@ -12,6 +12,7 @@ export type UIState = {
   width: number
   infix: Infix
   touchable: boolean
+  gap: number
 }
 
 const getInfix = (): Infix => {
@@ -42,6 +43,7 @@ const initialState: UIState = {
   width: window.innerWidth,
   infix: getInfix(),
   touchable: isTouchable(),
+  gap: window.innerWidth > 1200 ? 256 : 128,
 }
 
 /**

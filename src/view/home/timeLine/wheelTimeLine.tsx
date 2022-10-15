@@ -4,7 +4,7 @@ import { useCallback, useEffect, useState, WheelEvent } from 'react'
 import CardTimeLine from './cardTimeLine'
 import ProgressTimeline from './progressTimeline'
 
-import useWidth from 'hooks/useWidth'
+import { useWidth } from 'hooks/useUI'
 import { MAX_WIDTH, TIME_LINE } from 'constant'
 
 const TIMELINE_WHEEL_ID = 'timeline_wheel'

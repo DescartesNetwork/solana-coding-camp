@@ -8,12 +8,12 @@ const BgTimeline = ({ style, language }: BgTimelineProps) => {
   if (language === 'vn')
     return (
       <svg
-        style={style}
         width="1408"
         height="210"
         viewBox="0 0 1408 210"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        style={style}
       >
         <rect
           width="210"
@@ -207,12 +207,12 @@ const BgTimeline = ({ style, language }: BgTimelineProps) => {
     )
   return (
     <svg
-      style={style}
       width="1408"
       height="210"
       viewBox="0 0 1408 210"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      style={style}
     >
       <rect
         width="210"

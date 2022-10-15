@@ -12,6 +12,10 @@ export const enLanguage = {
       label: 'Blog',
       key: '/blog',
     },
+    {
+      label: 'Project',
+      key: '/project',
+    },
   ],
   CTA: {
     register: 'REGISTER NOW',
@@ -95,5 +99,12 @@ export const enLanguage = {
       <p>If you have any other questions, drop us an email at hi@sentre.io or send a message to our official Telegram group!</p>`,
     },
     registration: 'Registration form',
+  },
+  project: {
+    title: 'Why build Web3 on Solana?',
+    description:
+      'Now web3 technology like open source protocols and decentralized blockchains give us the ability to take that co-creation to a new scale. The Blockchain Solana technology to fund and build digital public goods projects that serve everyone, and solve our most immediate problems.',
+    CTA: 'Submit Project',
+    leaderboard: 'Leaderboard',
   },
 }

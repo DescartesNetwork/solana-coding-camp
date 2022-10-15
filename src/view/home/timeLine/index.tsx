@@ -3,7 +3,7 @@ import MobileView from './mobileView'
 import MaxWidthLayout from 'components/maxWidthLayout'
 import Container from './container'
 
-import useWidth from 'hooks/useWidth'
+import { useWidth } from 'hooks/useUI'
 import useLanguages from 'hooks/useLanguages'
 
 const TimeLine = () => {

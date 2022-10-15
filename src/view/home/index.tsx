@@ -1,30 +1,21 @@
 import { Col, Row } from 'antd'
 import Banner from './banner'
 import CountDown from './countDown'
-import Footer from 'view/footer'
-import Header from 'view/header'
 import MediaPartners from './mediaPartner'
 import Organizers from './organizers'
-import SocialFixed from '../socialFixed'
 import Speakers from './speakers'
 import TimeLine from './timeLine'
 import Tracks from './tracks'
 
-import useWidth from 'hooks/useWidth'
+import { useGap } from 'hooks/useUI'
 
 const Home = () => {
-  const width = useWidth()
-  const isDesktop = width > 1200
-  const gap = isDesktop ? 256 : 128
+  const gap = useGap()
 
   return (
     <Row gutter={[0, gap]}>
       <Col span={24}>
         <Row>
-          <Col span={24}>
-            <Header />
-          </Col>
-          <SocialFixed />
           <Col span={24}>
             <Banner />
           </Col>
@@ -47,9 +38,6 @@ const Home = () => {
       </Col>
       <Col span={24}>
         <MediaPartners />
-      </Col>
-      <Col span={24}>
-        <Footer />
       </Col>
     </Row>
   )

@@ -2,7 +2,7 @@ import { Col, Image, Row, Typography } from 'antd'
 import MaxWidthLayout from 'components/maxWidthLayout'
 
 import useLanguages from 'hooks/useLanguages'
-import useWidth from 'hooks/useWidth'
+import { useWidth } from 'hooks/useUI'
 
 import AboutBanner from 'static/images/extra/about-banner.png'
 

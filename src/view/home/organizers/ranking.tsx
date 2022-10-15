@@ -2,7 +2,7 @@ import numbro from 'numbro'
 
 import { Card, Col, Image, Row, Space, Typography } from 'antd'
 
-import useWidth from 'hooks/useWidth'
+import { useWidth } from 'hooks/useUI'
 
 import imgOne from 'static/images/ranking/one.svg'
 import imgTwo from 'static/images/ranking/two.svg'

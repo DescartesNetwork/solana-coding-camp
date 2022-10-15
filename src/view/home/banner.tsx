@@ -1,23 +1,26 @@
-import { useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 
 import { Button, Col, Row, Space, Typography } from 'antd'
 import MaxWidthLayout from 'components/maxWidthLayout'
 
-import useWidth from 'hooks/useWidth'
-import { AppState } from 'store'
-
-import { FORM_ID } from 'view/about/registration'
+import configs from 'configs'
 import { AGENDA_ID } from 'view/about/agenda'
+import { useWidth } from 'hooks/useUI'
+import useLanguages from 'hooks/useLanguages'
+
 import Map from 'static/images/extra/map-svg'
 
+const {
+  typeform: { registration },
+} = configs
+
 const Banner = () => {
-  const { system } = useSelector((state: AppState) => state.languages)
+  const { banner, CTA } = useLanguages()
   const history = useHistory()
   const width = useWidth()
-  const unDesktop = width < 1200
-  const marginTop = unDesktop ? -280 : undefined
-  const maxHeight = unDesktop ? '100vh' : undefined
+  const isMobile = width < 1200
+  const marginTop = isMobile ? -280 : undefined
+  const maxHeight = isMobile ? '60vh' : undefined
 
   return (
     <MaxWidthLayout className="banner-gradient-bg">
@@ -33,24 +36,24 @@ const Banner = () => {
               level={1}
               style={{ fontSize: 96 }}
             >
-              {system.banner.title}
+              {banner.title}
             </Typography.Title>
             <Typography.Text style={{ fontSize: 20 }}>
-              {system.banner.subtitle}
+              {banner.subtitle}
             </Typography.Text>
             <Space>
               <Button
                 size="large"
                 type="primary"
-                onClick={() => history.push(`/about/#${FORM_ID}`)}
+                onClick={() => history.push(`/about/#${registration}`)}
               >
-                {system.CTA.register}
+                {CTA.register}
               </Button>
               <Button
                 size="large"
                 onClick={() => history.push(`/about/#${AGENDA_ID}`)}
               >
-                {system.CTA.curriculum}
+                {CTA.curriculum}
               </Button>
             </Space>
           </Space>
