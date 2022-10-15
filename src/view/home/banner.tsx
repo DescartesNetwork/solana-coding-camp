@@ -35,7 +35,7 @@ const Banner = () => {
             >
               {system.banner.title}
             </Typography.Title>
-            <Typography.Text type="secondary" style={{ fontSize: 20 }}>
+            <Typography.Text style={{ fontSize: 20 }}>
               {system.banner.subtitle}
             </Typography.Text>
             <Space>
