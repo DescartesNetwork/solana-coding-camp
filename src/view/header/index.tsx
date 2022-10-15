@@ -1,6 +1,6 @@
+import { Col, Row } from 'antd'
 import Brand from 'components/brand'
 import MaxWidthLayout from 'components/maxWidthLayout'
-import { Col, Row } from 'antd'
 import Menu from './menu'
 
 import './index.less'

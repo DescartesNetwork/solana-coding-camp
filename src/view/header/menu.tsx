@@ -1,9 +1,9 @@
 import { useState } from 'react'
 
 import { Button, Col, Drawer, Image, Row, Segmented } from 'antd'
-import Navigation from './navigation'
 import IonIcon from '@sentre/antd-ionicon'
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
+import Navigation from './navigation'
 
 import { useWidth } from 'hooks/useUI'
 import { useDispatch, useSelector } from 'react-redux'

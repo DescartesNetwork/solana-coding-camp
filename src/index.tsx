@@ -12,10 +12,11 @@ import { WalletModalProvider } from '@solana/wallet-adapter-react-ui'
 import {
   PhantomWalletAdapter,
   Coin98WalletAdapter,
-  TorusWalletAdapter,
   SolletWalletAdapter,
   SolletExtensionWalletAdapter,
   SolflareWalletAdapter,
+  ExodusWalletAdapter,
+  GlowWalletAdapter,
 } from '@solana/wallet-adapter-wallets'
 
 import store from 'store'
@@ -23,7 +24,8 @@ import store from 'store'
 const wallets = [
   new PhantomWalletAdapter(),
   new Coin98WalletAdapter(),
-  new TorusWalletAdapter(),
+  new ExodusWalletAdapter(),
+  new GlowWalletAdapter(),
   new SolletWalletAdapter(),
   new SolletExtensionWalletAdapter(),
   new SolflareWalletAdapter(),
