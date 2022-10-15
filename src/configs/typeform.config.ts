@@ -5,7 +5,8 @@ import { Env } from './env'
  */
 
 type Config = {
-  subversion: 'devnet' | 'alpha' | 'beta' | null
+  registration: string
+  submission: string
 }
 
 const configs: Record<Env, Config> = {
@@ -13,21 +14,24 @@ const configs: Record<Env, Config> = {
    * Development configurations
    */
   development: {
-    subversion: 'devnet',
+    registration: 'hyibBZhP',
+    submission: 'fh8YQG90',
   },
 
   /**
    * Staging configurations
    */
   staging: {
-    subversion: 'devnet',
+    registration: 'hyibBZhP',
+    submission: 'fh8YQG90',
   },
 
   /**
    * Production configurations
    */
   production: {
-    subversion: 'beta',
+    registration: 'hyibBZhP',
+    submission: '',
   },
 }
 

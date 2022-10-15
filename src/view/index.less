@@ -130,6 +130,7 @@
 .banner-gradient-bg {
   overflow: hidden;
   &::before {
+    z-index: -1;
     content: '';
     position: absolute;
     width: 600px;
@@ -147,6 +148,7 @@
     box-shadow: 0 0 60px 70px #9945ff78;
   }
   &::after {
+    z-index: -1;
     content: '';
     position: absolute;
     width: 400px;

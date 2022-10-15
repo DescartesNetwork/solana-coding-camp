@@ -2,8 +2,13 @@ import { useHistory } from 'react-router-dom'
 
 import { Button, Col, Row, Space, Typography } from 'antd'
 import IonIcon from '@sentre/antd-ionicon'
-import { FORM_ID } from 'view/about/registration'
+
+import configs from 'configs'
 import useLanguages from 'hooks/useLanguages'
+
+const {
+  typeform: { registration },
+} = configs
 
 const Register = () => {
   const system = useLanguages()
@@ -44,7 +49,7 @@ const Register = () => {
               <Button
                 size="large"
                 type="primary"
-                onClick={() => history.push(`/about/#${FORM_ID}`)}
+                onClick={() => history.push(`/about/#${registration}`)}
               >
                 {system.CTA.register}
               </Button>

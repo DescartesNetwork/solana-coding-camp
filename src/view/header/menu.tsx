@@ -1,17 +1,18 @@
-import { Fragment, useState } from 'react'
+import { useState } from 'react'
 
 import { Button, Col, Drawer, Image, Row, Segmented } from 'antd'
-import Navigation from './navigation'
 import IonIcon from '@sentre/antd-ionicon'
+import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
+import Navigation from './navigation'
 
-import useWidth from 'hooks/useWidth'
-
-import flagVN from 'static/images/logo/flag-vn.svg'
-import flagUK from 'static/images/logo/flag-uk.svg'
+import { useWidth } from 'hooks/useUI'
 import { useDispatch, useSelector } from 'react-redux'
 import { setLanguage } from 'store/languages.reducer'
 import { LanguageType } from 'constant'
 import { AppState } from 'store'
+
+import flagVN from 'static/images/logo/flag-vn.svg'
+import flagUK from 'static/images/logo/flag-uk.svg'
 
 export enum LanguageKey {
   VietNam = 'vn',
@@ -35,6 +36,7 @@ export type ContainerProps = {
   direction?: 'horizontal' | 'vertical'
   onChange?: () => void
 }
+
 const Container = ({
   direction = 'horizontal',
   onChange = () => {},
@@ -47,18 +49,21 @@ const Container = ({
   const align = isVertical ? 'top' : 'middle'
 
   return (
-    <Row
-      gutter={[24, 24]}
-      style={{ ...style }}
-      justify="space-between"
-      align={align}
-    >
-      <Col>
+    <Row gutter={[24, 24]} style={{ ...style }} align={align}>
+      <Col flex="auto">
         <Navigation onChange={onChange} />
       </Col>
       <Col>
+        <WalletMultiButton
+          style={{
+            backgroundColor: '#14f195',
+            borderRadius: 24,
+            color: '#000000',
+          }}
+        />
+      </Col>
+      <Col>
         <Segmented
-          style={{ marginLeft: 16 }}
           value={language}
           className="switch-language"
           options={LANGUAGES}
@@ -76,13 +81,15 @@ const MobileMenu = () => {
   const [visible, setVisible] = useState(false)
 
   return (
-    <Fragment>
-      <Button
-        type="text"
-        style={{ padding: 0, width: 'auto', height: 'auto' }}
-        icon={<IonIcon style={{ fontSize: 32 }} name="menu-outline" />}
-        onClick={() => setVisible(true)}
-      />
+    <Row gutter={[24, 24]} justify="end">
+      <Col>
+        <Button
+          size="large"
+          type="text"
+          icon={<IonIcon name="menu-outline" />}
+          onClick={() => setVisible(true)}
+        />
+      </Col>
       <Drawer
         className="drawer-menu"
         visible={visible}
@@ -109,7 +116,7 @@ const MobileMenu = () => {
           </Col>
         </Row>
       </Drawer>
-    </Fragment>
+    </Row>
   )
 }
 

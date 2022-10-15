@@ -2,7 +2,7 @@ import { useHistory, useLocation } from 'react-router-dom'
 
 import { Button, Space, SpaceProps } from 'antd'
 
-import useWidth from 'hooks/useWidth'
+import { useWidth } from 'hooks/useUI'
 import useLanguages from 'hooks/useLanguages'
 
 const ACTIVE_COLOR = {
@@ -42,7 +42,7 @@ const Navigation = ({ onChange = () => {} }: NavigationProps) => {
               onChange()
               return history.push(menu.key)
             }}
-            style={{ ...activeStyle, fontSize: 16 }}
+            style={{ ...activeStyle, fontSize: 16, fontWeight: 700 }}
             disabled={menu.key === '/blog'}
           >
             {menu.label}

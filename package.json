@@ -6,9 +6,14 @@
     "@reduxjs/toolkit": "^1.6.2",
     "@sentre/antd-iconsax": "^2.0.0",
     "@sentre/antd-ionicon": "^2.0.2",
+    "@sentre/codingcamp": "^1.0.2",
+    "@solana/wallet-adapter-react": "^0.15.20",
+    "@solana/wallet-adapter-react-ui": "^0.9.18",
+    "@solana/wallet-adapter-wallets": "^0.19.1",
     "@typeform/embed-react": "^2.0.0",
     "antd": "^4.16.13",
     "axios": "^1.1.2",
+    "bs58": "^5.0.0",
     "numbro": "^2.3.6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -16,6 +21,7 @@
     "react-router-dom": "^5.3.0",
     "react-scripts": "^5.0.1",
     "swiper": "^8.3.2",
+    "tweetnacl": "^1.0.3",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
@@ -47,6 +53,7 @@
   },
   "devDependencies": {
     "@craco/craco": "^6.3.0",
+    "@sentre/craco-plugins": "^2.0.2",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",

@@ -3,7 +3,7 @@ import { useMemo } from 'react'
 import { Col, Row } from 'antd'
 import InfiniteSwiper from 'components/infinteSwiper'
 
-import useWidth from 'hooks/useWidth'
+import { useWidth } from 'hooks/useUI'
 import { PATH_GOOGLE_VIEW_IMG } from 'constant'
 
 const MEDIA_PARTNER = [

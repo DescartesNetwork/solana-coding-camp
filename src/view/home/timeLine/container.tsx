@@ -1,6 +1,8 @@
 import { useSelector } from 'react-redux'
-import BgTimeline from 'static/images/timeline/bg-timeline'
+
 import { AppState } from 'store'
+
+import BgTimeline from 'static/images/timeline/bg-timeline'
 
 const Container = () => {
   const language = useSelector((state: AppState) => state.languages.language)

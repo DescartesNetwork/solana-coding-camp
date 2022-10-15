@@ -3,7 +3,11 @@ import { Widget } from '@typeform/embed-react'
 import { Col, Row, Typography } from 'antd'
 import MaxWidthLayout from 'components/maxWidthLayout'
 
-export const FORM_ID = 'hyibBZhP'
+import configs from 'configs'
+
+const {
+  typeform: { registration },
+} = configs
 
 const Registration = () => {
   return (
@@ -14,8 +18,8 @@ const Registration = () => {
             Registration form
           </Typography.Title>
         </Col>
-        <Col span={24} id={FORM_ID}>
-          <Widget id={FORM_ID} height={644} />
+        <Col id={registration} span={24}>
+          <Widget id={registration} height={644} />
         </Col>
       </Row>
     </MaxWidthLayout>
