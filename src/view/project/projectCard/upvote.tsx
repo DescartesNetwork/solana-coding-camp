@@ -3,26 +3,28 @@ import { MouseEvent, useCallback } from 'react'
 import { Button } from 'antd'
 import IonIcon from '@sentre/antd-ionicon'
 
-import { useUpvote, useUpvoters } from 'hooks/useUpvote'
+import { useDownvote, useUpvote, useUpvoters, useVoted } from 'hooks/useUpvote'
 import { useWallet } from '@solana/wallet-adapter-react'
 import { useWalletModal } from '@solana/wallet-adapter-react-ui'
 
 export type UpvoteProps = { name: string; voted?: boolean }
 
-const Upvote = ({ name, voted = false }: UpvoteProps) => {
+const Upvote = ({ name }: UpvoteProps) => {
   const { setVisible } = useWalletModal()
   const { publicKey } = useWallet()
   const upvote = useUpvote(name)
+  const downvote = useDownvote(name)
   const voters = useUpvoters(name)
+  const voted = useVoted(name)
 
   const onClick = useCallback(
-    (e: MouseEvent<HTMLElement>) => {
+    async (e: MouseEvent<HTMLElement>) => {
       e.stopPropagation()
       if (!publicKey) return setVisible(true)
-      if (voted) return upvote()
-      return null
+      if (!voted) return await upvote()
+      return await downvote()
     },
-    [publicKey, setVisible, voted, upvote],
+    [publicKey, setVisible, voted, upvote, downvote],
   )
 
   return (
@@ -32,7 +34,7 @@ const Upvote = ({ name, voted = false }: UpvoteProps) => {
       onClick={(e) => onClick(e)}
       block
     >
-      UPVOTE {voters}
+      {voted ? 'CANCEL' : 'UPVOTE'} {voters}
     </Button>
   )
 }

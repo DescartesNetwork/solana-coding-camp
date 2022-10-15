@@ -1,24 +1,64 @@
 import { encode } from 'bs58'
-import { uid } from '@sentre/codingcamp'
-import { useWallet } from '@solana/wallet-adapter-react'
+import CodingCamp, { uid } from '@sentre/codingcamp'
+import { useAnchorWallet } from '@solana/wallet-adapter-react'
+import configs from 'configs'
+import { useCallback, useEffect, useState } from 'react'
 
-const dummyVoting: Record<string, number> = {}
+const {
+  voting: { cluster, campaign },
+} = configs
 
 export const getProjectId = (projectName: string) => {
   return encode(uid(projectName))
 }
 
 export const useUpvote = (projectName: string) => {
-  const { publicKey, connect } = useWallet()
-  if (!publicKey) return connect
-  return () => {
-    const id = getProjectId(projectName)
-    if (!dummyVoting[id]) dummyVoting[id] = 0
-    dummyVoting[id] = dummyVoting[id] + 1
-  }
+  const wallet = useAnchorWallet()
+  const cb = useCallback(async () => {
+    if (!wallet) return
+    const codingcamp = new CodingCamp(wallet, cluster)
+    return await codingcamp.vote(campaign, projectName)
+  }, [wallet, projectName])
+  return cb
+}
+
+export const useDownvote = (projectName: string) => {
+  const wallet = useAnchorWallet()
+  const cb = useCallback(async () => {
+    if (!wallet) return
+    const codingcamp = new CodingCamp(wallet, cluster)
+    return await codingcamp.void(campaign, projectName)
+  }, [wallet, projectName])
+  return cb
+}
+
+export const useVoted = (projectName: string) => {
+  const [voted, setVoted] = useState(false)
+  const wallet = useAnchorWallet()
+
+  useEffect(() => {
+    ;(async () => {
+      if (!wallet) return setVoted(false)
+      const codingcamp = new CodingCamp(wallet, cluster)
+      try {
+        const ballotAddress = await codingcamp.deriveBallotAddress(
+          campaign,
+          projectName,
+        )
+        const data = await codingcamp.getBallotData(ballotAddress)
+        if (data) return setVoted(true)
+        throw new Error('Not voted yet')
+      } catch (er) {
+        return setVoted(false)
+      }
+    })()
+  }, [wallet, projectName])
+
+  return voted
 }
 
 export const useUpvoters = (projectName: string) => {
   const id = getProjectId(projectName)
-  return dummyVoting[id] || 0
+  console.log(id)
+  return 0
 }

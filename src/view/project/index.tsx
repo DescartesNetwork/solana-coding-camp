@@ -6,10 +6,19 @@ import Projects from './projects'
 import { useGap } from 'hooks/useUI'
 import { useProjects } from 'hooks/useProjects'
 import Leaderboard from './leaderboard'
+import { useDispatch } from 'react-redux'
+import { AppDispatch } from 'store'
+import { useEffect } from 'react'
+import { getProjects } from 'store/projects.reducer'
 
 const Project = () => {
+  const dispath = useDispatch<AppDispatch>()
   const gap = useGap()
   const projects = useProjects()
+
+  useEffect(() => {
+    dispath(getProjects())
+  }, [dispath])
 
   return (
     <MaxWidthLayout className="banner-gradient-bg">

@@ -2,15 +2,7 @@ import { useCallback } from 'react'
 
 import { Button } from 'antd'
 import IonIcon from '@sentre/antd-ionicon'
-
-export enum Social {
-  Twitter = 'twitter',
-  Discord = 'discord',
-  Website = 'website',
-  Github = 'github',
-  Telegram = 'telegram',
-  Facebook = 'facebook',
-}
+import { Social } from 'store/projects.reducer'
 
 export const SocialLogo = ({ type }: { type: Social | string }) => {
   switch (type) {

@@ -1,9 +1,10 @@
 import { useCallback, useMemo } from 'react'
 
 import { Avatar, Card, Col, Row, Space, Typography } from 'antd'
-import ProjectSocial, { Social } from './projectSocial'
+import ProjectSocial from './projectSocial'
 import Upvote from './upvote'
 import { useWidth } from 'hooks/useUI'
+import { Social } from 'store/projects.reducer'
 
 export type ProjectMetadata = Partial<
   Record<Social, string> & Record<'others', string[]>
