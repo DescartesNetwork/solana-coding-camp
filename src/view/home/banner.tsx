@@ -9,7 +9,6 @@ import { useWidth } from 'hooks/useUI'
 import useLanguages from 'hooks/useLanguages'
 
 import Map from 'static/images/extra/map-svg'
-import './banner.less'
 
 const {
   typeform: { registration },

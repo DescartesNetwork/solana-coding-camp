@@ -12,7 +12,7 @@ const Project = () => {
   const projects = useProjects()
 
   return (
-    <MaxWidthLayout>
+    <MaxWidthLayout className="banner-gradient-bg">
       <Row gutter={[36, 24]}>
         <Col span={24} style={{ height: gap }} />
         <Col span={24}>
