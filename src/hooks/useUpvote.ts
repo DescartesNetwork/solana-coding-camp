@@ -1,11 +1,12 @@
-import { encode } from 'bs58'
-import CodingCamp, { uid } from '@sentre/codingcamp'
-import { useAnchorWallet } from '@solana/wallet-adapter-react'
-import configs from 'configs'
 import { useCallback, useEffect, useState } from 'react'
+import { encode } from 'bs58'
+import { uid } from '@sentre/codingcamp'
+
+import configs from 'configs'
+import { useCodingCamp } from './useCodingCamp'
 
 const {
-  voting: { cluster, campaign },
+  voting: { campaign },
 } = configs
 
 export const getProjectId = (projectName: string) => {
@@ -13,33 +14,29 @@ export const getProjectId = (projectName: string) => {
 }
 
 export const useUpvote = (projectName: string) => {
-  const wallet = useAnchorWallet()
+  const codingcamp = useCodingCamp()
   const cb = useCallback(async () => {
-    if (!wallet) return
-    const codingcamp = new CodingCamp(wallet, cluster)
     return await codingcamp.vote(campaign, projectName)
-  }, [wallet, projectName])
+  }, [codingcamp, projectName])
   return cb
 }
 
 export const useDownvote = (projectName: string) => {
-  const wallet = useAnchorWallet()
+  const codingcamp = useCodingCamp()
   const cb = useCallback(async () => {
-    if (!wallet) return
-    const codingcamp = new CodingCamp(wallet, cluster)
     return await codingcamp.void(campaign, projectName)
-  }, [wallet, projectName])
+  }, [codingcamp, projectName])
   return cb
 }
 
 export const useVoted = (projectName: string) => {
   const [voted, setVoted] = useState(false)
-  const wallet = useAnchorWallet()
+  const [refreshing, setRefreshing] = useState(1)
+  const codingcamp = useCodingCamp()
 
   useEffect(() => {
     ;(async () => {
-      if (!wallet) return setVoted(false)
-      const codingcamp = new CodingCamp(wallet, cluster)
+      console.info(`Refresh ${projectName} ${refreshing} times`)
       try {
         const ballotAddress = await codingcamp.deriveBallotAddress(
           campaign,
@@ -52,9 +49,13 @@ export const useVoted = (projectName: string) => {
         return setVoted(false)
       }
     })()
-  }, [wallet, projectName])
+  }, [codingcamp, projectName, refreshing])
 
-  return voted
+  const refresh = useCallback(() => {
+    return setRefreshing(refreshing + 1)
+  }, [refreshing, setRefreshing])
+
+  return { voted, refresh }
 }
 
 export const useUpvoters = (projectName: string) => {
