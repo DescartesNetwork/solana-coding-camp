@@ -11,7 +11,7 @@ import useLanguages from 'hooks/useLanguages'
 const LeaderCard = ({
   data: { name, logo, description },
 }: ProjectCardProps) => {
-  const voters = useUpvoters(name)
+  const { voters } = useUpvoters(name)
   const upvote = useUpvote(name)
 
   return (

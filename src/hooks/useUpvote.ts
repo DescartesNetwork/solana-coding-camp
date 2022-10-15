@@ -31,12 +31,11 @@ export const useDownvote = (projectName: string) => {
 
 export const useVoted = (projectName: string) => {
   const [voted, setVoted] = useState(false)
-  const [refreshing, setRefreshing] = useState(1)
+  const [refreshing, setRefreshing] = useState(false)
   const codingcamp = useCodingCamp()
 
   useEffect(() => {
     ;(async () => {
-      console.info(`Refresh ${projectName} ${refreshing} times`)
       try {
         const ballotAddress = await codingcamp.deriveBallotAddress(
           campaign,
@@ -47,19 +46,43 @@ export const useVoted = (projectName: string) => {
         throw new Error('Not voted yet')
       } catch (er) {
         return setVoted(false)
+      } finally {
+        if (refreshing) return setRefreshing(false)
       }
     })()
   }, [codingcamp, projectName, refreshing])
 
   const refresh = useCallback(() => {
-    return setRefreshing(refreshing + 1)
-  }, [refreshing, setRefreshing])
+    if (!refreshing) return setRefreshing(true)
+  }, [refreshing])
 
   return { voted, refresh }
 }
 
 export const useUpvoters = (projectName: string) => {
-  const id = getProjectId(projectName)
-  console.log(id)
-  return 0
+  const [voters, setVoters] = useState(0)
+  const [refreshing, setRefreshing] = useState(false)
+  const codingcamp = useCodingCamp()
+
+  useEffect(() => {
+    ;(async () => {
+      try {
+        const data = await codingcamp.getTotalVotersForProject(
+          campaign,
+          projectName,
+        )
+        return setVoters(data)
+      } catch (er) {
+        return setVoters(0)
+      } finally {
+        if (refreshing) return setRefreshing(false)
+      }
+    })()
+  }, [codingcamp, projectName, refreshing])
+
+  const refresh = useCallback(() => {
+    if (!refreshing) return setRefreshing(true)
+  }, [refreshing, setRefreshing])
+
+  return { voters, refresh }
 }

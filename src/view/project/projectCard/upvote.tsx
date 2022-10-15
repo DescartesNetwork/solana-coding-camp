@@ -11,8 +11,13 @@ const Upvote = ({ name }: UpvoteProps) => {
   const [loading, setLoading] = useState(false)
   const upvote = useUpvote(name)
   const downvote = useDownvote(name)
-  const voters = useUpvoters(name)
-  const { voted, refresh } = useVoted(name)
+  const { voters, refresh: refreshVoters } = useUpvoters(name)
+  const { voted, refresh: refreshVoted } = useVoted(name)
+
+  const refresh = useCallback(() => {
+    refreshVoted()
+    refreshVoters()
+  }, [refreshVoted, refreshVoters])
 
   const onClick = useCallback(
     async (e: MouseEvent<HTMLElement>) => {
