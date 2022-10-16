@@ -39,6 +39,7 @@ const ProjectSocial = ({ type, url }: ProjectSocialProps) => {
       type="text"
       icon={<SocialLogo type={type} />}
       onClick={onClick}
+      disabled={!url}
     />
   )
 }

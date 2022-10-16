@@ -1,6 +1,7 @@
 import { Button, Col, Row, Typography } from 'antd'
+import ProjectCard from './projectCard'
 
-import ProjectCard, { ProjectData } from './projectCard'
+import { ProjectData } from 'store/projects.reducer'
 
 export type ProjectsProps = {
   title: string

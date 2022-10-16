@@ -1,14 +1,15 @@
+import { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+
 import { Col, Row } from 'antd'
 import MaxWidthLayout from 'components/maxWidthLayout'
 import Banner from './banner'
 import Projects from './projects'
+import Leaderboard from './leaderboard'
 
 import { useGap } from 'hooks/useUI'
 import { useProjects } from 'hooks/useProjects'
-import Leaderboard from './leaderboard'
-import { useDispatch } from 'react-redux'
 import { AppDispatch } from 'store'
-import { useEffect } from 'react'
 import { getProjects } from 'store/projects.reducer'
 
 const Project = () => {

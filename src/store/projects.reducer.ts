@@ -1,10 +1,13 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+import { uid } from '@sentre/codingcamp'
 import axios from 'axios'
+import { encode } from 'bs58'
 
 import configs from 'configs'
+import { normalizeProjectData } from 'helpers/projectParser'
 
 const {
-  stat: { projects },
+  stat: { projectsApi },
 } = configs
 
 export enum Social {
@@ -27,6 +30,8 @@ export type ProjectData = {
   description: string
   author: string
   metadata: ProjectMetadata
+  submittedAt: number
+  category: string
 }
 
 export type ProjectState = Record<string, ProjectData>
@@ -45,9 +50,12 @@ const initialState: ProjectState = {}
 export const getProjects = createAsyncThunk(`${NAME}/getProjects`, async () => {
   const {
     data: { items },
-  } = await axios.get(projects)
-  console.log(items)
-  return {}
+  } = await axios.get(projectsApi)
+  const projects: ProjectState = {}
+  normalizeProjectData(items).forEach((project) => {
+    projects[encode(uid(project.name))] = project
+  })
+  return projects
 })
 
 /**

@@ -1,23 +1,12 @@
 import { useCallback, useMemo } from 'react'
 
 import { Avatar, Card, Col, Row, Space, Typography } from 'antd'
+import IonIcon from '@sentre/antd-ionicon'
 import ProjectSocial from './projectSocial'
 import Upvote from './upvote'
+
 import { useWidth } from 'hooks/useUI'
-import { Social } from 'store/projects.reducer'
-
-export type ProjectMetadata = Partial<
-  Record<Social, string> & Record<'others', string[]>
->
-
-export type ProjectData = {
-  name: string
-  logo: string
-  cover: string
-  description: string
-  author: string
-  metadata: ProjectMetadata
-}
+import { ProjectData, Social } from 'store/projects.reducer'
 
 export type ProjectCardProps = {
   data: ProjectData
@@ -44,7 +33,9 @@ const ProjectCard = ({
         <Col flex="auto">
           <Row gutter={[24, 24]} wrap={false}>
             <Col>
-              <Avatar shape="square" src={logo} size={isMobile ? 64 : 128} />
+              <Avatar shape="square" src={logo} size={isMobile ? 64 : 128}>
+                <IonIcon name="image-outline" />
+              </Avatar>
             </Col>
             <Col flex="auto">
               <Row gutter={[8, 8]}>
