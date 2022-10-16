@@ -8,7 +8,7 @@ import Projects from './projects'
 import Leaderboard from './leaderboard'
 
 import { useGap } from 'hooks/useUI'
-import { useProjects } from 'hooks/useProjects'
+import { useProjects, useShuffledProjects } from 'hooks/useProjects'
 import { AppDispatch } from 'store'
 import { getProjects } from 'store/projects.reducer'
 
@@ -16,6 +16,7 @@ const Project = () => {
   const dispath = useDispatch<AppDispatch>()
   const gap = useGap()
   const projects = useProjects()
+  const shuffledProjects = useShuffledProjects()
 
   useEffect(() => {
     dispath(getProjects())
@@ -35,10 +36,10 @@ const Project = () => {
         >
           <Row gutter={[24, 24]}>
             <Col span={24}>
-              <Projects title="Defi" projects={projects} />
+              <Projects title="Latest Projects" projects={projects} />
             </Col>
             <Col span={24}>
-              <Projects title="Gamefi" projects={projects} />
+              <Projects title="Explorer" projects={shuffledProjects} />
             </Col>
           </Row>
         </Col>

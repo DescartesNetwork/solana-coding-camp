@@ -1,6 +1,6 @@
 import { useCallback, useMemo } from 'react'
 
-import { Avatar, Card, Col, Row, Space, Typography } from 'antd'
+import { Avatar, Card, Col, Row, Space, Tag, Typography } from 'antd'
 import IonIcon from '@sentre/antd-ionicon'
 import ProjectSocial from './projectSocial'
 import Upvote from './upvote'
@@ -13,7 +13,7 @@ export type ProjectCardProps = {
 }
 
 const ProjectCard = ({
-  data: { name, logo, description, author, metadata },
+  data: { name, logo, description, author, category, metadata },
 }: ProjectCardProps) => {
   const width = useWidth()
 
@@ -40,7 +40,10 @@ const ProjectCard = ({
             <Col flex="auto">
               <Row gutter={[8, 8]}>
                 <Col span={24}>
-                  <Typography.Title level={4}>{name}</Typography.Title>
+                  <Space size={12}>
+                    <Typography.Title level={4}>{name}</Typography.Title>
+                    <Tag color="#000000">{category}</Tag>
+                  </Space>
                 </Col>
                 <Col span={24}>
                   <Space>
@@ -49,7 +52,7 @@ const ProjectCard = ({
                   </Space>
                 </Col>
                 <Col span={24}>
-                  <Space style={{ marginLeft: -8 }}>
+                  <Space style={{ marginLeft: -8 }} size={2}>
                     {socials.map((social) => (
                       <ProjectSocial
                         key={social}
