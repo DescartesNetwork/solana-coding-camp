@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 
 import { Button, Col, Empty, Row, Typography } from 'antd'
 import ProjectCard from './projectCard'
@@ -19,6 +19,11 @@ const Projects = ({ title, projects = [] }: ProjectsProps) => {
     setLimit(limit + LIMIT)
   }, [limit])
 
+  const limitedProjects = useMemo(
+    () => projects.slice(0, limit),
+    [projects, limit],
+  )
+
   return (
     <Row gutter={[24, 24]} justify="center">
       <Col span={24}>
@@ -33,7 +38,7 @@ const Projects = ({ title, projects = [] }: ProjectsProps) => {
           </Row>
         </Col>
       )}
-      {projects.map((project) => (
+      {limitedProjects.map((project) => (
         <Col span={24} key={project.name}>
           <ProjectCard data={project} />
         </Col>
