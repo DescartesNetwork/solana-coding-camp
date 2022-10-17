@@ -70,8 +70,8 @@ const Leaderboard = () => {
 
   return (
     <Row gutter={[24, 24]}>
-      <Col span={24} style={{ marginTop: 18 }}>
-        <Typography.Text>{project.leaderboard}</Typography.Text>
+      <Col span={24} style={{ marginTop: 12 }}>
+        <Typography.Title level={4}>{project.leaderboard}</Typography.Title>
       </Col>
       <Col span={24}>
         <Card bordered={false}>

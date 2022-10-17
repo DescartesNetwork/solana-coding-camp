@@ -11,6 +11,7 @@ import { useGap } from 'hooks/useUI'
 import { useProjects, useShuffledProjects } from 'hooks/useProjects'
 import { AppDispatch } from 'store'
 import { getProjects } from 'store/projects.reducer'
+import Category from './category'
 
 const Project = () => {
   const dispath = useDispatch<AppDispatch>()
@@ -49,7 +50,14 @@ const Project = () => {
           lg={{ order: 2, span: 8 }}
           xl={{ order: 1, span: 6 }}
         >
-          <Leaderboard />
+          <Row gutter={[24, 24]}>
+            <Col span={24}>
+              <Leaderboard />
+            </Col>
+            <Col span={24}>
+              <Category />
+            </Col>
+          </Row>
         </Col>
       </Row>
     </MaxWidthLayout>

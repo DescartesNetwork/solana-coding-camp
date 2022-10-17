@@ -1,7 +1,6 @@
 export const normalizeProjectData = (projects: any[]) => {
   return projects.map(
     ({ answers, submitted_at }: { answers: any[]; submitted_at: string }) => {
-      console.log(answers)
       return {
         name: parseName(answers),
         logo: parseLogo(answers),
@@ -59,7 +58,7 @@ export const parseCover = (answers: any[]) => {
 
 export const parseDescription = (answers: any[]) => {
   try {
-    return answers.find(({ field: { id } }) => id === 'YB53ek6eWawf').text
+    return answers.find(({ field: { id } }) => id === 'Y5XNeWHw3vX8').text
   } catch (er) {
     return ''
   }
@@ -83,7 +82,7 @@ export const parseEmail = (answers: any[]) => {
 
 export const parseTwitter = (answers: any[]) => {
   try {
-    return answers.find(({ field: { id } }) => id === '').text
+    return answers.find(({ field: { id } }) => id === '93OYHl07hlg1').url
   } catch (er) {
     return ''
   }
@@ -91,7 +90,7 @@ export const parseTwitter = (answers: any[]) => {
 
 export const parseDiscord = (answers: any[]) => {
   try {
-    return answers.find(({ field: { id } }) => id === '').text
+    return answers.find(({ field: { id } }) => id === 'hu2nuNhG86MK').url
   } catch (er) {
     return ''
   }
@@ -125,7 +124,15 @@ export const parseTelegram = (answers: any[]) => {
 
 export const parseFacebook = (answers: any[]) => {
   try {
-    return answers.find(({ field: { id } }) => id === '').url
+    return answers.find(({ field: { id } }) => id === 'qlxAJUIdQu6y').url
+  } catch (er) {
+    return ''
+  }
+}
+
+export const parseOther = (answers: any[]) => {
+  try {
+    return answers.find(({ field: { id } }) => id === 'j52EErXLhdOF').url
   } catch (er) {
     return ''
   }

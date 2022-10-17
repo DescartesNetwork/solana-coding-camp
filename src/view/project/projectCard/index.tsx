@@ -27,8 +27,6 @@ const ProjectCard = ({
     console.log(name)
   }, [name])
 
-  console.log(logo)
-
   return (
     <Card style={{ cursor: 'pointer' }} bordered={false} onClick={onDetails}>
       <Row gutter={[24, 24]} wrap={isMobile}>
