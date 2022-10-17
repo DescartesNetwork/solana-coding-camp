@@ -28,7 +28,7 @@ const Banner = () => {
         <Col
           xs={{ order: 2, span: 24 }}
           xl={{ order: 2, span: 13 }}
-          style={{ paddingTop: 202, paddingBottom: 24, marginTop }}
+          style={{ paddingTop: 150, paddingBottom: 24, marginTop }}
         >
           <Space direction="vertical" size={32}>
             <Typography.Title
