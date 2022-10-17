@@ -1,12 +1,14 @@
-import { Fragment } from 'react'
+import { Fragment, useMemo } from 'react'
+import { useSelector } from 'react-redux'
 
-import { Avatar, Card, Col, Divider, Row, Space, Typography } from 'antd'
+import { Avatar, Card, Col, Divider, Empty, Row, Space, Typography } from 'antd'
 import IonIcon from '@sentre/antd-ionicon'
 
 import { ProjectCardProps } from './projectCard'
-import { useProjects } from 'hooks/useProjects'
+import { useRankingProjects } from 'hooks/useProjects'
 import { useUpvote, useUpvoters } from 'hooks/useUpvote'
 import useLanguages from 'hooks/useLanguages'
+import { AppState } from 'store'
 
 const LeaderCard = ({
   data: { name, logo, description },
@@ -57,8 +59,14 @@ const LeaderCard = ({
 }
 
 const Leaderboard = () => {
-  const projects = useProjects()
+  const allProjects = useSelector((state: AppState) => state.projects)
   const { project } = useLanguages()
+  const { ranking } = useRankingProjects(5)
+
+  const projects = useMemo(
+    () => ranking.map((id) => allProjects[id]).filter((project) => project),
+    [ranking, allProjects],
+  )
 
   return (
     <Row gutter={[24, 24]}>
@@ -67,7 +75,12 @@ const Leaderboard = () => {
       </Col>
       <Col span={24}>
         <Card bordered={false}>
-          <Row gutter={[24, 24]}>
+          <Row gutter={[24, 24]} justify="center">
+            {!projects.length && (
+              <Col>
+                <Empty />
+              </Col>
+            )}
             {projects.map((data, i) => (
               <Fragment key={data.name}>
                 <Col span={24}>

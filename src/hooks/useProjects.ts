@@ -1,49 +1,83 @@
-import { shuffle } from 'helpers/util'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useSelector } from 'react-redux'
+import { uid } from '@sentre/codingcamp'
+import { encode } from 'bs58'
+
+import { shuffle } from 'helpers/util'
 import { AppState } from 'store'
 import { ProjectData } from 'store/projects.reducer'
+import configs from 'configs'
+import { useCodingCamp } from './useCodingCamp'
 
-const dummyProjects: ProjectData[] = [
-  {
-    name: 'Sentre',
-    logo: 'https://raw.githubusercontent.com/DescartesNetwork/sen-static/master/square-logo.png',
-    cover:
-      'https://academy.sentre.io/content/images/size/w2000/2022/10/Sentre-v4.0-is-Live_final2.png',
-    author: 'Sentre Protocol',
-    description:
-      'The DApp Store For All Things Solana. Explore & install DApps on Senhub, build on Sentre, and send your project to the moon with Sen Suite.',
-    metadata: {
-      website: 'https://sentre.io',
-      twitter: 'https://twitter.com/SentreProtocol',
-      discord: 'https://discord.com/invite/VD7UBAp2HN',
-      github: 'https://github.com/DescartesNetwork',
-    },
-    submittedAt: Date.now(),
-    category: 'Defi',
-  },
-  {
-    name: 'Saros',
-    logo: 'https://pbs.twimg.com/profile_images/1556909169445220353/ln2Suf5b_400x400.jpg',
-    cover:
-      'https://pbs.twimg.com/profile_banners/1304982931476066304/1660031049/1500x500',
-    author: 'Coin98',
-    description: 'A DeFi Super-Network Built on S◎lana.',
-    metadata: {
-      website: 'https://saros.finance/',
-      twitter: 'https://twitter.com/Saros_Finance',
-      discord: 'http://saros.link/discord',
-    },
-    submittedAt: Date.now(),
-    category: 'Defi',
-  },
-]
+const {
+  voting: { campaign },
+} = configs
+
+const campaignId = encode(uid(campaign))
 
 export const useProjects = (): ProjectData[] => {
   const projects = useSelector((state: AppState) => state.projects)
-  return [...Object.values(projects), ...dummyProjects]
+  return Object.values(projects)
+}
+
+export const useProjectsSelector = (ids: string[]): ProjectData[] => {
+  const projects = useSelector((state: AppState) => {
+    const projectIds = Object.keys(state.projects)
+    return projectIds
+      .filter((projectId) => ids.includes(projectId))
+      .map((projectId) => state.projects[projectId])
+  })
+  return projects
 }
 
 export const useShuffledProjects = (): ProjectData[] => {
   const projects = useProjects()
   return shuffle(projects)
+}
+
+export const useRankingProjects = (
+  topNumber: number = 5,
+): { ranking: string[]; stat: Record<string, number> } => {
+  const [stat, setStat] = useState<Record<string, number>>({})
+  const codingcamp = useCodingCamp()
+
+  const fetchAllAccounts = useCallback(async () => {
+    const stat: Record<string, number> = {}
+    const data = await codingcamp.program.account.ballot.all([
+      {
+        memcmp: {
+          offset: 8 + 32,
+          bytes: campaignId,
+        },
+      },
+    ])
+    data.forEach(({ account: { project } }) => {
+      if (!stat[encode(project)]) stat[encode(project)] = 0
+      stat[encode(project)]++
+    })
+    return setStat(stat)
+  }, [codingcamp])
+
+  useEffect(() => {
+    fetchAllAccounts()
+  }, [fetchAllAccounts])
+
+  const ranking = useMemo(() => {
+    const temp: string[] = []
+    const getLowest = (ids: string[]) => {
+      let lowest = 0
+      ids.forEach((id, i) => {
+        if (stat[id] < stat[ids[lowest]]) return (lowest = i)
+      })
+      return { id: ids[lowest], index: lowest }
+    }
+    Object.keys(stat).forEach((id) => {
+      if (temp.length < topNumber) return temp.push(id)
+      const { id: lowestId, index: lowestIndex } = getLowest(temp)
+      if (stat[lowestId] < stat[id]) return (temp[lowestIndex] = id)
+    })
+    return temp.sort((prevId, nextId) => stat[nextId] - stat[prevId])
+  }, [stat, topNumber])
+
+  return { ranking, stat }
 }

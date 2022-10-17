@@ -14,7 +14,7 @@ const configs: Record<Env, Config> = {
    * Development configurations
    */
   development: {
-    cluster: 'https://api.devnet.solana.com',
+    cluster: 'https://devnet.genesysgo.net',
     campaign: 'Vietnam Solana Coding Camp - Season 2',
   },
 
