@@ -54,15 +54,6 @@ const Container = ({
         <Navigation onChange={onChange} />
       </Col>
       <Col>
-        <WalletMultiButton
-          style={{
-            backgroundColor: '#14f195',
-            borderRadius: 24,
-            color: '#000000',
-          }}
-        />
-      </Col>
-      <Col>
         <Segmented
           value={language}
           className="switch-language"
@@ -70,6 +61,15 @@ const Container = ({
           onChange={(language) => {
             onChange()
             dispath(setLanguage(language as LanguageType))
+          }}
+        />
+      </Col>
+      <Col>
+        <WalletMultiButton
+          style={{
+            backgroundColor: '#14f195',
+            borderRadius: 24,
+            color: '#000000',
           }}
         />
       </Col>
