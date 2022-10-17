@@ -10,7 +10,7 @@ export const vnLanguage = {
     },
     {
       label: 'Bài viết',
-      key: '/blog',
+      key: '/blogs',
     },
     {
       label: 'Dự án',
@@ -84,7 +84,7 @@ export const vnLanguage = {
         'Sentre Protocol là một DApp Store cho mọi DApp trên hệ sinh thái Solana, nơi người dùng có thể cài đặt và sử dụng các DApp yêu thích của mình trên một nền tảng duy nhất.',
       c98: 'Coin98 là siêu ứng dụng tiền điện tử, được thiết kế để kết nối hàng tỷ người dùng với thế giới tiền điện tử một cách an toàn, bảo mật.',
       dao: 'Superteam Vietnam là cộng đồng dành riêng cho các builder trên hệ sinh thái Solana tại Việt Nam, chịu trách nhiệm cung cấp nguồn tài trợ, tiền thưởng, cơ hội nghề nghiệp và hơn thế nữa.',
-      jh: 'Nền tảng tuyển dụng và tìm việc bằng công nghệ AI số 1 Việt Nam',
+      jh: 'Nền tảng tuyển dụng và tìm việc bằng công nghệ AI số 1 Việt Nam.',
     },
     agenda: 'Thông tin chương trình',
     faq: {

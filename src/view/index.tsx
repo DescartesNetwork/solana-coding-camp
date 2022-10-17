@@ -11,6 +11,8 @@ import About from './about'
 import Project from './project'
 import SocialFixed from './socialFixed'
 import Watcher from './watcher'
+import Blogs from './blogs'
+import BlogDetails from './blogs/details'
 
 import { useGap } from 'hooks/useUI'
 
@@ -41,6 +43,8 @@ const View = () => {
             <Route exact path="/home" component={Home} />
             <Route exact path="/about" component={About} />
             <Route exact path="/project" component={Project} />
+            <Route exact path="/blogs" component={Blogs} />
+            <Route exact path="/blogs/:blogId" component={BlogDetails} />
             <Route path="*">
               <Redirect to="/home" />
             </Route>
