@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { AppState } from 'store'
 import { Route, Switch, Redirect } from 'react-router-dom'
 
@@ -14,6 +14,8 @@ import SocialFixed from './socialFixed'
 import Watcher from './watcher'
 
 import { useGap } from 'hooks/useUI'
+import { getProjects } from 'store/projects.reducer'
+import { AppDispatch } from 'store'
 
 import '@solana/wallet-adapter-react-ui/styles.css'
 import 'swiper/css/bundle'
@@ -21,15 +23,18 @@ import 'static/styles/theme.less'
 import './index.less'
 
 const View = () => {
+  const dispath = useDispatch<AppDispatch>()
   const gap = useGap()
   const language = useSelector((state: AppState) => state.languages.language)
 
   useEffect(() => {
     const rootElm = document.getElementById('root')
-    if (!rootElm) return
-
-    rootElm.setAttribute('class', language)
+    if (rootElm) rootElm.setAttribute('class', language)
   }, [language])
+
+  useEffect(() => {
+    dispath(getProjects())
+  }, [dispath])
 
   return (
     <Layout style={{ background: 'transparent', overflow: 'hidden' }}>

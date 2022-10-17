@@ -1,10 +1,11 @@
-import { useCallback, useMemo } from 'react'
+import { MouseEvent, useCallback, useMemo } from 'react'
 import { useHistory } from 'react-router-dom'
 
-import { Avatar, Card, Col, Row, Space, Tag, Typography } from 'antd'
+import { Avatar, Card, Col, Row, Space, Typography } from 'antd'
 import IonIcon from '@sentre/antd-ionicon'
 import ProjectSocial from './projectSocial'
 import Upvote from './upvote'
+import Chip from 'components/chip'
 
 import { useWidth } from 'hooks/useUI'
 import { ProjectData, Social } from 'store/projects.reducer'
@@ -25,9 +26,13 @@ const ProjectCard = ({
     [metadata],
   )
 
-  const onDetails = useCallback(() => {
-    return history.push(`/project/${name}`)
-  }, [history, name])
+  const onDetails = useCallback(
+    (e: MouseEvent<HTMLElement>) => {
+      e.stopPropagation()
+      return history.push(`/project/${name}`)
+    },
+    [history, name],
+  )
 
   return (
     <Card style={{ cursor: 'pointer' }} bordered={false} onClick={onDetails}>
@@ -44,7 +49,7 @@ const ProjectCard = ({
                 <Col span={24}>
                   <Space size={12}>
                     <Typography.Title level={4}>{name}</Typography.Title>
-                    <Tag color="#000000">{category}</Tag>
+                    <Chip title={category} />
                   </Space>
                 </Col>
                 <Col span={24}>

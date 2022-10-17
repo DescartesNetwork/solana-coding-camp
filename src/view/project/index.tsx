@@ -1,6 +1,3 @@
-import { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
-
 import { Col, Row } from 'antd'
 import MaxWidthLayout from 'components/maxWidthLayout'
 import Banner from './banner'
@@ -10,18 +7,11 @@ import Category from './category'
 
 import { useGap } from 'hooks/useUI'
 import { useProjects, useShuffledProjects } from 'hooks/useProjects'
-import { AppDispatch } from 'store'
-import { getProjects } from 'store/projects.reducer'
 
 const Project = () => {
-  const dispath = useDispatch<AppDispatch>()
   const gap = useGap()
   const projects = useProjects()
   const shuffledProjects = useShuffledProjects()
-
-  useEffect(() => {
-    dispath(getProjects())
-  }, [dispath])
 
   return (
     <MaxWidthLayout className="banner-gradient-bg">

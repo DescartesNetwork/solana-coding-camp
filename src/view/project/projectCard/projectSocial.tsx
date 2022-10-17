@@ -1,8 +1,9 @@
-import { useCallback } from 'react'
+import { MouseEvent, useCallback, useMemo } from 'react'
 
 import { Button } from 'antd'
 import IonIcon from '@sentre/antd-ionicon'
 import { Social } from 'store/projects.reducer'
+import { capitalize } from 'helpers/util'
 
 export const SocialLogo = ({ type }: { type: Social | string }) => {
   switch (type) {
@@ -26,12 +27,22 @@ export const SocialLogo = ({ type }: { type: Social | string }) => {
 export type ProjectSocialProps = {
   type: Social
   url: string
+  lengthy?: boolean
 }
 
-const ProjectSocial = ({ type, url }: ProjectSocialProps) => {
-  const onClick = useCallback(() => {
-    return window.open(url, '_blank')
-  }, [url])
+const ProjectSocial = ({ type, url, lengthy = false }: ProjectSocialProps) => {
+  const onClick = useCallback(
+    (e: MouseEvent<HTMLElement>) => {
+      e.stopPropagation()
+      return window.open(url, '_blank')
+    },
+    [url],
+  )
+
+  const title = useMemo(() => {
+    if (!lengthy) return undefined
+    return capitalize(type)
+  }, [lengthy, type])
 
   return (
     <Button
@@ -40,7 +51,9 @@ const ProjectSocial = ({ type, url }: ProjectSocialProps) => {
       icon={<SocialLogo type={type} />}
       onClick={onClick}
       disabled={!url}
-    />
+    >
+      {title}
+    </Button>
   )
 }
 
