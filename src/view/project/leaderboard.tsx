@@ -75,10 +75,14 @@ const Leaderboard = () => {
       </Col>
       <Col span={24}>
         <Card bordered={false}>
-          <Row gutter={[24, 24]} justify="center">
+          <Row gutter={[24, 24]}>
             {!projects.length && (
-              <Col>
-                <Empty />
+              <Col span={24}>
+                <Row gutter={[24, 24]} justify="center">
+                  <Col>
+                    <Empty />
+                  </Col>
+                </Row>
               </Col>
             )}
             {projects.map((data, i) => (
