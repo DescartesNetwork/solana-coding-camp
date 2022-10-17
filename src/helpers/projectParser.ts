@@ -1,6 +1,7 @@
 export const normalizeProjectData = (projects: any[]) => {
   return projects.map(
     ({ answers, submitted_at }: { answers: any[]; submitted_at: string }) => {
+      console.log(answers)
       return {
         name: parseName(answers),
         logo: parseLogo(answers),
@@ -24,7 +25,7 @@ export const normalizeProjectData = (projects: any[]) => {
 
 export const parseName = (answers: any[]) => {
   try {
-    return answers[1].text
+    return answers.find(({ field: { id } }) => id === '9qngNlGI20QK').text
   } catch (er) {
     return 'Unknown'
   }
@@ -32,7 +33,12 @@ export const parseName = (answers: any[]) => {
 
 export const parseLogo = (answers: any[]) => {
   try {
-    return answers[0].text
+    const raw = answers.find(
+      ({ field: { id } }) => id === 'riiipCNxEWn3',
+    ).file_url
+    return `https://stat.sentre.io/codingcamp/get-typeform-file?url=${encodeURIComponent(
+      raw,
+    )}`
   } catch (er) {
     return ''
   }
@@ -40,7 +46,12 @@ export const parseLogo = (answers: any[]) => {
 
 export const parseCover = (answers: any[]) => {
   try {
-    return answers[0].text
+    const raw = answers.find(
+      ({ field: { id } }) => id === '09Ll2C44rG5c',
+    ).file_url
+    return `https://stat.sentre.io/codingcamp/get-typeform-file?url=${encodeURIComponent(
+      raw,
+    )}`
   } catch (er) {
     return ''
   }
@@ -48,7 +59,7 @@ export const parseCover = (answers: any[]) => {
 
 export const parseDescription = (answers: any[]) => {
   try {
-    return answers[7].text
+    return answers.find(({ field: { id } }) => id === 'YB53ek6eWawf').text
   } catch (er) {
     return ''
   }
@@ -56,7 +67,7 @@ export const parseDescription = (answers: any[]) => {
 
 export const parseAuthor = (answers: any[]) => {
   try {
-    return answers[3].text
+    return answers.find(({ field: { id } }) => id === 'Aj9TpBDtBLMc').text
   } catch (er) {
     return ''
   }
@@ -64,7 +75,7 @@ export const parseAuthor = (answers: any[]) => {
 
 export const parseEmail = (answers: any[]) => {
   try {
-    return answers[4].email
+    return answers.find(({ field: { id } }) => id === 'XEXux0lJXrSM').email
   } catch (er) {
     return ''
   }
@@ -72,7 +83,7 @@ export const parseEmail = (answers: any[]) => {
 
 export const parseTwitter = (answers: any[]) => {
   try {
-    return answers[0].text
+    return answers.find(({ field: { id } }) => id === '').text
   } catch (er) {
     return ''
   }
@@ -80,7 +91,7 @@ export const parseTwitter = (answers: any[]) => {
 
 export const parseDiscord = (answers: any[]) => {
   try {
-    return answers[0].text
+    return answers.find(({ field: { id } }) => id === '').text
   } catch (er) {
     return ''
   }
@@ -88,7 +99,7 @@ export const parseDiscord = (answers: any[]) => {
 
 export const parseWebsite = (answers: any[]) => {
   try {
-    return answers[10].url
+    return answers.find(({ field: { id } }) => id === 'tzggYSosiMkn').url
   } catch (er) {
     return ''
   }
@@ -96,7 +107,7 @@ export const parseWebsite = (answers: any[]) => {
 
 export const parseGithub = (answers: any[]) => {
   try {
-    return answers[9].url
+    return answers.find(({ field: { id } }) => id === 'fDvZBe1iCyXs').url
   } catch (er) {
     return ''
   }
@@ -104,7 +115,9 @@ export const parseGithub = (answers: any[]) => {
 
 export const parseTelegram = (answers: any[]) => {
   try {
-    return answers[5].text
+    return answers.find(
+      ({ field: { id } }) => id === '' || id === 'KCghcFynydCN',
+    ).url
   } catch (er) {
     return ''
   }
@@ -112,7 +125,7 @@ export const parseTelegram = (answers: any[]) => {
 
 export const parseFacebook = (answers: any[]) => {
   try {
-    return answers[0].text
+    return answers.find(({ field: { id } }) => id === '').url
   } catch (er) {
     return ''
   }
@@ -120,7 +133,15 @@ export const parseFacebook = (answers: any[]) => {
 
 export const parseCategory = (answers: any[]) => {
   try {
-    return answers[6].text
+    return answers.find(({ field: { id } }) => id === 'y5EjfhWSiQPn').text
+  } catch (er) {
+    return ''
+  }
+}
+
+export const parseRepresentation = (answers: any[]) => {
+  try {
+    return answers.find(({ field: { id } }) => id === 'U4Xk0dI13CqW').url
   } catch (er) {
     return ''
   }

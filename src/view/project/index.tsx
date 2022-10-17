@@ -24,11 +24,12 @@ const Project = () => {
 
   return (
     <MaxWidthLayout className="banner-gradient-bg">
-      <Row gutter={[36, 24]}>
-        <Col span={24} style={{ height: gap }} />
+      <Row gutter={[24, 24]}>
+        <Col span={24} style={{ height: gap / 2 }} />
         <Col span={24}>
           <Banner />
         </Col>
+        <Col span={24} />
         <Col
           xs={{ order: 2, span: 24 }}
           lg={{ order: 1, span: 16 }}
