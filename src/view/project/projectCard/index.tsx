@@ -1,4 +1,5 @@
 import { useCallback, useMemo } from 'react'
+import { useHistory } from 'react-router-dom'
 
 import { Avatar, Card, Col, Row, Space, Tag, Typography } from 'antd'
 import IonIcon from '@sentre/antd-ionicon'
@@ -16,6 +17,7 @@ const ProjectCard = ({
   data: { name, logo, description, author, category, metadata },
 }: ProjectCardProps) => {
   const width = useWidth()
+  const history = useHistory()
 
   const isMobile = useMemo(() => width < 576, [width])
   const socials = useMemo(
@@ -24,8 +26,8 @@ const ProjectCard = ({
   )
 
   const onDetails = useCallback(() => {
-    console.log(name)
-  }, [name])
+    return history.push(`/project/${name}`)
+  }, [history, name])
 
   return (
     <Card style={{ cursor: 'pointer' }} bordered={false} onClick={onDetails}>

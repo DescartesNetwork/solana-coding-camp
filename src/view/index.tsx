@@ -9,6 +9,7 @@ import Footer from './footer'
 import Home from './home'
 import About from './about'
 import Project from './project'
+import ProjectDetails from './project/details'
 import SocialFixed from './socialFixed'
 import Watcher from './watcher'
 
@@ -41,6 +42,11 @@ const View = () => {
             <Route exact path="/home" component={Home} />
             <Route exact path="/about" component={About} />
             <Route exact path="/project" component={Project} />
+            <Route
+              exact
+              path="/project/:projectName"
+              component={ProjectDetails}
+            />
             <Route path="*">
               <Redirect to="/home" />
             </Route>

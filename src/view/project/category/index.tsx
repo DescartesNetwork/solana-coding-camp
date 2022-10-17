@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useCallback, useMemo } from 'react'
 import { encode } from 'bs58'
 
 import { uid } from '@sentre/codingcamp'
@@ -8,11 +8,12 @@ import { useProjects } from 'hooks/useProjects'
 import IonIcon from '@sentre/antd-ionicon'
 import { useSelector } from 'react-redux'
 import { AppState } from 'store'
+import { useHistory } from 'react-router-dom'
 
 type SectionProps = {
   title: string
   projectIds: string[]
-  onClick?: (id: string) => void
+  onClick?: (name: string) => void
 }
 
 const Section = ({ title, projectIds, onClick = () => {} }: SectionProps) => {
@@ -29,9 +30,13 @@ const Section = ({ title, projectIds, onClick = () => {} }: SectionProps) => {
         </Space>
       </Col>
       {projectIds.map((id) => (
-        <Col key={id} style={{ cursor: 'pointer' }} onClick={() => onClick(id)}>
+        <Col
+          key={id}
+          style={{ cursor: 'pointer' }}
+          onClick={() => onClick(projects[id].name)}
+        >
           <Space direction="vertical" align="center">
-            <Avatar size={48} shape="square" src={projects[id]?.logo || ''}>
+            <Avatar size={48} shape="square" src={projects[id].logo}>
               <IonIcon name="image-outline" />
             </Avatar>
             <Typography.Paragraph
@@ -39,7 +44,7 @@ const Section = ({ title, projectIds, onClick = () => {} }: SectionProps) => {
               style={{ width: 48, textAlign: 'center' }}
               ellipsis
             >
-              {projects[id]?.name || ''}
+              {projects[id].name}
             </Typography.Paragraph>
           </Space>
         </Col>
@@ -50,6 +55,7 @@ const Section = ({ title, projectIds, onClick = () => {} }: SectionProps) => {
 
 const Category = () => {
   const projects = useProjects()
+  const history = useHistory()
 
   const list = useMemo(() => {
     const temp: Record<string, string[]> = {}
@@ -60,6 +66,13 @@ const Category = () => {
     return temp
   }, [projects])
 
+  const onDetails = useCallback(
+    (id) => {
+      return history.push(`/project/${id}`)
+    },
+    [history],
+  )
+
   return (
     <Row gutter={[24, 24]}>
       <Col span={24}>
@@ -67,7 +80,7 @@ const Category = () => {
       </Col>
       {Object.keys(list).map((title) => (
         <Col key={title} span={24}>
-          <Section title={title} projectIds={list[title]} />
+          <Section title={title} projectIds={list[title]} onClick={onDetails} />
         </Col>
       ))}
     </Row>

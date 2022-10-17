@@ -6,12 +6,12 @@ import MaxWidthLayout from 'components/maxWidthLayout'
 import Banner from './banner'
 import Projects from './projects'
 import Leaderboard from './leaderboard'
+import Category from './category'
 
 import { useGap } from 'hooks/useUI'
 import { useProjects, useShuffledProjects } from 'hooks/useProjects'
 import { AppDispatch } from 'store'
 import { getProjects } from 'store/projects.reducer'
-import Category from './category'
 
 const Project = () => {
   const dispath = useDispatch<AppDispatch>()
