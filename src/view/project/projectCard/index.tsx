@@ -9,6 +9,7 @@ import Chip from 'components/chip'
 
 import { useWidth } from 'hooks/useUI'
 import { ProjectData, Social } from 'store/projects.reducer'
+import useLanguages from 'hooks/useLanguages'
 
 export type ProjectCardProps = {
   data: ProjectData
@@ -19,6 +20,7 @@ const ProjectCard = ({
 }: ProjectCardProps) => {
   const width = useWidth()
   const history = useHistory()
+  const { project } = useLanguages()
 
   const isMobile = useMemo(() => width < 576, [width])
   const socials = useMemo(
@@ -54,7 +56,9 @@ const ProjectCard = ({
                 </Col>
                 <Col span={24}>
                   <Space>
-                    <Typography.Text type="secondary">By</Typography.Text>
+                    <Typography.Text type="secondary">
+                      {project.by}
+                    </Typography.Text>
                     <Typography.Text type="success">{author}</Typography.Text>
                   </Space>
                 </Col>

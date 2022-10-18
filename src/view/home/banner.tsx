@@ -1,22 +1,16 @@
-import { useHistory } from 'react-router-dom'
-
-import { Button, Col, Row, Space, Typography } from 'antd'
+import { Col, Row, Space, Typography } from 'antd'
 import MaxWidthLayout from 'components/maxWidthLayout'
+import RegisterNow from 'components/registerNow'
+import ViewAgenda from 'components/viewAgenda'
 
-import configs from 'configs'
-import { AGENDA_ID } from 'view/about/agenda'
 import { useWidth } from 'hooks/useUI'
 import useLanguages from 'hooks/useLanguages'
+import { BTN_REGISTER_ID } from 'constant'
 
 import Map from 'static/images/extra/map-svg'
 
-const {
-  typeform: { registration },
-} = configs
-
 const Banner = () => {
-  const { banner, CTA } = useLanguages()
-  const history = useHistory()
+  const { banner } = useLanguages()
   const width = useWidth()
   const isMobile = width < 1200
   const marginTop = isMobile ? -280 : undefined
@@ -41,20 +35,9 @@ const Banner = () => {
             <Typography.Text style={{ fontSize: 20 }}>
               {banner.subtitle}
             </Typography.Text>
-            <Space>
-              <Button
-                size="large"
-                type="primary"
-                onClick={() => history.push(`/about/#${registration}`)}
-              >
-                {CTA.register}
-              </Button>
-              <Button
-                size="large"
-                onClick={() => history.push(`/about/#${AGENDA_ID}`)}
-              >
-                {CTA.curriculum}
-              </Button>
+            <Space className="wrap-cta-btn">
+              <RegisterNow id={BTN_REGISTER_ID} />
+              <ViewAgenda />
             </Space>
           </Space>
         </Col>

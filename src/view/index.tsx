@@ -23,6 +23,7 @@ import '@solana/wallet-adapter-react-ui/styles.css'
 import 'swiper/css/bundle'
 import 'static/styles/theme.less'
 import './index.less'
+import RegisterNow from 'components/registerNow'
 
 const View = () => {
   const dispath = useDispatch<AppDispatch>()
@@ -40,7 +41,7 @@ const View = () => {
 
   return (
     <Layout style={{ background: 'transparent', overflow: 'hidden' }}>
-      <Row gutter={[24, 24]}>
+      <Row gutter={[24, 24]} className="codingcamp-container">
         <Col span={24}>
           <Header />
         </Col>
@@ -66,6 +67,7 @@ const View = () => {
         </Col>
       </Row>
       <SocialFixed />
+      <RegisterNow fixed />
       <Watcher />
     </Layout>
   )

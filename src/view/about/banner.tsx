@@ -1,6 +1,9 @@
-import { Col, Image, Row, Typography } from 'antd'
+import { Col, Image, Row, Space, Typography } from 'antd'
 import MaxWidthLayout from 'components/maxWidthLayout'
+import RegisterNow from 'components/registerNow'
+import ViewAgenda from 'components/viewAgenda'
 
+import { BTN_REGISTER_ID } from 'constant'
 import useLanguages from 'hooks/useLanguages'
 import { useWidth } from 'hooks/useUI'
 
@@ -21,13 +24,19 @@ const Banner = () => {
           xl={{ order: 2, span: 13 }}
           style={{ paddingTop }}
         >
-          <Typography.Title
-            className="text-gradient"
-            level={1}
-            style={{ fontSize: 96 }}
-          >
-            {system.about.title}
-          </Typography.Title>
+          <Space direction="vertical" size={32}>
+            <Typography.Title
+              className="text-gradient"
+              level={1}
+              style={{ fontSize: 96 }}
+            >
+              {system.about.title}
+            </Typography.Title>
+            <Space className="wrap-cta-btn">
+              <RegisterNow id={BTN_REGISTER_ID} />
+              <ViewAgenda />
+            </Space>
+          </Space>
         </Col>
         <Col
           xs={{ order: 1, span: 24 }}
