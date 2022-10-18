@@ -59,3 +59,5 @@ export enum TabsKey {
   WhoCanJoin = 'who-can-join',
   HowToJoin = 'how-to-join',
 }
+
+export const BTN_REGISTER_ID = 'btn_register_id'

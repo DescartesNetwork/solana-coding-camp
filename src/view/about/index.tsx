@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 
 import { Col, Row } from 'antd'
 import Banner from './banner'
@@ -13,13 +14,13 @@ import './index.less'
 
 const About = () => {
   const gap = useGap()
+  const { hash } = useLocation()
 
   useEffect(() => {
-    const hashId = window.location.hash
-    if (!hashId) return
-    const elm = document.querySelector(hashId)
+    if (!hash) return
+    const elm = document.querySelector(hash)
     elm?.scrollIntoView({ behavior: 'smooth' })
-  }, [])
+  }, [hash])
 
   return (
     <Row gutter={[0, gap]}>

@@ -1,0 +1,55 @@
+.btn-register {
+  transition: all 0.3s linear;
+  &.btn-fixed {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  &.fadeout-cln {
+    animation: fadeOutAni 0.3s forwards;
+  }
+  &.fadein-cln {
+    animation: staticFadeIn 0.5s forwards;
+  }
+}
+.codingcamp-container {
+  &:has(.btn-register.fadeout-cln) ~ .btn-register {
+    animation: fadeInAni 0.3s forwards;
+  }
+}
+
+@keyframes fadeOutAni {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+}
+
+@keyframes staticFadeIn {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  40% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInAni {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
