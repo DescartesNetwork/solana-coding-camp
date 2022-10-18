@@ -35,7 +35,7 @@ const Projects = ({ title, projects = [] }: ProjectsProps) => {
         <Col span={24}>
           <Row gutter={[24, 24]} justify="center">
             <Col>
-              <Empty />
+              <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} />
             </Col>
           </Row>
         </Col>

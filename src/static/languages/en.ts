@@ -107,6 +107,7 @@ export const enLanguage = {
     CTA: 'Submit Project',
     leaderboard: 'Leaderboard',
     search: 'Search',
+    results: 'Results',
     back: 'Back',
     showMore: 'Show More',
     latestProjects: 'Latest Projects',

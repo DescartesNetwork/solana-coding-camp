@@ -108,6 +108,7 @@ export const vnLanguage = {
     CTA: 'Nộp dự án',
     leaderboard: 'Dự án dẫn đầu',
     search: 'Tìm kiếm',
+    results: 'Kết quả',
     back: 'Trở lại',
     showMore: 'Thêm',
     latestProjects: 'Dự án mới nhất',
