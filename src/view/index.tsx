@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { AppState } from 'store'
 import { Route, Switch, Redirect } from 'react-router-dom'
 
@@ -9,12 +9,15 @@ import Footer from './footer'
 import Home from './home'
 import About from './about'
 import Project from './project'
+import ProjectDetails from './projectDetails'
 import SocialFixed from './socialFixed'
 import Watcher from './watcher'
 import Blogs from './blogs'
 import BlogDetails from './blogs/details'
 
 import { useGap } from 'hooks/useUI'
+import { getProjects } from 'store/projects.reducer'
+import { AppDispatch } from 'store'
 
 import '@solana/wallet-adapter-react-ui/styles.css'
 import 'swiper/css/bundle'
@@ -23,15 +26,18 @@ import './index.less'
 import RegisterNow from 'components/registerNow'
 
 const View = () => {
+  const dispath = useDispatch<AppDispatch>()
   const gap = useGap()
   const language = useSelector((state: AppState) => state.languages.language)
 
   useEffect(() => {
     const rootElm = document.getElementById('root')
-    if (!rootElm) return
-
-    rootElm.setAttribute('class', language)
+    if (rootElm) rootElm.setAttribute('class', language)
   }, [language])
+
+  useEffect(() => {
+    dispath(getProjects())
+  }, [dispath])
 
   return (
     <Layout style={{ background: 'transparent', overflow: 'hidden' }}>
@@ -44,6 +50,11 @@ const View = () => {
             <Route exact path="/home" component={Home} />
             <Route exact path="/about" component={About} />
             <Route exact path="/project" component={Project} />
+            <Route
+              exact
+              path="/project/:projectName"
+              component={ProjectDetails}
+            />
             <Route exact path="/blogs" component={Blogs} />
             <Route exact path="/blogs/:blogId" component={BlogDetails} />
             <Route path="*">

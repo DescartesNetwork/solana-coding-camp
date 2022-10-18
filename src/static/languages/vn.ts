@@ -108,10 +108,22 @@ export const vnLanguage = {
     registration: 'Đơn đăng ký',
   },
   project: {
-    title: 'Why build Web3 on Solana?',
-    description:
-      'Now web3 technology like open source protocols and decentralized blockchains give us the ability to take that co-creation to a new scale. The Blockchain Solana technology to fund and build digital public goods projects that serve everyone, and solve our most immediate problems.',
+    title: 'Tại sao Solana là lựa chọn tốt nhất cho Web3?',
+    subtitle:
+      'Ngày nay, công nghệ web3 như các giao thức mã nguồn mở và chuỗi khối phi tập trung cho phép chúng ta cùng nhau sáng tạo và phá vỡ các giới hạn. Công nghệ chuỗi khối Solana được đầu tư và xây dựng nhằm phục vụ tất cả mọi người, và giải quyết hầu hết các vấn đề cấp bách hiện nay.',
     CTA: 'Nộp dự án',
     leaderboard: 'Dự án dẫn đầu',
+    search: 'Tìm kiếm',
+    results: 'Kết quả',
+    back: 'Trở lại',
+    showMore: 'Thêm',
+    latestProjects: 'Dự án mới nhất',
+    explorer: 'Khám phá',
+    allProjects: 'Tất cả dự án',
+    upvote: 'BỎ PHIẾU',
+    cancel: 'HUỶ PHIẾU',
+    share: 'Chia sẻ',
+    by: 'Bởi',
+    description: 'Giới thiệu',
   },
 }
