@@ -6,7 +6,7 @@
     "@reduxjs/toolkit": "^1.6.2",
     "@sentre/antd-iconsax": "^2.0.0",
     "@sentre/antd-ionicon": "^2.0.2",
-    "@sentre/codingcamp": "^1.0.2",
+    "@sentre/codingcamp": "^1.0.3",
     "@solana/wallet-adapter-react": "^0.15.20",
     "@solana/wallet-adapter-react-ui": "^0.9.18",
     "@solana/wallet-adapter-wallets": "^0.19.1",

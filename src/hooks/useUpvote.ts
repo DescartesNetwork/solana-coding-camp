@@ -4,6 +4,8 @@ import { uid } from '@sentre/codingcamp'
 
 import configs from 'configs'
 import { useCodingCamp } from './useCodingCamp'
+import { useBallots, useMyBallots } from './useBallots'
+import { useWallet } from '@solana/wallet-adapter-react'
 
 const {
   voting: { campaign },
@@ -31,58 +33,32 @@ export const useDownvote = (projectName: string) => {
 
 export const useVoted = (projectName: string) => {
   const [voted, setVoted] = useState(false)
-  const [refreshing, setRefreshing] = useState(false)
-  const codingcamp = useCodingCamp()
+  const { publicKey } = useWallet()
+  const myBallots = useMyBallots(publicKey?.toBase58() || '')
 
   useEffect(() => {
-    ;(async () => {
-      try {
-        const ballotAddress = await codingcamp.deriveBallotAddress(
-          campaign,
-          projectName,
-        )
-        const data = await codingcamp.getBallotData(ballotAddress)
-        if (data) return setVoted(true)
-        throw new Error('Not voted yet')
-      } catch (er) {
-        return setVoted(false)
-      } finally {
-        if (refreshing) return setRefreshing(false)
-      }
-    })()
-  }, [codingcamp, projectName, refreshing])
+    const projectId = getProjectId(projectName)
+    for (const { project } of myBallots) {
+      if (project === projectId) return setVoted(true)
+    }
+    return setVoted(false)
+  }, [projectName, myBallots])
 
-  const refresh = useCallback(() => {
-    if (!refreshing) return setRefreshing(true)
-  }, [refreshing])
-
-  return { voted, refresh }
+  return voted
 }
 
 export const useUpvoters = (projectName: string) => {
   const [voters, setVoters] = useState(0)
-  const [refreshing, setRefreshing] = useState(false)
-  const codingcamp = useCodingCamp()
+  const ballots = useBallots()
 
   useEffect(() => {
-    ;(async () => {
-      try {
-        const data = await codingcamp.getTotalVotersForProject(
-          campaign,
-          projectName,
-        )
-        return setVoters(data)
-      } catch (er) {
-        return setVoters(0)
-      } finally {
-        if (refreshing) return setRefreshing(false)
-      }
-    })()
-  }, [codingcamp, projectName, refreshing])
+    const projectId = getProjectId(projectName)
+    let voters = 0
+    ballots.forEach(({ project }) => {
+      if (project === projectId) voters = voters + 1
+    })
+    return setVoters(voters)
+  }, [projectName, ballots])
 
-  const refresh = useCallback(() => {
-    if (!refreshing) return setRefreshing(true)
-  }, [refreshing, setRefreshing])
-
-  return { voters, refresh }
+  return voters
 }

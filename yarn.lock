@@ -2285,10 +2285,10 @@
   dependencies:
     react-helmet "^6.1.0"
 
-"@sentre/codingcamp@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@sentre/codingcamp/-/codingcamp-1.0.2.tgz#97a532c3b8c17c345bd29a2a817598a36ea774c4"
-  integrity sha512-1rZljl2GrgiU2R1CCuemZAhB3CdF3Ndgdli1M5Zs93bhtZ8sqFvaPVZ4dIaDWaOBGjM3qDc4meOOOVGCo9bryg==
+"@sentre/codingcamp@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@sentre/codingcamp/-/codingcamp-1.0.3.tgz#8e89be80735aa19c552f68a5c6eebbecd27bbf47"
+  integrity sha512-4rblkFUSBme3g1UQ9q9tcgD4hMCchn2OUlEB40ivuzZwM8nkyHnVxzERmmqrRssS+YHEoqb6TLfutdfC+eUXhg==
   dependencies:
     "@project-serum/anchor" "^0.24.2"
     bs58 "^5.0.0"

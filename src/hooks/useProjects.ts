@@ -1,19 +1,9 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { uid } from '@sentre/codingcamp'
-import { encode } from 'bs58'
 
 import { shuffle } from 'helpers/util'
 import { AppState } from 'store'
 import { ProjectData } from 'store/projects.reducer'
-import configs from 'configs'
-import { useCodingCamp } from './useCodingCamp'
-
-const {
-  voting: { campaign },
-} = configs
-
-const campaignId = encode(uid(campaign))
 
 export const useProjects = (): ProjectData[] => {
   const projects = useSelector((state: AppState) => state.projects)
@@ -39,24 +29,16 @@ export const useRankingProjects = (
   topNumber: number = 5,
 ): { ranking: string[]; stat: Record<string, number> } => {
   const [stat, setStat] = useState<Record<string, number>>({})
-  const codingcamp = useCodingCamp()
+  const ballots = useSelector((state: AppState) => state.ballots)
 
   const fetchAllAccounts = useCallback(async () => {
     const stat: Record<string, number> = {}
-    const data = await codingcamp.program.account.ballot.all([
-      {
-        memcmp: {
-          offset: 8 + 32,
-          bytes: campaignId,
-        },
-      },
-    ])
-    data.forEach(({ account: { project } }) => {
-      if (!stat[encode(project)]) stat[encode(project)] = 0
-      stat[encode(project)]++
+    Object.values(ballots).forEach(({ project }) => {
+      if (!stat[project]) stat[project] = 0
+      stat[project]++
     })
     return setStat(stat)
-  }, [codingcamp])
+  }, [ballots])
 
   useEffect(() => {
     fetchAllAccounts()

@@ -9,7 +9,7 @@ import Footer from './footer'
 import Home from './home'
 import About from './about'
 import Project from './project'
-import ProjectDetails from './project/details'
+import ProjectDetails from './projectDetails'
 import SocialFixed from './socialFixed'
 import Watcher from './watcher'
 

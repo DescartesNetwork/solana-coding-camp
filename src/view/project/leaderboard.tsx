@@ -13,7 +13,7 @@ import { AppState } from 'store'
 const LeaderCard = ({
   data: { name, logo, description },
 }: ProjectCardProps) => {
-  const { voters } = useUpvoters(name)
+  const voters = useUpvoters(name)
   const upvote = useUpvote(name)
 
   return (

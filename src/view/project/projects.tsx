@@ -4,6 +4,7 @@ import { Button, Col, Empty, Row, Typography } from 'antd'
 import ProjectCard from './projectCard'
 
 import { ProjectData } from 'store/projects.reducer'
+import useLanguages from 'hooks/useLanguages'
 
 const LIMIT = 5
 
@@ -14,6 +15,7 @@ export type ProjectsProps = {
 
 const Projects = ({ title, projects = [] }: ProjectsProps) => {
   const [limit, setLimit] = useState(LIMIT)
+  const { project } = useLanguages()
 
   const onMore = useCallback(() => {
     setLimit(limit + LIMIT)
@@ -44,7 +46,9 @@ const Projects = ({ title, projects = [] }: ProjectsProps) => {
         </Col>
       ))}
       <Col>
-        {limit < projects.length && <Button onClick={onMore}>Show More</Button>}
+        {limit < projects.length && (
+          <Button onClick={onMore}>{project.showMore}</Button>
+        )}
       </Col>
     </Row>
   )

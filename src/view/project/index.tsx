@@ -7,11 +7,13 @@ import Category from './category'
 
 import { useGap } from 'hooks/useUI'
 import { useProjects, useShuffledProjects } from 'hooks/useProjects'
+import useLanguages from 'hooks/useLanguages'
 
 const Project = () => {
   const gap = useGap()
   const projects = useProjects()
   const shuffledProjects = useShuffledProjects()
+  const { project } = useLanguages()
 
   return (
     <MaxWidthLayout className="banner-gradient-bg">
@@ -28,10 +30,10 @@ const Project = () => {
         >
           <Row gutter={[24, 24]}>
             <Col span={24}>
-              <Projects title="Latest Projects" projects={projects} />
+              <Projects title={project.latestProjects} projects={projects} />
             </Col>
             <Col span={24}>
-              <Projects title="Explorer" projects={shuffledProjects} />
+              <Projects title={project.explorer} projects={shuffledProjects} />
             </Col>
           </Row>
         </Col>

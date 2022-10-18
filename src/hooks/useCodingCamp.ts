@@ -1,10 +1,10 @@
+import { useMemo } from 'react'
 import { web3 } from '@project-serum/anchor'
 import CodingCamp, { AnchorWallet } from '@sentre/codingcamp'
 import { useWallet, useAnchorWallet } from '@solana/wallet-adapter-react'
 import { useWalletModal } from '@solana/wallet-adapter-react-ui'
 
 import configs from 'configs'
-import { useMemo } from 'react'
 
 const {
   voting: { cluster },
