@@ -32,7 +32,7 @@ const Banner = () => {
             >
               {system.about.title}
             </Typography.Title>
-            <Space className="wrap-cta-btn">
+            <Space>
               <RegisterNow id={BTN_REGISTER_ID} />
               <ViewAgenda />
             </Space>

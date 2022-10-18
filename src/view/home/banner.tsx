@@ -35,7 +35,7 @@ const Banner = () => {
             <Typography.Text style={{ fontSize: 20 }}>
               {banner.subtitle}
             </Typography.Text>
-            <Space className="wrap-cta-btn">
+            <Space>
               <RegisterNow id={BTN_REGISTER_ID} />
               <ViewAgenda />
             </Space>
