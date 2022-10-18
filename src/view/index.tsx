@@ -24,6 +24,7 @@ import 'swiper/css/bundle'
 import 'static/styles/theme.less'
 import './index.less'
 import RegisterNow from 'components/registerNow'
+import IonIcon from '@sentre/antd-ionicon'
 
 const View = () => {
   const dispath = useDispatch<AppDispatch>()
@@ -67,7 +68,7 @@ const View = () => {
         </Col>
       </Row>
       <SocialFixed />
-      <RegisterNow fixed />
+      <RegisterNow fixed icon={<IonIcon name="receipt" />} />
       <Watcher />
     </Layout>
   )

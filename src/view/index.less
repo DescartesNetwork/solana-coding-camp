@@ -266,33 +266,3 @@
   right: 0;
   z-index: 999;
 }
-
-// CTA button
-.wrap-cta-btn {
-  .ant-space-item {
-    transform: all 0.3s linear;
-    &:has(.btn-register.fadeout-cln) {
-      animation: visible 0.2s linear forwards;
-    }
-    &:has(.btn-register.fadein-cln) {
-      animation: inVisible 0.2s linear forwards;
-    }
-  }
-}
-
-@keyframes visible {
-  0% {
-    width: 100%;
-  }
-  100% {
-    width: 0;
-  }
-}
-@keyframes inVisible {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 100%;
-  }
-}
