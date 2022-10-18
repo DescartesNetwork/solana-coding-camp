@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useHistory, useLocation, useParams } from 'react-router-dom'
 import { uid } from '@sentre/codingcamp'
@@ -59,6 +59,10 @@ const ProjectDetails = () => {
     return history.goBack()
   }, [history, location])
 
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   if (!data)
     return (
       <Row gutter={[24, 24]} justify="center">
@@ -71,7 +75,6 @@ const ProjectDetails = () => {
   return (
     <MaxWidthLayout className="banner-gradient-bg">
       <Row gutter={[24, 24]} justify="center">
-        <Col span={24} style={{ height: gap / 2 }} />
         <Col span={24}>
           <Row gutter={[12, 12]}>
             <Col span={24}>
