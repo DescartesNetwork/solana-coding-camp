@@ -1,4 +1,5 @@
-import { Fragment, useMemo } from 'react'
+import { Fragment, MouseEvent, useCallback, useMemo } from 'react'
+import { useHistory } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
 import { Avatar, Card, Col, Divider, Empty, Row, Space, Typography } from 'antd'
@@ -6,18 +7,32 @@ import IonIcon from '@sentre/antd-ionicon'
 
 import { ProjectCardProps } from './projectCard'
 import { useRankingProjects } from 'hooks/useProjects'
-import { useUpvote, useUpvoters } from 'hooks/useUpvote'
+import { useUpvoters } from 'hooks/useUpvote'
 import useLanguages from 'hooks/useLanguages'
 import { AppState } from 'store'
 
 const LeaderCard = ({
   data: { name, logo, description },
 }: ProjectCardProps) => {
+  const history = useHistory()
   const voters = useUpvoters(name)
-  const upvote = useUpvote(name)
+
+  const onDetails = useCallback(
+    (e: MouseEvent<HTMLElement>) => {
+      e.stopPropagation()
+      return history.push(`/project/${name}`)
+    },
+    [history, name],
+  )
 
   return (
-    <Row gutter={[12, 12]} wrap={false} align="middle">
+    <Row
+      gutter={[12, 12]}
+      wrap={false}
+      align="middle"
+      style={{ cursor: 'pointer' }}
+      onClick={onDetails}
+    >
       <Col>
         <Avatar size={48} shape="square" src={logo} />
       </Col>
@@ -43,13 +58,7 @@ const LeaderCard = ({
         />
       </Col>
       <Col>
-        <Space
-          direction="vertical"
-          align="center"
-          size={4}
-          style={{ cursor: 'pointer' }}
-          onClick={upvote}
-        >
+        <Space direction="vertical" align="center" size={4}>
           <IonIcon name="caret-up-outline" />
           <Typography.Title level={5}>{voters}</Typography.Title>
         </Space>
