@@ -125,7 +125,7 @@ const ProjectDetails = () => {
             <Col span={24}>
               <Row gutter={[12, 12]}>
                 <Col span={24}>
-                  <Row gutter={[12, 12]} wrap={false} align="middle">
+                  <Row gutter={[12, 12]} align="middle">
                     <Col flex="auto">
                       <Typography.Title level={1}>
                         {projectName}
@@ -137,19 +137,17 @@ const ProjectDetails = () => {
                         <Typography.Text type="secondary">
                           {moment(data.submittedAt).format('MMM DD, YYYY')}
                         </Typography.Text>
+                        <Tooltip title="Copied" visible={copied}>
+                          <Button
+                            icon={<IonIcon name="share-social" />}
+                            style={{ color: '#14f195' }}
+                            type="text"
+                            onClick={onCopy}
+                          >
+                            Share
+                          </Button>
+                        </Tooltip>
                       </Space>
-                    </Col>
-                    <Col>
-                      <Tooltip title="Copied" visible={copied}>
-                        <Button
-                          icon={<IonIcon name="share-social" />}
-                          style={{ color: '#14f195' }}
-                          type="text"
-                          onClick={onCopy}
-                        >
-                          Share
-                        </Button>
-                      </Tooltip>
                     </Col>
                   </Row>
                 </Col>
@@ -167,7 +165,7 @@ const ProjectDetails = () => {
               </Row>
             </Col>
             <Col span={24}>
-              <Space style={{ marginLeft: -8 }} size={2}>
+              <Space style={{ marginLeft: -8 }} size={2} wrap={true}>
                 {socials.map((social) => (
                   <ProjectSocial
                     key={social}
