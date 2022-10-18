@@ -1,5 +1,6 @@
 import { Col, Image, Row, Typography } from 'antd'
 import { PopupButton } from '@typeform/embed-react'
+import Search from './search'
 
 import configs from 'configs'
 import useLanguages from 'hooks/useLanguages'
@@ -36,6 +37,9 @@ const Banner = () => {
                 {project.CTA}
               </Typography.Title>
             </PopupButton>
+          </Col>
+          <Col span={24}>
+            <Search />
           </Col>
         </Row>
       </Col>

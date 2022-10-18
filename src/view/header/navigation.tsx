@@ -42,7 +42,6 @@ const Navigation = ({ onChange = () => {} }: NavigationProps) => {
               return history.push(menu.key)
             }}
             style={{ ...activeStyle, fontSize: 16, fontWeight: 700 }}
-            disabled={menu.key === '/project'}
           >
             {menu.label}
           </Button>

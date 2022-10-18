@@ -1,32 +1,24 @@
-import { useCallback, useMemo } from 'react'
+import { MouseEvent, useCallback, useMemo } from 'react'
+import { useHistory } from 'react-router-dom'
 
 import { Avatar, Card, Col, Row, Space, Typography } from 'antd'
+import IonIcon from '@sentre/antd-ionicon'
 import ProjectSocial from './projectSocial'
 import Upvote from './upvote'
+import Chip from 'components/chip'
+
 import { useWidth } from 'hooks/useUI'
-import { Social } from 'store/projects.reducer'
-
-export type ProjectMetadata = Partial<
-  Record<Social, string> & Record<'others', string[]>
->
-
-export type ProjectData = {
-  name: string
-  logo: string
-  cover: string
-  description: string
-  author: string
-  metadata: ProjectMetadata
-}
+import { ProjectData, Social } from 'store/projects.reducer'
 
 export type ProjectCardProps = {
   data: ProjectData
 }
 
 const ProjectCard = ({
-  data: { name, logo, description, author, metadata },
+  data: { name, logo, description, author, category, metadata },
 }: ProjectCardProps) => {
   const width = useWidth()
+  const history = useHistory()
 
   const isMobile = useMemo(() => width < 576, [width])
   const socials = useMemo(
@@ -34,9 +26,13 @@ const ProjectCard = ({
     [metadata],
   )
 
-  const onDetails = useCallback(() => {
-    console.log(name)
-  }, [name])
+  const onDetails = useCallback(
+    (e: MouseEvent<HTMLElement>) => {
+      e.stopPropagation()
+      return history.push(`/project/${name}`)
+    },
+    [history, name],
+  )
 
   return (
     <Card style={{ cursor: 'pointer' }} bordered={false} onClick={onDetails}>
@@ -44,12 +40,17 @@ const ProjectCard = ({
         <Col flex="auto">
           <Row gutter={[24, 24]} wrap={false}>
             <Col>
-              <Avatar shape="square" src={logo} size={isMobile ? 64 : 128} />
+              <Avatar shape="square" src={logo} size={isMobile ? 64 : 128}>
+                <IonIcon name="image-outline" />
+              </Avatar>
             </Col>
             <Col flex="auto">
               <Row gutter={[8, 8]}>
                 <Col span={24}>
-                  <Typography.Title level={4}>{name}</Typography.Title>
+                  <Space size={12}>
+                    <Typography.Title level={4}>{name}</Typography.Title>
+                    <Chip title={category} />
+                  </Space>
                 </Col>
                 <Col span={24}>
                   <Space>
@@ -58,7 +59,7 @@ const ProjectCard = ({
                   </Space>
                 </Col>
                 <Col span={24}>
-                  <Space style={{ marginLeft: -8 }}>
+                  <Space style={{ marginLeft: -8 }} size={2}>
                     {socials.map((social) => (
                       <ProjectSocial
                         key={social}

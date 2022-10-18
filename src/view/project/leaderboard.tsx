@@ -1,17 +1,19 @@
-import { Fragment } from 'react'
+import { Fragment, useMemo } from 'react'
+import { useSelector } from 'react-redux'
 
-import { Avatar, Card, Col, Divider, Row, Space, Typography } from 'antd'
+import { Avatar, Card, Col, Divider, Empty, Row, Space, Typography } from 'antd'
 import IonIcon from '@sentre/antd-ionicon'
 
 import { ProjectCardProps } from './projectCard'
-import { useProjects } from 'hooks/useProjects'
+import { useRankingProjects } from 'hooks/useProjects'
 import { useUpvote, useUpvoters } from 'hooks/useUpvote'
 import useLanguages from 'hooks/useLanguages'
+import { AppState } from 'store'
 
 const LeaderCard = ({
   data: { name, logo, description },
 }: ProjectCardProps) => {
-  const { voters } = useUpvoters(name)
+  const voters = useUpvoters(name)
   const upvote = useUpvote(name)
 
   return (
@@ -57,17 +59,32 @@ const LeaderCard = ({
 }
 
 const Leaderboard = () => {
-  const projects = useProjects()
+  const allProjects = useSelector((state: AppState) => state.projects)
   const { project } = useLanguages()
+  const { ranking } = useRankingProjects(5)
+
+  const projects = useMemo(
+    () => ranking.map((id) => allProjects[id]).filter((project) => project),
+    [ranking, allProjects],
+  )
 
   return (
     <Row gutter={[24, 24]}>
-      <Col span={24} style={{ marginTop: 18 }}>
-        <Typography.Text>{project.leaderboard}</Typography.Text>
+      <Col span={24} style={{ marginTop: 12 }}>
+        <Typography.Title level={4}>{project.leaderboard}</Typography.Title>
       </Col>
       <Col span={24}>
         <Card bordered={false}>
           <Row gutter={[24, 24]}>
+            {!projects.length && (
+              <Col span={24}>
+                <Row gutter={[24, 24]} justify="center">
+                  <Col>
+                    <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} />
+                  </Col>
+                </Row>
+              </Col>
+            )}
             {projects.map((data, i) => (
               <Fragment key={data.name}>
                 <Col span={24}>

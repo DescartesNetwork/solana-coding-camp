@@ -5,8 +5,8 @@ import { Env } from './env'
  */
 
 type Config = {
-  registrants: string
-  projects: string
+  registrantsApi: string
+  projectsApi: string
 }
 
 const configs: Record<Env, Config> = {
@@ -14,24 +14,24 @@ const configs: Record<Env, Config> = {
    * Development configurations
    */
   development: {
-    registrants: 'https://stat.sentre.io/codingcamp/total-registers',
-    projects: 'https://stat.sentre.io/codingcamp/submission',
+    registrantsApi: 'https://stat.sentre.io/codingcamp/total-registers',
+    projectsApi: 'https://stat.sentre.io/codingcamp/submission',
   },
 
   /**
    * Staging configurations
    */
   staging: {
-    registrants: 'https://stat.sentre.io/codingcamp/total-registers',
-    projects: 'https://stat.sentre.io/codingcamp/submission',
+    registrantsApi: 'https://stat.sentre.io/codingcamp/total-registers',
+    projectsApi: 'https://stat.sentre.io/codingcamp/submission',
   },
 
   /**
    * Production configurations
    */
   production: {
-    registrants: 'https://stat.sentre.io/codingcamp/total-registers',
-    projects: 'https://stat.sentre.io/codingcamp/submission',
+    registrantsApi: 'https://stat.sentre.io/codingcamp/total-registers',
+    projectsApi: 'https://stat.sentre.io/codingcamp/submission',
   },
 }
 

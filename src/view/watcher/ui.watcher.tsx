@@ -2,10 +2,10 @@ import { Fragment, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 
 import { notification } from 'antd'
+import IonIcon from '@sentre/antd-ionicon'
 
 import { AppDispatch } from 'store'
 import { resize } from 'store/ui.reducer'
-import IonIcon from '@sentre/antd-ionicon'
 
 const UIWatcher = () => {
   const [api, contextHolder] = notification.useNotification()
@@ -16,7 +16,7 @@ const UIWatcher = () => {
     type,
     description,
     onClick = () => {},
-  }: AcademyNotification) => {
+  }: CodingCampNotification) => {
     return api[type]({
       message: type.toUpperCase(),
       description,
