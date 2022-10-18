@@ -144,7 +144,7 @@ const ProjectDetails = () => {
                             type="text"
                             onClick={onCopy}
                           >
-                            Share
+                            {project.share}
                           </Button>
                         </Tooltip>
                       </Space>
@@ -156,7 +156,9 @@ const ProjectDetails = () => {
                 </Col>
                 <Col span={24}>
                   <Space>
-                    <Typography.Text type="secondary">By</Typography.Text>
+                    <Typography.Text type="secondary">
+                      {project.by}
+                    </Typography.Text>
                     <Typography.Text type="success">
                       {data.author}
                     </Typography.Text>
@@ -179,7 +181,9 @@ const ProjectDetails = () => {
             <Col span={24}>
               <Row gutter={[12, 12]}>
                 <Col span={24}>
-                  <Typography.Title level={4}>Description</Typography.Title>
+                  <Typography.Title level={4}>
+                    {project.description}
+                  </Typography.Title>
                 </Col>
                 <Col span={24}>
                   <Typography.Paragraph>

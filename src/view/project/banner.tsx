@@ -27,7 +27,7 @@ const Banner = () => {
               {project.title}
             </Typography.Title>
           </Col>
-          <Col span={24}>{project.description}</Col>
+          <Col span={24}>{project.subtitle}</Col>
           <Col span={24}>
             <PopupButton
               id={submission}

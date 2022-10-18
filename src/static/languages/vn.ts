@@ -109,7 +109,7 @@ export const vnLanguage = {
   },
   project: {
     title: 'Tại sao Solana là lựa chọn tốt nhất cho Web3?',
-    description:
+    subtitle:
       'Ngày nay, công nghệ web3 như các giao thức mã nguồn mở và chuỗi khối phi tập trung cho phép chúng ta cùng nhau sáng tạo và phá vỡ các giới hạn. Công nghệ chuỗi khối Solana được đầu tư và xây dựng nhằm phục vụ tất cả mọi người, và giải quyết hầu hết các vấn đề cấp bách hiện nay.',
     CTA: 'Nộp dự án',
     leaderboard: 'Dự án dẫn đầu',
@@ -122,5 +122,8 @@ export const vnLanguage = {
     allProjects: 'Tất cả dự án',
     upvote: 'BỎ PHIẾU',
     cancel: 'HUỶ PHIẾU',
+    share: 'Chia sẻ',
+    by: 'Bởi',
+    description: 'Giới thiệu',
   },
 }
