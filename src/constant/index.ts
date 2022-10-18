@@ -53,3 +53,9 @@ export const DEFAULT_SYSTEM: Record<LanguageType, any> = {
   en: enLanguage,
   vn: vnLanguage,
 }
+
+export enum TabsKey {
+  WhyJoin = 'why-join',
+  WhoCanJoin = 'who-can-join',
+  HowToJoin = 'how-to-join',
+}

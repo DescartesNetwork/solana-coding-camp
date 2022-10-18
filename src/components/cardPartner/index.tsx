@@ -3,6 +3,8 @@ import { CSSProperties, ReactNode } from 'react'
 import { Button, Card, Col, Image, Row, Space, Typography } from 'antd'
 import IonIcon from '@sentre/antd-ionicon'
 
+import './index.less'
+
 export type SocialData = { src: string; icon: string }
 export type CardPartnerProps = {
   logo?: string
@@ -10,6 +12,9 @@ export type CardPartnerProps = {
   socials?: SocialData[]
   imgStyle?: CSSProperties
   gap?: number
+  fontSize?: number
+  legend?: string
+  size?: number
 }
 const CardPartner = ({
   children,
@@ -17,6 +22,9 @@ const CardPartner = ({
   socials,
   imgStyle,
   gap = 42,
+  fontSize = 14,
+  legend,
+  size = 50,
 }: CardPartnerProps) => {
   return (
     <Card
@@ -33,14 +41,25 @@ const CardPartner = ({
         <Col>
           <Row gutter={[0, gap]} justify="center">
             <Col style={{ minHeight: 50 }} className="logo-partner-img">
-              <Image
-                style={{ maxHeight: 50, objectFit: 'contain', ...imgStyle }}
-                src={logo}
-                preview={false}
-              />
+              <Space
+                direction="vertical"
+                style={{ textAlign: 'center' }}
+                size={0}
+              >
+                <Image
+                  style={{ maxHeight: size, objectFit: 'contain', ...imgStyle }}
+                  src={logo}
+                  preview={false}
+                />
+                {legend && (
+                  <Typography.Text style={{ fontSize }} type="secondary">
+                    {legend}
+                  </Typography.Text>
+                )}
+              </Space>
             </Col>
             <Col span={24} style={{ textAlign: 'center' }}>
-              <Typography.Text>{children}</Typography.Text>
+              <Typography.Text style={{ fontSize }}>{children}</Typography.Text>
             </Col>
           </Row>
         </Col>
@@ -51,6 +70,7 @@ const CardPartner = ({
                 <Button
                   style={{ padding: 0, width: 'auto', height: 'auto' }}
                   type="text"
+                  size="large"
                   icon={<IonIcon name={social.icon} />}
                   onClick={() => window.open(social.src, '_blank')}
                   key={social.src}

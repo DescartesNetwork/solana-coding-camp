@@ -62,7 +62,13 @@ export const enLanguage = {
   prize1stPlace: '1st Place',
   for2Winners: 'for 2 Winners',
   tracks: {
+    title: 'Tracks',
     sponsored: 'Sponsored by',
+  },
+  sponsor: {
+    title: 'Infrastructure Sponsor',
+    solscan:
+      'Solscan is a user-friendly and real-time block explorer for the Solana Ecosystem. Track $SOL and Solana-related tokens to get information on transactions, blocks and token details.',
   },
   speakers: {
     title: 'Speakers & Judges',

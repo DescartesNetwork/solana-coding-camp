@@ -6,6 +6,7 @@ import Organizers from './organizers'
 import Speakers from './speakers'
 import TimeLine from './timeLine'
 import Tracks from './tracks'
+import Sponsor from './sponsor'
 
 import { useGap } from 'hooks/useUI'
 
@@ -32,6 +33,9 @@ const Home = () => {
       </Col>
       <Col span={24}>
         <Tracks />
+      </Col>
+      <Col span={24}>
+        <Sponsor />
       </Col>
       <Col span={24}>
         <Speakers />

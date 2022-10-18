@@ -7,14 +7,9 @@ import CardFAQ from './cardFAQ'
 
 import useLanguages from 'hooks/useLanguages'
 import { useWidth } from 'hooks/useUI'
+import { TabsKey } from 'constant'
 
 import './index.less'
-
-export enum TabsKey {
-  WhyJoin = 'why-join',
-  WhoCanJoin = 'who-can-join',
-  HowToJoin = 'how-to-join',
-}
 
 const FAQ = () => {
   const system = useLanguages()
@@ -59,9 +54,13 @@ const FAQ = () => {
               }}
               onClick={() => setActiveKey(faq.key)}
               active={activeKey === faq.key}
+              cardKey={faq.key}
             >
               <Space direction="vertical" style={{ textAlign: 'center' }}>
-                <IonIcon style={{ fontSize: 28 }} name={faq.icon} />
+                <IonIcon
+                  style={{ fontSize: 28, color: 'inherit' }}
+                  name={faq.icon}
+                />
                 <Typography.Title
                   level={level}
                   style={{ color: activeKey === faq.key ? '#000' : '#fff' }}
@@ -73,7 +72,7 @@ const FAQ = () => {
           </Col>
         ))}
         <Col span={24}>
-          <CardFAQ>
+          <CardFAQ style={{ border: '1px solid transparent' }}>
             <div
               className="faq-content"
               dangerouslySetInnerHTML={{ __html: FAQ_DATA[activeKey] }}

@@ -6,6 +6,7 @@ import { Spin } from 'antd'
 import { LoadingOutlined } from '@ant-design/icons'
 
 import CardLogo from './cardLogo'
+import { LazyOptions } from 'swiper/types'
 
 type ImageSlideProps = { link?: string }
 const ImageSlide = ({ link }: ImageSlideProps) => {
@@ -31,6 +32,7 @@ type InfiniteSwiperProps = {
   wraped?: boolean
   rootPath?: string
   cardClassName?: string
+  lazy?: LazyOptions
 }
 const InfiniteSwiper = ({
   autoplay = true,
@@ -44,6 +46,10 @@ const InfiniteSwiper = ({
   wraped = false,
   rootPath = '',
   cardClassName,
+  lazy = {
+    loadPrevNextAmount: 1,
+    loadPrevNext: true,
+  },
 }: InfiniteSwiperProps) => {
   const configAutoplay = {
     delay: 0,
@@ -59,7 +65,7 @@ const InfiniteSwiper = ({
       autoplay={autoplay ? configAutoplay : autoplay}
       speed={speed}
       loop={loop}
-      lazy
+      lazy={lazy}
       className="apps-slide-infinite"
     >
       {data.map((gallery, idx) => (

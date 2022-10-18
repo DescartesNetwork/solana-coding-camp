@@ -7,7 +7,6 @@ import { useWidth } from 'hooks/useUI'
 import { PATH_GOOGLE_VIEW_IMG } from 'constant'
 
 const MEDIA_PARTNER = [
-  '14i92L8YFINk00uB5BI1noN0k71uzVzcg', // solscan
   '1LbIWdGsoE3qvZhSbnjwt8C02o8l4OVpb', // trade coind
   '1IRmQsmsfq5N-B-D0T01lLtiHBjWpLEHS', //zeta
   '1bUSAzz5PVTiHmUIBP3DEK-PC1LqkGGgG', //kyros
