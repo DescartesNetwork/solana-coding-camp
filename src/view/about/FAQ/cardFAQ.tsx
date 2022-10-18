@@ -1,10 +1,13 @@
 import { CSSProperties, ReactNode, useMemo } from 'react'
 
-import { Card } from 'antd'
+import { Card, CardProps } from 'antd'
+import { TabsKey } from 'constant'
 
-const ACTIVE_CLN = 'active'
-const POINTER_CLN = 'pointer'
-const DEFAULT_CLN = 'card-faq'
+const COLOR_BASE = {
+  [TabsKey.WhyJoin]: '#DA61B8',
+  [TabsKey.WhoCanJoin]: '#80ECFF',
+  [TabsKey.HowToJoin]: '#EE7C56',
+}
 
 export type CardFAQProps = {
   active?: boolean
@@ -12,6 +15,8 @@ export type CardFAQProps = {
   children?: ReactNode
   onClick?: () => void
   bodyStyle?: CSSProperties
+  cardKey?: TabsKey
+  bordered?: CardProps['bordered']
 }
 const CardFAQ = ({
   active = false,
@@ -19,18 +24,28 @@ const CardFAQ = ({
   children,
   onClick,
   bodyStyle,
+  cardKey,
 }: CardFAQProps) => {
-  const getCardCln = useMemo(() => {
-    const arrCln: string[] = [DEFAULT_CLN]
-    if (active) arrCln.push(ACTIVE_CLN)
-    if (onClick) arrCln.push(POINTER_CLN)
-    return arrCln.join(' ')
-  }, [active, onClick])
+  const activeStyle = useMemo(
+    () =>
+      active
+        ? {
+            background: COLOR_BASE[cardKey || TabsKey.WhyJoin],
+            color: '#000',
+          }
+        : { color: COLOR_BASE[cardKey || TabsKey.WhyJoin] },
+    [active, cardKey],
+  )
 
   return (
     <Card
-      className={getCardCln}
-      style={{ height: '100%', ...style }}
+      className="card-faq pointer"
+      style={{
+        height: '100%',
+        border: `1px solid ${COLOR_BASE[cardKey || TabsKey.WhyJoin]}`,
+        ...activeStyle,
+        ...style,
+      }}
       bodyStyle={bodyStyle}
       onClick={onClick}
     >

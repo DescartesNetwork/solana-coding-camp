@@ -62,7 +62,13 @@ export const vnLanguage = {
   prize1stPlace: 'Giải nhất',
   for2Winners: 'cho 2 người chiến thắng',
   tracks: {
+    title: 'Hệ thống giải thưởng',
     sponsored: 'Tài trợ bởi',
+  },
+  sponsor: {
+    title: 'Nhà tài trợ',
+    solscan:
+      'Solscan là một trình duyệt block theo thời gian thực và thân thiện với người dùng dành cho hệ sinh thái Solana. Theo dõi $SOL và các token trên hệ Solana để nhận thông tin về giao dịch, các block và chi tiết token.',
   },
   speakers: {
     title: 'Diễn giả & Ban giám khảo',

@@ -2,7 +2,7 @@ import { useMemo } from 'react'
 
 import { Col, Row, Typography } from 'antd'
 import MaxWidthLayout from 'components/maxWidthLayout'
-import CardPartner from './cardPartner'
+import CardPartner from 'components/cardPartner'
 
 import useLanguages from 'hooks/useLanguages'
 import { useWidth } from 'hooks/useUI'
@@ -12,7 +12,6 @@ import logoSentre from 'static/images/logo/logo-sentre.svg'
 import logoC98 from 'static/images/logo/logo-c98.svg'
 import logoSolana from 'static/images/logo/logo-solana.svg'
 import logoDao from 'static/images/logo/logo-dao.svg'
-import './index.less'
 
 const Partner = () => {
   const width = useWidth()
@@ -89,8 +88,11 @@ const Partner = () => {
           </Typography.Title>
         </Col>
         <Col span={24} />
-        {PARTNERS.map((partner) => (
-          <Col style={{ flex: `0 0 ${colWidth}`, maxWidth: colWidth }}>
+        {PARTNERS.map((partner, idx) => (
+          <Col
+            style={{ flex: `0 0 ${colWidth}`, maxWidth: colWidth }}
+            key={idx}
+          >
             <CardPartner
               socials={partner.socials}
               logo={partner.logo}

@@ -1,18 +1,15 @@
 .card-faq {
-  border-color: transparent !important;
   border-radius: 16px !important;
-  &.active {
-    background: #da61b8 !important;
-  }
   &.pointer {
     cursor: pointer;
-    &:hover {
-      border-color: #80ecff !important;
-    }
+  }
+  &:not(:hover) {
+    border: 1px solid transparent !important;
   }
   .faq-content {
     font-size: 22px;
     font-weight: 400;
+    color: #fff;
     &p:last-child {
       margin: 0;
     }

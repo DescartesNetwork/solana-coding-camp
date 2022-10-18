@@ -4,6 +4,7 @@ import CardTrack, { TrackData } from './cardTrack'
 
 import logoSaros from 'static/images/tracks/logo-saros.svg'
 import logoAncient8 from 'static/images/tracks/logo-ancient8.svg'
+import useLanguages from 'hooks/useLanguages'
 
 const TRACKS: TrackData[] = [
   {
@@ -21,12 +22,14 @@ const TRACKS: TrackData[] = [
 ]
 
 const Tracks = () => {
+  const system = useLanguages()
+
   return (
     <MaxWidthLayout>
       <Row gutter={[24, 24]} justify="center">
         <Col>
           <Typography.Title level={2} className="text-title">
-            Tracks
+            {system.tracks.title}
           </Typography.Title>
         </Col>
         <Col span={24} />
