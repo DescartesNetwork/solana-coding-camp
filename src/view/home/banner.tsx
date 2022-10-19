@@ -13,7 +13,7 @@ const Banner = () => {
   const { banner } = useLanguages()
   const width = useWidth()
   const isMobile = width < 1200
-  const marginTop = isMobile ? -280 : undefined
+  const marginTop = isMobile ? -120 : undefined
   const maxHeight = isMobile ? '60vh' : undefined
 
   return (
@@ -22,7 +22,7 @@ const Banner = () => {
         <Col
           xs={{ order: 2, span: 24 }}
           xl={{ order: 2, span: 13 }}
-          style={{ paddingTop: 150, paddingBottom: 24, marginTop }}
+          style={{ paddingTop: 120, paddingBottom: 24, marginTop }}
         >
           <Space direction="vertical" size={32}>
             <Typography.Title
