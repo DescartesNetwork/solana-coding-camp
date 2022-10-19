@@ -99,19 +99,19 @@ const Ranking = () => {
       left: imgOne,
       right: glass1,
       color: [20, 241, 149],
-      label: system.prize1st,
+      label: system.prizesChampion,
     },
     7000: {
       left: imgTwo,
       right: glass2,
       color: [153, 69, 255],
-      label: system.prize2nd,
+      label: system.prizes1stRunner,
     },
     5000: {
       left: imgThree,
       right: glass3,
       color: [128, 236, 255],
-      label: system.prize3rd,
+      label: system.prizes2stRunner,
     },
   }
 
