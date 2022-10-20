@@ -1,0 +1,76 @@
+@cardSize: 300px;
+@ratio: 1.5;
+@parentTranslateZ: -100px;
+
+.wrap-card-certi {
+  width: @cardSize;
+  height: @cardSize;
+  perspective: 400px;
+  .inner-card-certi {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: translateZ(@parentTranslateZ);
+    transition: transform 1s;
+    .card-certi-item {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: 12px solid transparent;
+      transition: transform 1s;
+      .ant-image {
+        width: 100%;
+        height: 100%;
+        border-radius: 24px;
+        overflow: hidden;
+        transition: all 0.4s linear;
+      }
+      &.item-1 {
+        transform: rotateY(-35deg) translateZ(calc(@cardSize / @ratio));
+        &:hover {
+          transform: rotateY(0deg) translateZ(calc(@cardSize / @ratio));
+          .ant-image {
+            transform: scale(1.2);
+            transition-delay: 1s;
+            box-shadow: 0 0 45px #dadada1f;
+          }
+          & ~ .item-2 {
+            transform: rotateY(80deg) translateZ(calc(@cardSize / @ratio));
+          }
+        }
+      }
+      &.item-2 {
+        transform: rotateY(35deg) translateZ(calc(@cardSize / @ratio));
+        &:hover {
+          transform: rotateY(0deg) translateZ(calc(@cardSize / @ratio));
+          .ant-image {
+            transform: scale(1.2);
+            transition-delay: 1s;
+            box-shadow: 0 0 45px #dadada1f;
+          }
+        }
+      }
+    }
+    &:has(.item-2:hover) {
+      .item-1 {
+        transform: rotateY(-80deg) translateZ(calc(@cardSize / @ratio));
+      }
+    }
+  }
+  &:has(.card-certi-item:hover) {
+    position: relative;
+    z-index: 9;
+  }
+}
+
+@media (max-width: 992px) {
+  .wrap-card-certi {
+    .inner-card-certi {
+      transform: translateZ(calc(@parentTranslateZ * 2));
+    }
+    &:has(.card-certi-item:hover) {
+      position: relative;
+      z-index: 9;
+    }
+  }
+}

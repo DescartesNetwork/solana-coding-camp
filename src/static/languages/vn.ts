@@ -73,6 +73,9 @@ export const vnLanguage = {
   speakers: {
     title: 'Diễn giả & Ban giám khảo',
   },
+  certificate: {
+    title: 'Accreditation',
+  },
   esteemedPartners: {
     title: 'ĐƠN VỊ ĐỒNG HÀNH',
   },

@@ -61,3 +61,8 @@ export enum TabsKey {
 }
 
 export const BTN_REGISTER_ID = 'btn_register_id'
+
+export enum CertificateState {
+  Completion = 'Completion',
+  Participation = 'Participation',
+}

@@ -9,6 +9,7 @@ import Tracks from './tracks'
 import Sponsor from './sponsor'
 
 import { useGap } from 'hooks/useUI'
+import Certificate from './certificate'
 
 const Home = () => {
   const gap = useGap()
@@ -33,6 +34,9 @@ const Home = () => {
       </Col>
       <Col span={24}>
         <Tracks />
+      </Col>
+      <Col span={24}>
+        <Certificate />
       </Col>
       <Col span={24}>
         <Sponsor />

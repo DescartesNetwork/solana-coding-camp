@@ -73,6 +73,9 @@ export const enLanguage = {
   speakers: {
     title: 'Speakers & Judges',
   },
+  certificate: {
+    title: 'Accreditation',
+  },
   esteemedPartners: {
     title: 'Our Partners',
   },

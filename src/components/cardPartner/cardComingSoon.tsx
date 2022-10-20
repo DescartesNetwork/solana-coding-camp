@@ -1,6 +1,16 @@
 import { Card, Typography } from 'antd'
+import { CSSProperties } from 'react'
 
-const CardComingSoon = () => {
+export type CardComingSoonProps = {
+  label?: string
+  style?: CSSProperties
+  bodyStyle?: CSSProperties
+}
+const CardComingSoon = ({
+  label = 'Coming soon',
+  style,
+  bodyStyle,
+}: CardComingSoonProps) => {
   return (
     <Card
       className="card-coming-soon"
@@ -13,6 +23,7 @@ const CardComingSoon = () => {
         rgba(185, 248, 253, 0.9) 100%
       )`,
         backdropFilter: 'blur(10px)',
+        ...style,
       }}
       bodyStyle={{
         display: 'flex',
@@ -20,11 +31,12 @@ const CardComingSoon = () => {
         justifyContent: 'center',
         alignItems: 'center',
         minHeight: 324,
+        ...bodyStyle,
       }}
       bordered={false}
     >
       <Typography.Text style={{ fontSize: 22, color: '#000' }}>
-        Coming soon
+        {label}
       </Typography.Text>
     </Card>
   )
