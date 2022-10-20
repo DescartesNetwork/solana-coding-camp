@@ -14,6 +14,8 @@ import SocialFixed from './socialFixed'
 import Watcher from './watcher'
 import Blogs from './blogs'
 import BlogDetails from './blogs/details'
+import IonIcon from '@sentre/antd-ionicon'
+import RegisterNow from 'components/registerNow'
 
 import { useGap } from 'hooks/useUI'
 import { getProjects } from 'store/projects.reducer'
@@ -23,8 +25,6 @@ import '@solana/wallet-adapter-react-ui/styles.css'
 import 'swiper/css/bundle'
 import 'static/styles/theme.less'
 import './index.less'
-import RegisterNow from 'components/registerNow'
-import IonIcon from '@sentre/antd-ionicon'
 
 const View = () => {
   const dispath = useDispatch<AppDispatch>()

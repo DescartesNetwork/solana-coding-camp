@@ -56,9 +56,9 @@ export const vnLanguage = {
   prize1st: 'Giải nhất',
   prize2nd: 'Giải nhì',
   prize3rd: 'Giải ba',
-  prizesChampion: 'Giải đặt biệt',
-  prizes1stRunner: 'Giải nhất',
-  prizes2stRunner: 'Giải nhì',
+  prizesChampion: 'Giải nhất',
+  prizes1stRunner: 'Giải nhì',
+  prizes2stRunner: 'Giải ba',
   prize1stPlace: 'Giải nhất',
   for2Winners: 'cho 2 người chiến thắng',
   tracks: {

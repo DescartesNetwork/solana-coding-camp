@@ -7,7 +7,7 @@ import send from 'static/images/timeline/send.svg'
 import recorder from 'static/images/timeline/recorder.svg'
 import cup from 'static/images/timeline/cup.svg'
 
-export const MAX_WIDTH = 1300
+export const MAX_WIDTH = 1200
 
 export const TIME_LINE = [
   {

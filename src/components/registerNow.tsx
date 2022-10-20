@@ -10,7 +10,7 @@ const {
   typeform: { registration },
 } = configs
 
-const FIXED_STYLE = { position: 'fixed', bottom: 50, right: 24 }
+const FIXED_STYLE = { position: 'fixed', bottom: 50, right: 24, zIndex: 9999 }
 
 export type RegisterNowProps = {
   type?: ButtonProps['type']
@@ -47,7 +47,6 @@ const RegisterNow = ({
       id={id}
       size={size}
       type={type}
-      className={fixed ? 'btn-register btn-fixed' : 'btn-register'}
       onClick={onClick}
       style={{ ...fixedStyle, ...style }}
       icon={icon}
