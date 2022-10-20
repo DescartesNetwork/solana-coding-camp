@@ -6,7 +6,7 @@ import CardPartner from 'components/cardPartner'
 
 import useLanguages from 'hooks/useLanguages'
 import { useWidth } from 'hooks/useUI'
-import { PATH_GOOGLE_VIEW_IMG } from 'constant'
+import { MAX_WIDTH, PATH_GOOGLE_VIEW_IMG } from 'constant'
 
 import logoSentre from 'static/images/logo/logo-sentre.svg'
 import logoC98 from 'static/images/logo/logo-c98.svg'
@@ -64,18 +64,18 @@ const Partner = () => {
   ]
 
   const colWidth = useMemo(() => {
-    if (width > 1300) return '20%'
+    if (width > MAX_WIDTH) return '20%'
     if (width > 768) return '33.333333%'
     return '100%'
   }, [width])
 
   const imgHeight = useMemo(() => {
-    if (width > 1300) return 42
+    if (width > MAX_WIDTH) return 42
     return 50
   }, [width])
 
   const cardGap = useMemo(() => {
-    if (width > 1300) return 24
+    if (width > MAX_WIDTH) return 24
     return 42
   }, [width])
 
