@@ -8,8 +8,8 @@ import CardCertificate from './cardCertificate'
 import { CertificateState } from 'constant'
 import { useWidth } from 'hooks/useUI'
 
-import Cert1 from 'static/images/certificate/cer1.svg'
-import Cert2 from 'static/images/certificate/cer2.svg'
+import Cert1 from 'static/images/certificate/cer1.png'
+import Cert2 from 'static/images/certificate/cer2.png'
 
 import './index.less'
 
