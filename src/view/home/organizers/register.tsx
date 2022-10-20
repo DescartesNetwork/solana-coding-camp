@@ -10,6 +10,8 @@ const {
   typeform: { registration },
 } = configs
 
+const VIDEO_ID = ['uKk6bQi_cnI', '9204BBCLO9I', 'aRgUx4shcyk']
+
 const Register = () => {
   const system = useLanguages()
   const history = useHistory()
@@ -66,25 +68,19 @@ const Register = () => {
       </Col>
       <Col xs={{ span: 24, order: 1 }} lg={{ span: 12, order: 2 }}>
         <Row gutter={[24, 24]}>
-          <Col span={24}>
-            <iframe
-              width="100%"
-              style={{ minHeight: 400 }}
-              src="https://www.youtube.com/embed/uKk6bQi_cnI"
-              title="Solana coding camp 1"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </Col>
-          <Col span={24}>
-            <iframe
-              src="https://drive.google.com/file/d/1bpE_8HodOuRbCD9Bz6OlNDWzmmDYo_0C/preview"
-              style={{ minHeight: 400, width: '100%' }}
-              title="Solana coding camp 1"
-              allowFullScreen
-            />
-          </Col>
+          {VIDEO_ID.map((id, idx) => (
+            <Col span={24} key={idx}>
+              <iframe
+                width="100%"
+                style={{ minHeight: 400 }}
+                src={`https://www.youtube.com/embed/${id}`}
+                title="Solana coding camp 1"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </Col>
+          ))}
         </Row>
       </Col>
     </Row>
