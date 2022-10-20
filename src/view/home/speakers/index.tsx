@@ -96,7 +96,7 @@ const SPEAKER_ID: SpeakersData[] = [
   {
     id: '1rAw4B3bmHOkHQpr29Ts0KVgZ4sfO1fbH',
     name: 'Kevin Tung Nguyen',
-    position: 'CEO at JobHopin',
+    position: 'CEO & Founder at JobHopin',
   },
   {
     id: '1QI9Rkun-ywoatA-npJEhSdzC4h7eazXY',
@@ -112,6 +112,11 @@ const SPEAKER_ID: SpeakersData[] = [
     id: '1RFCXUHsibsH2fe4wyz9qq9VS44yyTJLn',
     name: 'Vishal Kankani',
     position: 'Principal at Multicoin Capital',
+  },
+  {
+    id: '1p_6R6VOVV4_onNqsrR8twsjCbZJIzr7E',
+    name: 'Jarvis Nguyen',
+    position: 'CTO at Krystal',
   },
 ]
 

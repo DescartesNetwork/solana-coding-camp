@@ -41,8 +41,8 @@ const View = () => {
   }, [dispath])
 
   return (
-    <Layout style={{ background: 'transparent', overflow: 'hidden' }}>
-      <Row gutter={[24, 24]} className="codingcamp-container">
+    <Layout style={{ background: 'transparent' }}>
+      <Row gutter={[0, 24]} className="codingcamp-container">
         <Col span={24}>
           <Header />
         </Col>

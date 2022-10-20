@@ -10,7 +10,12 @@ const Header = () => {
     <MaxWidthLayout>
       <Row
         gutter={[24, 24]}
-        style={{ marginTop: 24, marginBottom: 24 }}
+        style={{
+          position: 'relative',
+          marginTop: 24,
+          marginBottom: 24,
+          zIndex: 999999,
+        }}
         align="middle"
         wrap={false}
       >
