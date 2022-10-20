@@ -31,7 +31,7 @@ const configs: Record<Env, Config> = {
    */
   production: {
     registration: 'hyibBZhP',
-    submission: '',
+    submission: 'fh8YQG90',
   },
 }
 
