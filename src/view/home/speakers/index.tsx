@@ -123,6 +123,11 @@ const SPEAKER_ID: SpeakersData[] = [
     name: 'Minh Ho',
     position: 'Head of Growth at Coin98',
   },
+  {
+    id: '1pNT-Vfdn-dkowe6Lr8FcjbZ5njePGSj1',
+    name: 'Hoang Ha',
+    position: 'Product Manager at Solscan',
+  },
 ]
 
 const Speakers = () => {
