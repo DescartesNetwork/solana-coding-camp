@@ -1,15 +1,17 @@
-import { Card, Typography } from 'antd'
+import { Card, Space, Typography } from 'antd'
 import { CSSProperties } from 'react'
 
 export type CardComingSoonProps = {
   label?: string
   style?: CSSProperties
   bodyStyle?: CSSProperties
+  description?: string
 }
 const CardComingSoon = ({
   label = 'Coming soon',
   style,
   bodyStyle,
+  description,
 }: CardComingSoonProps) => {
   return (
     <Card
@@ -35,9 +37,16 @@ const CardComingSoon = ({
       }}
       bordered={false}
     >
-      <Typography.Text style={{ fontSize: 22, color: '#000' }}>
-        {label}
-      </Typography.Text>
+      <Space direction="vertical" style={{ textAlign: 'center' }}>
+        <Typography.Text style={{ fontSize: 22, color: '#000' }}>
+          {label}
+        </Typography.Text>
+        {description && (
+          <Typography.Text style={{ color: '#000' }}>
+            {description}
+          </Typography.Text>
+        )}
+      </Space>
     </Card>
   )
 }
