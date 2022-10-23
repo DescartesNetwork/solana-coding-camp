@@ -64,6 +64,11 @@ const SPEAKER_ID: SpeakersData[] = [
     position: 'Ecosystem Growth at Coin98 Finance',
   },
   {
+    id: '1NnGb0JwFdsuLsaIMWb1B_cbCArDE9oXB',
+    name: 'Minh Ho',
+    position: 'Head of Growth at Coin98',
+  },
+  {
     id: '1m4-WjMSOcOVPddrvsvT5T249T9nieUwW',
     name: 'Ken Nguyen',
     position: 'Growth at Saros',
@@ -103,6 +108,17 @@ const SPEAKER_ID: SpeakersData[] = [
     name: 'Long Vuong',
     position: 'CEO at Solscan',
   },
+
+  {
+    id: '1pNT-Vfdn-dkowe6Lr8FcjbZ5njePGSj1',
+    name: 'Hoang Ha',
+    position: 'Product Manager at Solscan',
+  },
+  {
+    id: '10nwGb99eRhkwwGZvt78MhBVo5BjQb42P',
+    name: 'Thanh Vu',
+    position: 'Tech Lead at Solscan',
+  },
   {
     id: '1GGBLJ5zH2TuugD33UL0nnjWw1T21rPmd',
     name: 'Binh Tran',
@@ -117,16 +133,6 @@ const SPEAKER_ID: SpeakersData[] = [
     id: '1p_6R6VOVV4_onNqsrR8twsjCbZJIzr7E',
     name: 'Jarvis Nguyen',
     position: 'CTO at Krystal',
-  },
-  {
-    id: '1NnGb0JwFdsuLsaIMWb1B_cbCArDE9oXB',
-    name: 'Minh Ho',
-    position: 'Head of Growth at Coin98',
-  },
-  {
-    id: '1pNT-Vfdn-dkowe6Lr8FcjbZ5njePGSj1',
-    name: 'Hoang Ha',
-    position: 'Product Manager at Solscan',
   },
 ]
 
