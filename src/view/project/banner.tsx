@@ -33,9 +33,16 @@ const Banner = () => {
               id={submission}
               className="ant-btn ant-btn-primary ant-btn-block"
             >
-              <Typography.Title level={5} style={{ color: 'inherit' }}>
+              <Typography.Text
+                style={{
+                  color: 'inherit',
+                  fontSize: 16,
+                  textTransform: 'uppercase',
+                  fontWeight: 500,
+                }}
+              >
                 {project.CTA}
-              </Typography.Title>
+              </Typography.Text>
             </PopupButton>
           </Col>
           <Col span={24}>

@@ -70,6 +70,9 @@ const Container = ({
             backgroundColor: '#14f195',
             borderRadius: 24,
             color: '#000000',
+            fontWeight: 300,
+            height: 40,
+            textTransform: 'uppercase',
           }}
         />
       </Col>

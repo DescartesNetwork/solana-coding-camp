@@ -24,7 +24,6 @@ const BlogsWatcher = () => {
           const result = blog.tags.filter((tag) => tag.name === SOLANA_TAG_NAME)
           return !!result && result.length > 0
         })
-
         return dispatch(setBlogsData(filterByTags))
       } catch (error) {
         return dispatch(setBlogsData([]))
