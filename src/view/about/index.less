@@ -10,11 +10,15 @@
     border-radius: 73% 27% 58% 42% / 71% 31% 69% 29%;
     background: radial-gradient(circle, #9945ffae 0%, #9945ff14 100%);
     top: 140px;
-    transform: translateX(355px);
+    right: (355px);
     filter: blur(70px);
     opacity: 0.5;
     box-shadow: 0 0 60px 70px #9945ff78;
     animation: magicBorder 4s linear infinite;
+
+    @media (max-width: 992px) {
+      right: 0;
+    }
   }
 }
 
