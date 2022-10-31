@@ -16,6 +16,9 @@ const MEDIA_PARTNER = [
   '1qnSJhrEnug8WhYfqpK3uKb0E_nh5RgtL', // LSVP
   '1DY1WG0j25oBcZ8c7NyFhNdcftY3Z3vQs', // Accel
   '1j3h--AGs3fbk9efjy1O4kBKekRz6pZJe', // Krystal
+  '1ZVa06UAbDQGSJHDSwsL_icFVbhu8Cd6f', // VNUK Đà Nẵng
+  '1a733GophNfqrhPDgB2RAPADgs9fcictz', // University Hong Bang
+  '1OlxtOhEEQZUKVWBegJWCV8EsYAZq8P2G', // Enouvo
 ]
 
 const ListPartners = () => {

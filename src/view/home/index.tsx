@@ -7,9 +7,9 @@ import Speakers from './speakers'
 import TimeLine from './timeLine'
 import Tracks from './tracks'
 import Sponsor from './sponsor'
+import Certificate from './certificate'
 
 import { useGap } from 'hooks/useUI'
-import Certificate from './certificate'
 
 const Home = () => {
   const gap = useGap()
