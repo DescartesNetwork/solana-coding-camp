@@ -34,7 +34,7 @@ const SPEAKER_ID: SpeakersData[] = [
     position: 'Solana Vietnam | Superteam Vietnam',
   },
   {
-    id: '1_7Xw7iC4P40k43MP3vQv1_LvYxV0cf3C',
+    id: '1Hoh6j17C13l9S7UN2UeK0CI9k_C7jfPt',
     name: 'Minh Thach',
     position: 'Solana Vietnam | Superteam Vietnam',
   },
