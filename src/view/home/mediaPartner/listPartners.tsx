@@ -15,7 +15,7 @@ const MEDIA_PARTNER = [
   '144MMNyGkI76HWFGUfcpygyGe77ocDTbC', //kyber
   '1j3h--AGs3fbk9efjy1O4kBKekRz6pZJe', // Krystal
   '1IRmQsmsfq5N-B-D0T01lLtiHBjWpLEHS', //zeta
-  '1_itWHo0YEfi_pbczwMk90PHGH9N88khT', //coin 68
+  '1rgz34DOtAdB8qf50P75ANPMvvFy5r7qf', //coin 68
   '1Dj8ga2GDNG1sHZ2QocQqZlphW9Y11mD5', //5' crypto
   '1_H53xIlh9Tr9D3ux_2t0jVk4gh22pcoT', //Chainplay
   '1LbIWdGsoE3qvZhSbnjwt8C02o8l4OVpb', // trade coind
