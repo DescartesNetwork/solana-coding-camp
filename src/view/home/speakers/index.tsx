@@ -111,7 +111,7 @@ const SPEAKER_ID: SpeakersData[] = [
 
   {
     id: '1pNT-Vfdn-dkowe6Lr8FcjbZ5njePGSj1',
-    name: 'Hoang Ha',
+    name: 'Ha Hoang',
     position: 'Product Manager at Solscan',
   },
   {
