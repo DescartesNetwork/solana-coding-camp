@@ -61,6 +61,9 @@ export const enLanguage = {
   prizes2stRunner: 'Runner-up',
   prize1stPlace: '1st Place',
   for2Winners: 'for 2 Winners',
+  u20tracks: {
+    title: 'U20 Tracks',
+  },
   tracks: {
     title: 'Tracks',
     sponsored: 'Sponsored by',
