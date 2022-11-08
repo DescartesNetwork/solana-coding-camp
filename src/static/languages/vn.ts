@@ -61,6 +61,9 @@ export const vnLanguage = {
   prizes2stRunner: 'Giải ba',
   prize1stPlace: 'Giải nhất',
   for2Winners: 'cho 2 người chiến thắng',
+  u20tracks: {
+    title: 'U20 Tracks',
+  },
   tracks: {
     title: 'Hệ thống giải thưởng',
     sponsored: 'Tài trợ bởi',

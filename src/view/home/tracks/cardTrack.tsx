@@ -2,6 +2,7 @@ import { Card, Col, Image, Row, Space, Typography } from 'antd'
 import SpaceBetween from 'components/spaceBetween'
 import PriceTitle from './priceTitle'
 import IconSax from '@sentre/antd-iconsax'
+
 import useLanguages from 'hooks/useLanguages'
 
 const COLOR_BASE = [
@@ -61,9 +62,13 @@ const CardTrack = ({ data, index = 0 }: CardTrackProps) => {
                   </PriceTitle>
                 }
               >
-                <Typography.Text style={{ fontSize: 32 }}>
+                <Typography.Title
+                  level={2}
+                  style={{ fontWeight: 300 }}
+                  type="secondary"
+                >
                   {system.prize1stPlace}
-                </Typography.Text>
+                </Typography.Title>
               </SpaceBetween>
             </Col>
             <Col span={24}>
@@ -84,9 +89,13 @@ const CardTrack = ({ data, index = 0 }: CardTrackProps) => {
                   </Space>
                 }
               >
-                <Typography.Text style={{ fontSize: 32 }}>
+                <Typography.Title
+                  style={{ fontWeight: 300 }}
+                  level={2}
+                  type="secondary"
+                >
                   {system.prizes2stRunner}
-                </Typography.Text>
+                </Typography.Title>
               </SpaceBetween>
             </Col>
           </Row>
