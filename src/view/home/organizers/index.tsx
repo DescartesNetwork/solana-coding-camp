@@ -93,7 +93,16 @@ const Organizers = () => {
       </Col>
       <Col span={24}>
         <MaxWidthLayout>
-          <Ranking />
+          <Row gutter={[24, 24]} justify="center">
+            <Col>
+              <Typography.Title level={2} className="text-title">
+                Main track
+              </Typography.Title>
+            </Col>
+            <Col span={24}>
+              <Ranking />
+            </Col>
+          </Row>
         </MaxWidthLayout>
       </Col>
     </Row>
