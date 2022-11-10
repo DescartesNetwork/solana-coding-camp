@@ -62,7 +62,7 @@ export const vnLanguage = {
   prize1stPlace: 'Giải nhất',
   for2Winners: 'cho 2 người chiến thắng',
   u20tracks: {
-    title: 'U20 Tracks',
+    title: 'U20 Track',
   },
   tracks: {
     title: 'Hệ thống giải thưởng',
