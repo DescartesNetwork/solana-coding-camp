@@ -22,6 +22,7 @@ const MEDIA_PARTNER = [
   '1OlxtOhEEQZUKVWBegJWCV8EsYAZq8P2G', // Enouvo
   '1ZVa06UAbDQGSJHDSwsL_icFVbhu8Cd6f', // VNUK Đà Nẵng
   '1a733GophNfqrhPDgB2RAPADgs9fcictz', // University Hong Bang
+  '1S7UurQLMCuFEcirsJrFZKjtqDd7wouKB', //midX
 ]
 
 const ListPartners = () => {
