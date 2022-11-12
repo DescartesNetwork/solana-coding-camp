@@ -1,11 +1,16 @@
-import { Card, Col, Row, Space, Typography } from 'antd'
+import { Card, Col, Image, Row, Space, Typography } from 'antd'
 import SpaceBetween from 'components/spaceBetween'
 import useLanguages from 'hooks/useLanguages'
 
+import { PATH_GOOGLE_VIEW_IMG } from 'constant'
+
 import bg from 'static/images/u20tracks/bg.png'
+import logoDao from 'static/images/logo/logo-dao.svg'
 
 const CardU20Tracks = () => {
   const system = useLanguages()
+
+  const MindX_IMG = PATH_GOOGLE_VIEW_IMG + '1S7UurQLMCuFEcirsJrFZKjtqDd7wouKB' //MindX
 
   return (
     <Card
@@ -37,42 +42,54 @@ const CardU20Tracks = () => {
               }
             >
               <Typography.Title level={2}>
-                {system.prizesChampion}
+                {system.prize1stPlace}
               </Typography.Title>
             </SpaceBetween>
             <SpaceBetween
               gutter={[24, 24]}
               floatContent={
-                <Space direction="vertical">
-                  <Typography.Title
-                    level={2}
-                    style={{ fontWeight: 300 }}
-                    type="secondary"
-                  >
-                    {system.prizes2stRunner}
-                  </Typography.Title>
-                  <Typography.Title
-                    level={1}
-                    style={{ color: '#80ECFF', fontSize: 44 }}
-                  >
-                    $2,000
-                  </Typography.Title>
-                </Space>
+                <Typography.Title
+                  level={1}
+                  style={{ color: '#80ECFF', fontSize: 44 }}
+                >
+                  $2,000
+                </Typography.Title>
               }
             >
+              <Typography.Title
+                level={2}
+                style={{ fontWeight: 300 }}
+                type="secondary"
+              >
+                {system.prizes2stRunner}
+              </Typography.Title>
+            </SpaceBetween>
+
+            <SpaceBetween
+              gutter={[24, 24]}
+              floatContent={
+                <Image
+                  width={140}
+                  src={MindX_IMG}
+                  alt="partner"
+                  preview={false}
+                />
+              }
+              align="bottom"
+            >
               <Space direction="vertical">
+                <Typography.Text type="secondary">Sponsored by</Typography.Text>
                 <Typography.Title
                   level={2}
                   style={{ fontWeight: 300 }}
                   type="secondary"
                 >
-                  {system.prizes1stRunner}
-                </Typography.Title>
-                <Typography.Title
-                  level={1}
-                  style={{ color: '#9945FF', fontSize: 44 }}
-                >
-                  $3,000
+                  <Image
+                    width={240}
+                    src={logoDao}
+                    alt="partner"
+                    preview={false}
+                  />
                 </Typography.Title>
               </Space>
             </SpaceBetween>
