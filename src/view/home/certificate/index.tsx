@@ -23,14 +23,14 @@ const Certificate = () => {
 
   return (
     <MaxWidthLayout>
-      <Row gutter={[24, rowGap]} justify="center">
+      <Row gutter={[0, rowGap]} justify="center">
         <Col>
           <Typography.Title level={2} className="text-title">
             {system.certificate.title}
           </Typography.Title>
         </Col>
         <Col span={24} style={{ marginBottom: 80 }}>
-          <Row gutter={[cerGap, cerGap]} justify="center">
+          <Row gutter={[0, cerGap]} justify="space-evenly">
             <Col>
               <CardCertificate items={[CertificateState.Completion, Cert1]} />
             </Col>

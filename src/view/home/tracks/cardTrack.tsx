@@ -1,9 +1,12 @@
+import { useMemo } from 'react'
+
 import { Card, Col, Image, Row, Space, Typography } from 'antd'
 import SpaceBetween from 'components/spaceBetween'
 import PriceTitle from './priceTitle'
 import IconSax from '@sentre/antd-iconsax'
 
 import useLanguages from 'hooks/useLanguages'
+import { useWidth } from 'hooks/useUI'
 
 const COLOR_BASE = [
   [118, 79, 255],
@@ -23,12 +26,20 @@ export type TrackData = {
 export type CardTrackProps = { data: TrackData; index?: number }
 const CardTrack = ({ data, index = 0 }: CardTrackProps) => {
   const system = useLanguages()
+  const width = useWidth()
+  const isMobile = width < 992
+
+  const cardPadding = useMemo(() => (isMobile ? 24 : 56), [isMobile])
+  const spaceDirection = useMemo(
+    () => (isMobile ? 'vertical' : 'horizontal'),
+    [isMobile],
+  )
 
   return (
     <Card
       bordered={false}
       style={{ overflow: 'hidden', height: '100%' }}
-      bodyStyle={{ padding: 56, position: 'relative', height: '100%' }}
+      bodyStyle={{ padding: cardPadding, position: 'relative', height: '100%' }}
     >
       <Row
         gutter={[0, 40]}
@@ -101,7 +112,7 @@ const CardTrack = ({ data, index = 0 }: CardTrackProps) => {
           </Row>
         </Col>
         <Col>
-          <Space align="center" size={16}>
+          <Space align="center" size={16} direction={spaceDirection}>
             <Typography.Text type="secondary" style={{ fontSize: 18 }}>
               {system.tracks.sponsored}
             </Typography.Text>

@@ -116,7 +116,7 @@ const Ranking = () => {
   }
 
   return (
-    <Row gutter={[64, 64]}>
+    <Row gutter={[0, 64]}>
       {Object.keys(rankingBg)
         .sort((a, b) => Number(b) - Number(a))
         .map((key, idx) => {

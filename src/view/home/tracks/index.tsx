@@ -34,7 +34,7 @@ const Tracks = () => {
         </Col>
         <Col span={24} />
         {TRACKS.map((track, idx) => (
-          <Col xs={24} md={12} key={track.value1st}>
+          <Col xs={24} lg={12} key={track.value1st}>
             <CardTrack data={track} index={idx} />
           </Col>
         ))}

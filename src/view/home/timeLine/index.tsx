@@ -1,15 +1,11 @@
 import { Col, Row, Typography } from 'antd'
-import MobileView from './mobileView'
 import MaxWidthLayout from 'components/maxWidthLayout'
 import Container from './container'
 
-import { useWidth } from 'hooks/useUI'
 import useLanguages from 'hooks/useLanguages'
 
 const TimeLine = () => {
   const system = useLanguages()
-  const width = useWidth()
-  const isMobile = width < 992
 
   return (
     <MaxWidthLayout>
@@ -19,7 +15,10 @@ const TimeLine = () => {
             {system.timeline.title}
           </Typography.Title>
         </Col>
-        <Col span={24}>{isMobile ? <MobileView /> : <Container />}</Col>
+        <Col span={24}>
+          {' '}
+          <Container />
+        </Col>
       </Row>
     </MaxWidthLayout>
   )

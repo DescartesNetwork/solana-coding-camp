@@ -22,9 +22,9 @@ const Register = () => {
     system.organizers.labelWin,
   ]
   return (
-    <Row gutter={[24, 24]}>
+    <Row gutter={[0, 24]}>
       <Col xs={{ span: 24, order: 2 }} lg={{ span: 12, order: 1 }}>
-        <Row gutter={[32, 32]} style={{ position: 'sticky', top: 24 }}>
+        <Row gutter={[0, 32]} style={{ position: 'sticky', top: 24 }}>
           <Col span={24}>
             <Typography.Title level={1} style={{ fontSize: 72 }}>
               {system.organizers.videoTitle}

@@ -1,7 +1,10 @@
+import { useMemo } from 'react'
+
 import { Card, Col, Image, Row, Space, Typography } from 'antd'
 import SpaceBetween from 'components/spaceBetween'
 import useLanguages from 'hooks/useLanguages'
 
+import { useWidth } from 'hooks/useUI'
 import { PATH_GOOGLE_VIEW_IMG } from 'constant'
 
 import bg from 'static/images/u20tracks/bg.png'
@@ -10,13 +13,17 @@ import logoDao from 'static/images/logo/logo-dao.svg'
 const CardU20Tracks = () => {
   const system = useLanguages()
 
+  const width = useWidth()
+  const isMobile = width < 992
+
+  const cardPadding = useMemo(() => (isMobile ? 24 : 56), [isMobile])
   const MindX_IMG = PATH_GOOGLE_VIEW_IMG + '1S7UurQLMCuFEcirsJrFZKjtqDd7wouKB' //MindX
 
   return (
     <Card
       bordered={false}
       style={{ overflow: 'hidden', height: '100%' }}
-      bodyStyle={{ padding: 56, position: 'relative', height: '100%' }}
+      bodyStyle={{ padding: cardPadding, position: 'relative', height: '100%' }}
     >
       <Row gutter={[24, 24]} align="bottom">
         <Col
