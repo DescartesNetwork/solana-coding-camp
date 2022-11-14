@@ -46,7 +46,7 @@ const SPEAKER_ID: SpeakersData[] = [
   {
     id: '1oMvSu6OyOt9B7N3lTaxeLacdcuuZBRD6',
     name: 'Ryan Nguyen',
-    position: 'COO at Sentre',
+    position: 'COO at Sentre Protocol',
   },
   {
     id: '1uekV144CCFYmfhkE7cfmVI5mU-nnQE2c',
