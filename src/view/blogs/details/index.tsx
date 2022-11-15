@@ -4,16 +4,16 @@ import moment from 'moment'
 import { Button, Col, Empty, Image, Row, Space, Typography } from 'antd'
 import MaxWidthLayout from 'components/maxWidthLayout'
 import CardSecondary from '../containers/cardSecondary'
+import IonIcon from '@sentre/antd-ionicon'
 
 import { useBlogs } from 'hooks/useBlogs'
 
 import './index.less'
-import IonIcon from '@sentre/antd-ionicon'
 
 export type BlogParams = { blogId: string }
 
 const BlogDetails = () => {
-  const blogs = useBlogs()
+  const { blogs } = useBlogs()
   const params: BlogParams = useParams()
   const history = useHistory()
   const blogData = blogs[params.blogId]

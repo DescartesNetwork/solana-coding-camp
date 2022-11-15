@@ -23,7 +23,7 @@ const CardBlog = ({
   id,
   transparent = false,
 }: CardBlogProps) => {
-  const blogs = useBlogs()
+  const { blogs } = useBlogs()
   const { created_at, feature_image, meta_description, title, primary_author } =
     blogs[id]
   const imgSpan = useMemo(() => {
