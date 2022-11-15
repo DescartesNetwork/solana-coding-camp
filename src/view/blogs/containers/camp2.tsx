@@ -32,7 +32,7 @@ const Containers = () => {
     <MaxWidthLayout>
       <Row gutter={[24, 24]}>
         <Col span={24}>
-          <Typography.Title>Coding camp2</Typography.Title>
+          <Typography.Title>Coding camp 2</Typography.Title>
         </Col>
         <Col span={24}>
           <CardBlog
