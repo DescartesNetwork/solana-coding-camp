@@ -1,8 +1,16 @@
 .blog-details-content {
   font-size: 18px;
+  iframe,
+  video,
   img {
     width: 100%;
     object-fit: contain;
+  }
+  iframe {
+    min-height: 500px;
+    @media (max-width: 575px) {
+      min-height: 300px;
+    }
   }
   pre {
     background: rgba(255, 255, 255, 0.18);
