@@ -31,7 +31,7 @@ const Containers = () => {
   return (
     <MaxWidthLayout>
       <Row gutter={[24, 24]}>
-        <Col span={24}>
+        <Col span={24} style={{ textAlign: 'center' }}>
           <Typography.Title>Coding camp 2</Typography.Title>
         </Col>
         <Col span={24}>

@@ -22,7 +22,7 @@ const Camp1 = () => {
   return (
     <MaxWidthLayout>
       <Row gutter={[24, 24]}>
-        <Col span={24}>
+        <Col span={24} style={{ textAlign: 'center' }}>
           <Typography.Title>Coding camp 1</Typography.Title>
         </Col>
 
