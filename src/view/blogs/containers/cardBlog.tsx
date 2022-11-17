@@ -24,8 +24,14 @@ const CardBlog = ({
   transparent = false,
 }: CardBlogProps) => {
   const { blogs } = useBlogs()
-  const { created_at, feature_image, meta_description, title, primary_author } =
-    blogs[id]
+  const {
+    created_at,
+    feature_image,
+    meta_description,
+    title,
+    primary_author,
+    excerpt,
+  } = blogs[id]
   const imgSpan = useMemo(() => {
     if (direction === 'vertical') return 24
     return 16
@@ -76,7 +82,7 @@ const CardBlog = ({
                     style={{ fontSize: 16 }}
                     type="secondary"
                   >
-                    {meta_description}
+                    {meta_description || excerpt}
                   </Typography.Paragraph>
                 </Col>
               </Row>
