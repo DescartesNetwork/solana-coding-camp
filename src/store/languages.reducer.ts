@@ -10,8 +10,8 @@ export type LanguagesState = {
 }
 
 const initialState: LanguagesState = {
-  language: 'en',
-  system: DEFAULT_SYSTEM.en,
+  language: 'vn',
+  system: DEFAULT_SYSTEM.vn,
 }
 
 /**

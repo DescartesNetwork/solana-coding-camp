@@ -1,7 +1,7 @@
 import { MouseEvent, useCallback, useMemo } from 'react'
 import { useHistory } from 'react-router-dom'
 
-import { Avatar, Card, Col, Row, Space, Typography } from 'antd'
+import { Avatar, Card, Col, Row, Space, Tag, Typography } from 'antd'
 import IonIcon from '@sentre/antd-ionicon'
 import ProjectSocial from './projectSocial'
 import Upvote from './upvote'
@@ -14,6 +14,8 @@ import useLanguages from 'hooks/useLanguages'
 export type ProjectCardProps = {
   data: ProjectData
 }
+
+const DEMO_PROJECTS = ['Sentre', 'Ancient8', 'Saros']
 
 const ProjectCard = ({
   data: { name, logo, description, author, category, metadata },
@@ -51,6 +53,9 @@ const ProjectCard = ({
                 <Col span={24}>
                   <Space size={12}>
                     <Typography.Title level={4}>{name}</Typography.Title>
+                    {DEMO_PROJECTS.includes(name) && (
+                      <Tag color="#14f195">Demo</Tag>
+                    )}
                     <Chip title={category} />
                   </Space>
                 </Col>
