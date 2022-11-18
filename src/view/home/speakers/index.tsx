@@ -64,7 +64,7 @@ const SPEAKER_ID: SpeakersData[] = [
     position: 'Ecosystem Growth at Coin98 Finance',
   },
   {
-    id: '1NnGb0JwFdsuLsaIMWb1B_cbCArDE9oXB',
+    id: '1swO5_vkbPDgy-H6WXoXzJIRZFddr8XBf',
     name: 'Minh Ho',
     position: 'Head of Growth at Coin98',
   },
