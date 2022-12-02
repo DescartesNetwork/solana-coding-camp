@@ -21,7 +21,7 @@ export const enLanguage = {
     register: 'REGISTER NOW',
     curriculum: 'CURRICULUM',
     more: 'MORE INFO',
-    join: 'JOIN US',
+    join: 'Submit project',
   },
   banner: {
     title: 'Vietnam Web3 Coding Camp',
