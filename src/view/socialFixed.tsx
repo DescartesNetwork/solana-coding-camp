@@ -12,7 +12,7 @@ const SOCIAL_BTN = [
   },
   {
     icon: 'logo-discord',
-    link: 'http://discord.gg/R3tV7axdYx',
+    link: 'https://discord.gg/R3tV7axdYx',
   },
 ]
 

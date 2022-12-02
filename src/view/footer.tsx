@@ -6,7 +6,7 @@ import imgBg from 'static/images/extra/img-footer.png'
 import useLanguages from 'hooks/useLanguages'
 
 // const LINK_JOIN_US = 'https://t.me/solanadevsvietnam'
-const LINK_JOIN_US = 'http://discord.gg/R3tV7axdYx'
+const LINK_JOIN_US = 'https://discord.gg/R3tV7axdYx'
 
 const Footer = () => {
   const system = useLanguages()
