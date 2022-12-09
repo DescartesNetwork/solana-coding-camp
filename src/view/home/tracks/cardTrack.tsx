@@ -105,7 +105,7 @@ const CardTrack = ({ data, index = 0 }: CardTrackProps) => {
                   level={2}
                   type="secondary"
                 >
-                  {system.prizes2stRunner}
+                  {system.prize2nd}
                 </Typography.Title>
               </SpaceBetween>
             </Col>

@@ -14,7 +14,7 @@ const Header = () => {
           position: 'relative',
           marginTop: 24,
           marginBottom: 24,
-          zIndex: 999999,
+          zIndex: 99,
         }}
         align="middle"
         wrap={false}

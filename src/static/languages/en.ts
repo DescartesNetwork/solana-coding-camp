@@ -21,7 +21,7 @@ export const enLanguage = {
     register: 'REGISTER NOW',
     curriculum: 'CURRICULUM',
     more: 'MORE INFO',
-    join: 'JOIN US',
+    join: 'Submit project',
   },
   banner: {
     title: 'Vietnam Web3 Coding Camp',
@@ -54,7 +54,7 @@ export const enLanguage = {
       'Join a Solana-focused community of top-tier devs with opportunities for grants, bounties, careers and more!',
   },
   prize1st: '1st Prize',
-  prize2nd: '2nd Prize',
+  prize2nd: 'Runner-up',
   prize3rd: '3rd Prize',
   prizesChampion: 'Grand Champion',
   prizes1stRunner: '1st Runner-up',

@@ -68,7 +68,7 @@ const CardU20Tracks = () => {
                 style={{ fontWeight: 300 }}
                 type="secondary"
               >
-                {system.prizes2stRunner}
+                {system.prize2nd}
               </Typography.Title>
             </SpaceBetween>
 
