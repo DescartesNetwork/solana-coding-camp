@@ -85,7 +85,9 @@ const CardU20Tracks = () => {
               align="bottom"
             >
               <Space direction="vertical">
-                <Typography.Text type="secondary">Sponsored by</Typography.Text>
+                <Typography.Text type="secondary">
+                  {system.tracks.sponsored}
+                </Typography.Text>
                 <Typography.Title
                   level={2}
                   style={{ fontWeight: 300 }}
