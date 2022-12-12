@@ -28,7 +28,7 @@ const Banner = () => {
             </Typography.Title>
           </Col>
           <Col span={24}>{project.subtitle}</Col>
-          <Col span={24}>
+          <Col span={24} id={submission}>
             <PopupButton
               id={submission}
               className="ant-btn ant-btn-primary ant-btn-block"

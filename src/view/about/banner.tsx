@@ -3,7 +3,6 @@ import MaxWidthLayout from 'components/maxWidthLayout'
 import RegisterNow from 'components/registerNow'
 import ViewAgenda from 'components/viewAgenda'
 
-import { BTN_REGISTER_ID } from 'constant'
 import useLanguages from 'hooks/useLanguages'
 import { useWidth } from 'hooks/useUI'
 
@@ -33,7 +32,7 @@ const Banner = () => {
               {system.about.title}
             </Typography.Title>
             <Space>
-              <RegisterNow id={BTN_REGISTER_ID} />
+              <RegisterNow />
               <ViewAgenda />
             </Space>
           </Space>

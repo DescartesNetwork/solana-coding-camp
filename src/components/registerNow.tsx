@@ -7,7 +7,7 @@ import useLanguages from 'hooks/useLanguages'
 import configs from 'configs'
 
 const {
-  typeform: { registration },
+  typeform: { submission },
 } = configs
 
 const FIXED_STYLE = { position: 'fixed', bottom: 50, right: 24, zIndex: 9999 }
@@ -29,14 +29,16 @@ const RegisterNow = ({
   icon = <Fragment />,
 }: RegisterNowProps) => {
   const history = useHistory()
-  const { CTA } = useLanguages()
+  const { timeline } = useLanguages()
   const { hash } = useLocation()
 
   const fixedStyle = fixed ? FIXED_STYLE : {}
 
   const onClick = useCallback(() => {
-    const id = `#${registration}`
-    if (hash !== id) return history.push(`/about/${id}`)
+    const id = `#${submission}`
+
+    console.log(id, 'ud')
+    if (hash !== id) return history.push(`/project/${id}`)
 
     const elmHash = document.querySelector(id)
     if (!!elmHash) return elmHash.scrollIntoView({ behavior: 'smooth' })
@@ -51,7 +53,7 @@ const RegisterNow = ({
       style={{ ...fixedStyle, ...style }}
       icon={icon}
     >
-      {CTA.register}
+      {timeline.dappSubmission}
     </Button>
   )
 }

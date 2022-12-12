@@ -12,7 +12,7 @@ import { Space, Typography } from 'antd'
 
 import useLanguages from 'hooks/useLanguages'
 
-const END_DATE = '11/13/2022 23:59:59'
+const END_DATE = '12/16/2022 23:59:59'
 const END_TIME_ISO = new Date(END_DATE).getTime()
 const ENDTIME_LOCAL = END_TIME_ISO - new Date(END_TIME_ISO).getTimezoneOffset()
 

@@ -16,7 +16,7 @@ const Project = () => {
   const { project } = useLanguages()
 
   return (
-    <MaxWidthLayout className="banner-gradient-bg">
+    <MaxWidthLayout className="banner-gradient-bg after-effect">
       <Row gutter={[24, 24]}>
         <Col span={24} style={{ height: gap / 2 }} />
         <Col span={24}>

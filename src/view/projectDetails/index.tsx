@@ -73,7 +73,7 @@ const ProjectDetails = () => {
       </Row>
     )
   return (
-    <MaxWidthLayout className="banner-gradient-bg">
+    <MaxWidthLayout className="banner-gradient-bg after-effect">
       <Row gutter={[24, 24]} justify="center">
         <Col span={24}>
           <Row gutter={[12, 12]}>

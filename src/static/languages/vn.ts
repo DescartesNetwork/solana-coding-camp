@@ -19,7 +19,7 @@ export const vnLanguage = {
   ],
   CTA: {
     register: 'Đăng ký ngay',
-    curriculum: 'Lịch trình',
+    curriculum: 'Lễ trao giải',
     more: 'Xem thêm',
     join: 'Nộp dự án',
   },
@@ -29,7 +29,7 @@ export const vnLanguage = {
       'Chuỗi workshop đào tạo lập trình và kinh doanh giúp bạn sẵn sàng khởi nghiệp Web3 trong hệ sinh thái Solana.',
   },
   timeline: {
-    timeLabel: 'Thời gian đóng cổng đăng ký',
+    timeLabel: 'Thời gian đóng cổng nộp dự án',
     days: 'Ngày',
     hours: 'Giờ',
     minutes: 'Phút',
@@ -39,7 +39,7 @@ export const vnLanguage = {
     title: 'Lịch trình',
     registration: 'Đăng ký',
     workshop: 'Hội thảo',
-    dappSubmission: 'Nộp bài dự thi',
+    dappSubmission: 'Nộp dự án',
     demoDay: 'Ngày giới thiệu',
     awardNight: 'Đêm trao giải',
   },

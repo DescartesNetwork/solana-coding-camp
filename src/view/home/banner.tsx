@@ -5,7 +5,6 @@ import ViewAgenda from 'components/viewAgenda'
 
 import { useWidth } from 'hooks/useUI'
 import useLanguages from 'hooks/useLanguages'
-import { BTN_REGISTER_ID } from 'constant'
 
 import Map from 'static/images/extra/map-svg'
 
@@ -36,7 +35,7 @@ const Banner = () => {
               {banner.subtitle}
             </Typography.Text>
             <Space>
-              <RegisterNow id={BTN_REGISTER_ID} />
+              <RegisterNow />
               <ViewAgenda />
             </Space>
           </Space>

@@ -19,7 +19,7 @@ export const enLanguage = {
   ],
   CTA: {
     register: 'REGISTER NOW',
-    curriculum: 'CURRICULUM',
+    curriculum: 'Award Night',
     more: 'MORE INFO',
     join: 'Submit project',
   },
@@ -29,7 +29,7 @@ export const enLanguage = {
       'A series of technical and business training workshops to kickstart your Web3 project in the Solana ecosystem.',
   },
   timeline: {
-    timeLabel: 'Close form registration in',
+    timeLabel: 'Close the DApp submission portal in',
     days: 'Days',
     hours: 'Hours',
     minutes: 'Minutes',
