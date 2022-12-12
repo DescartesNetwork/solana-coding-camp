@@ -28,3 +28,9 @@ export enum CertificateState {
   Completion = 'Completion',
   Participation = 'Participation',
 }
+
+export enum AwardNightTabs {
+  Date = 'Date',
+  Time = 'Time',
+  Location = 'Location',
+}

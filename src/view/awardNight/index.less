@@ -1,0 +1,44 @@
+.wn-timeline {
+  display: flex;
+  gap: 24px;
+  flex-flow: column;
+  padding-left: 16px;
+  border-left: 2px solid #333333;
+  &-item {
+    display: flex;
+    flex-flow: column;
+    position: relative;
+    &::before {
+      position: absolute;
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 100%;
+      background: #14f195;
+      left: -21px;
+      top: 7px;
+    }
+  }
+}
+.gradient-img-bg {
+  position: absolute;
+  bottom: 40px;
+  right: 25px;
+  width: 360px;
+  height: 360px;
+  &::after {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(128, 236, 255, 0.3);
+    filter: blur(100px);
+    border-radius: 100%;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}

@@ -49,7 +49,7 @@ const Container = ({
   const align = isVertical ? 'top' : 'middle'
 
   return (
-    <Row gutter={[24, 24]} style={{ ...style }} align={align}>
+    <Row gutter={[24, 24]} style={{ ...style }} align={align} wrap={false}>
       <Col flex="auto">
         <Navigation onChange={onChange} />
       </Col>
@@ -73,6 +73,7 @@ const Container = ({
             fontWeight: 300,
             height: 40,
             textTransform: 'uppercase',
+            whiteSpace: 'nowrap',
           }}
         />
       </Col>
@@ -125,7 +126,7 @@ const MobileMenu = () => {
 
 const Menu = () => {
   const width = useWidth()
-  const isMobile = width < 992
+  const isMobile = width < 1100
 
   if (isMobile) return <MobileMenu />
   return <Container />

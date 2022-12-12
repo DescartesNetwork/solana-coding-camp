@@ -16,6 +16,10 @@ export const enLanguage = {
       label: 'Projects',
       key: '/project',
     },
+    {
+      label: 'Award Night',
+      key: '/award-night',
+    },
   ],
   CTA: {
     register: 'REGISTER NOW',

@@ -16,6 +16,10 @@ export const vnLanguage = {
       label: 'Dự án',
       key: '/project',
     },
+    {
+      label: 'Lễ trao giải',
+      key: '/award-night',
+    },
   ],
   CTA: {
     register: 'Đăng ký ngay',

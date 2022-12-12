@@ -16,6 +16,7 @@ import Blogs from './blogs'
 import BlogDetails from './blogs/details'
 import IonIcon from '@sentre/antd-ionicon'
 import RegisterNow from 'components/registerNow'
+import AwardNight from './awardNight'
 
 import { useGap } from 'hooks/useUI'
 import { getProjects } from 'store/projects.reducer'
@@ -58,6 +59,7 @@ const View = () => {
             />
             <Route exact path="/blogs" component={Blogs} />
             <Route exact path="/blogs/:blogId" component={BlogDetails} />
+            <Route exact path="/award-night" component={AwardNight} />
             <Route path="*">
               <Redirect to="/home" />
             </Route>

@@ -1,10 +1,10 @@
+import { useCallback } from 'react'
 import { useHistory, useLocation } from 'react-router-dom'
 
 import { Button } from 'antd'
 
-import { AGENDA_ID } from 'view/about/agenda'
 import useLanguages from 'hooks/useLanguages'
-import { useCallback } from 'react'
+import { AWARD_NIGHT_ID } from 'view/awardNight/container'
 
 const ViewAgenda = () => {
   const history = useHistory()
@@ -12,8 +12,8 @@ const ViewAgenda = () => {
   const { hash } = useLocation()
 
   const onClick = useCallback(() => {
-    const id = `#${AGENDA_ID}`
-    if (hash !== id) return history.push(`/about/${id}`)
+    const id = `#${AWARD_NIGHT_ID}`
+    if (hash !== id) return history.push(`/award-night/${id}`)
 
     const elmHash = document.querySelector(id)
     if (!!elmHash) return elmHash.scrollIntoView({ behavior: 'smooth' })
