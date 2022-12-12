@@ -63,7 +63,9 @@ const CardAwardNight = () => {
         {data.map((item) => (
           <div className="wn-timeline-item">
             <Typography.Text type="secondary">{item.time}</Typography.Text>{' '}
-            <Typography.Text>{item.title}</Typography.Text>
+            <Typography.Text style={{ fontSize: 20 }}>
+              {item.title}
+            </Typography.Text>
           </div>
         ))}
       </div>

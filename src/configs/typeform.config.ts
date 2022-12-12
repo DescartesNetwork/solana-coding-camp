@@ -14,7 +14,8 @@ const configs: Record<Env, Config> = {
    * Development configurations
    */
   development: {
-    registration: 'hyibBZhP',
+    // registration: 'hyibBZhP',
+    registration: 'hmRimcc6',
     submission: 'fh8YQG90',
   },
 
@@ -22,7 +23,8 @@ const configs: Record<Env, Config> = {
    * Staging configurations
    */
   staging: {
-    registration: 'hyibBZhP',
+    // registration: 'hyibBZhP',
+    registration: 'hmRimcc6',
     submission: 'fh8YQG90',
   },
 
@@ -30,7 +32,8 @@ const configs: Record<Env, Config> = {
    * Production configurations
    */
   production: {
-    registration: 'hyibBZhP',
+    // registration: 'hyibBZhP',
+    registration: 'hmRimcc6',
     submission: 'fh8YQG90',
   },
 }
