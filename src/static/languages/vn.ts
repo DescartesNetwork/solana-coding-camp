@@ -25,7 +25,7 @@ export const vnLanguage = {
     register: 'Đăng ký ngay',
     curriculum: 'Lễ trao giải',
     more: 'Xem thêm',
-    join: 'Nộp dự án',
+    join: 'Discord',
   },
   banner: {
     title: 'Vietnam Web3 Coding Camp',
