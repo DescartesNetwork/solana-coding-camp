@@ -7,6 +7,7 @@ import { Env } from './env'
 type Config = {
   registration: string
   submission: string
+  luma: 'https://lu.ma/solaward'
 }
 
 const configs: Record<Env, Config> = {
@@ -17,6 +18,7 @@ const configs: Record<Env, Config> = {
     // registration: 'hyibBZhP',
     registration: 'hmRimcc6',
     submission: 'fh8YQG90',
+    luma: 'https://lu.ma/solaward',
   },
 
   /**
@@ -26,6 +28,7 @@ const configs: Record<Env, Config> = {
     // registration: 'hyibBZhP',
     registration: 'hmRimcc6',
     submission: 'fh8YQG90',
+    luma: 'https://lu.ma/solaward',
   },
 
   /**
@@ -35,6 +38,7 @@ const configs: Record<Env, Config> = {
     // registration: 'hyibBZhP',
     registration: 'hmRimcc6',
     submission: 'fh8YQG90',
+    luma: 'https://lu.ma/solaward',
   },
 }
 

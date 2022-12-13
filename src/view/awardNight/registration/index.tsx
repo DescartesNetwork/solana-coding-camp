@@ -1,25 +1,25 @@
-import { Widget } from '@typeform/embed-react'
+import { Button } from 'antd'
 
-import { Col, Row, Typography } from 'antd'
+import useLanguages from 'hooks/useLanguages'
 
 import configs from 'configs'
+import './index.less'
 
 const {
-  typeform: { registration },
+  typeform: { luma },
 } = configs
 
 const RegistrationWN = () => {
+  const { CTA } = useLanguages()
   return (
-    <Row gutter={[24, 24]} justify="center">
-      <Col>
-        <Typography.Title level={2} className="text-title">
-          Registration form
-        </Typography.Title>
-      </Col>
-      <Col id={registration} span={24}>
-        <Widget id={registration} height={644} />
-      </Col>
-    </Row>
+    <Button
+      type="primary"
+      onClick={() => window.open(luma, '_blank')}
+      block
+      style={{ fontWeight: 700 }}
+    >
+      {CTA.register}
+    </Button>
   )
 }
 
