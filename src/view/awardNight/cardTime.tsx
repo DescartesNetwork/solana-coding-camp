@@ -7,24 +7,33 @@ const AWN_BASE = {
     color: '#DA61B8',
     icon: 'calendar',
     children: '21 Dec, 2022',
+    link: '',
   },
   [AwardNightTabs.Time]: {
     color: '#80ECFF',
     icon: 'time',
     children: '18:00 - 22:30',
+    link: '',
   },
   [AwardNightTabs.Location]: {
     color: '#EE7C56',
     icon: 'location',
-    children: 'Ho Chi Minh city',
+    children: 'Capella Gallery Hall',
+    link: 'https://www.google.com/maps/place/CAPELLA+GALLERY+HALL/@10.7774404,106.6806446,15z/data=!4m5!3m4!1s0x0:0x3e85de751c03de9c!8m2!3d10.7773992!4d106.6807326',
   },
 }
 
 type CardTimeProps = { type: AwardNightTabs }
 const CardTime = ({ type }: CardTimeProps) => {
+  const link = AWN_BASE[type].link
   return (
     <Card
-      style={{ background: AWN_BASE[type].color, borderRadius: 16 }}
+      onClick={() => link && window.open(link, '_blank')}
+      style={{
+        background: AWN_BASE[type].color,
+        borderRadius: 16,
+        cursor: link ? 'pointer' : 'default',
+      }}
       bordered={false}
     >
       <Space direction="vertical" size={0}>
