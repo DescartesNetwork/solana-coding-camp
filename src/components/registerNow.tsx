@@ -37,7 +37,6 @@ const RegisterNow = ({
   const onClick = useCallback(() => {
     const id = `#${submission}`
 
-    console.log(id, 'ud')
     if (hash !== id) return history.push(`/project/${id}`)
 
     const elmHash = document.querySelector(id)

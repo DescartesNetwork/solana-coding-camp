@@ -28,6 +28,11 @@ import { AppState } from 'store'
 import { asyncWait } from 'helpers/util'
 import { Social } from 'store/projects.reducer'
 import useLanguages from 'hooks/useLanguages'
+import configs from 'configs'
+
+const {
+  stat: { fileApi },
+} = configs
 
 const ProjectDetails = () => {
   const [copied, setCopied] = useState(false)
@@ -192,6 +197,30 @@ const ProjectDetails = () => {
                 </Col>
               </Row>
             </Col>
+            {!!data.presentation && (
+              <Col span={24}>
+                <Row gutter={[12, 12]}>
+                  <Col span={24}>
+                    <Typography.Title level={4}>
+                      {project.presentation}
+                    </Typography.Title>
+                  </Col>
+                  <Col span={24}>
+                    <iframe
+                      title="presentation"
+                      style={{
+                        width: '100%',
+                        height: 600,
+                        border: 'none',
+                      }}
+                      src={`${fileApi}?url=${encodeURIComponent(
+                        data.presentation,
+                      )}`}
+                    />
+                  </Col>
+                </Row>
+              </Col>
+            )}
           </Row>
         </Col>
       </Row>

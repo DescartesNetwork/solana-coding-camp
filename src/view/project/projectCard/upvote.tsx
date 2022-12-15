@@ -1,6 +1,6 @@
 import { MouseEvent, useCallback, useState } from 'react'
 
-import { Button } from 'antd'
+import { Button, message } from 'antd'
 import IonIcon from '@sentre/antd-ionicon'
 
 import { useDownvote, useUpvote, useUpvoters, useVoted } from 'hooks/useUpvote'
@@ -23,8 +23,8 @@ const Upvote = ({ name }: UpvoteProps) => {
         setLoading(true)
         if (!voted) await upvote()
         else await downvote()
-      } catch (er) {
-        return console.log(er)
+      } catch (er: any) {
+        return message.error(er.message)
       } finally {
         return setLoading(false)
       }

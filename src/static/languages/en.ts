@@ -134,5 +134,6 @@ export const enLanguage = {
     share: 'Share',
     by: 'By',
     description: 'Description',
+    presentation: 'Presentation',
   },
 }

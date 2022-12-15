@@ -19,6 +19,8 @@ export const SocialLogo = ({ type }: { type: Social | string }) => {
       return <IonIcon name="logo-telegram" />
     case Social.Facebook:
       return <IonIcon name="logo-facebook" />
+    case Social.Youtube:
+      return <IonIcon name="logo-youtube" />
     default:
       return <IonIcon name="bookmark" />
   }

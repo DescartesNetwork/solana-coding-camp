@@ -17,6 +17,7 @@ export enum Social {
   Github = 'github',
   Telegram = 'telegram',
   Facebook = 'facebook',
+  Youtube = 'youtube',
 }
 
 export type ProjectMetadata = Partial<
@@ -32,6 +33,7 @@ export type ProjectData = {
   metadata: ProjectMetadata
   submittedAt: number
   category: string
+  presentation: string
 }
 
 export type ProjectState = Record<string, ProjectData>

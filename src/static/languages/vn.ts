@@ -135,5 +135,6 @@ export const vnLanguage = {
     share: 'Chia sẻ',
     by: 'Bởi',
     description: 'Giới thiệu',
+    presentation: 'Trình bày',
   },
 }

@@ -14,8 +14,10 @@ export const normalizeProjectData = (projects: any[]) => {
           github: parseGithub(answers),
           telegram: parseTelegram(answers),
           facebook: parseFacebook(answers),
+          youtube: parseYoutube(answers),
         },
         category: parseCategory(answers),
+        presentation: parsePresentation(answers),
         submittedAt: Number(new Date(submitted_at)),
       }
     },
@@ -130,6 +132,14 @@ export const parseFacebook = (answers: any[]) => {
   }
 }
 
+export const parseYoutube = (answers: any[]) => {
+  try {
+    return answers.find(({ field: { id } }) => id === 'U4Xk0dI13CqW').url
+  } catch (er) {
+    return ''
+  }
+}
+
 export const parseOther = (answers: any[]) => {
   try {
     return answers.find(({ field: { id } }) => id === 'j52EErXLhdOF').url
@@ -146,9 +156,9 @@ export const parseCategory = (answers: any[]) => {
   }
 }
 
-export const parseRepresentation = (answers: any[]) => {
+export const parsePresentation = (answers: any[]) => {
   try {
-    return answers.find(({ field: { id } }) => id === 'U4Xk0dI13CqW').url
+    return answers.find(({ field: { id } }) => id === 'Nc60v90goKhh').file_url
   } catch (er) {
     return ''
   }

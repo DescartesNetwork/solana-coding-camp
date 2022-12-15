@@ -7,6 +7,7 @@ import { Env } from './env'
 type Config = {
   registrantsApi: string
   projectsApi: string
+  fileApi: string
 }
 
 const configs: Record<Env, Config> = {
@@ -16,6 +17,7 @@ const configs: Record<Env, Config> = {
   development: {
     registrantsApi: 'https://stat.sentre.io/codingcamp/total-registers',
     projectsApi: 'https://stat.sentre.io/codingcamp/submission',
+    fileApi: 'https://stat.sentre.io/codingcamp/get-typeform-file',
   },
 
   /**
@@ -24,6 +26,7 @@ const configs: Record<Env, Config> = {
   staging: {
     registrantsApi: 'https://stat.sentre.io/codingcamp/total-registers',
     projectsApi: 'https://stat.sentre.io/codingcamp/submission',
+    fileApi: 'https://stat.sentre.io/codingcamp/get-typeform-file',
   },
 
   /**
@@ -32,6 +35,7 @@ const configs: Record<Env, Config> = {
   production: {
     registrantsApi: 'https://stat.sentre.io/codingcamp/total-registers',
     projectsApi: 'https://stat.sentre.io/codingcamp/submission',
+    fileApi: 'https://stat.sentre.io/codingcamp/get-typeform-file',
   },
 }
 

@@ -15,7 +15,6 @@ const configs: Record<Env, Config> = {
    * Development configurations
    */
   development: {
-    // registration: 'hyibBZhP',
     registration: 'hmRimcc6',
     submission: 'fh8YQG90',
     luma: 'https://lu.ma/solaward',
@@ -25,7 +24,6 @@ const configs: Record<Env, Config> = {
    * Staging configurations
    */
   staging: {
-    // registration: 'hyibBZhP',
     registration: 'hmRimcc6',
     submission: 'fh8YQG90',
     luma: 'https://lu.ma/solaward',
@@ -35,7 +33,6 @@ const configs: Record<Env, Config> = {
    * Production configurations
    */
   production: {
-    // registration: 'hyibBZhP',
     registration: 'hmRimcc6',
     submission: 'fh8YQG90',
     luma: 'https://lu.ma/solaward',
