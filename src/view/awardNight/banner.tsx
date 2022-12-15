@@ -7,7 +7,7 @@ const Banner = () => {
     <div className="wrap-blogs-banner">
       <Image className="blogs-banner" src={imgBanner} preview={false} />
       <Typography.Title level={1} style={{ fontSize: 92 }}>
-        Award Night agenda
+        Award Night Agenda
       </Typography.Title>
     </div>
   )

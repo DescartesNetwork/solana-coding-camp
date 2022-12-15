@@ -43,7 +43,7 @@ export const enLanguage = {
     title: 'Timeline',
     registration: 'Registration',
     workshop: 'Workshop Series',
-    dappSubmission: 'SUBMIT DAAP',
+    dappSubmission: 'SUBMIT DAPP',
     demoDay: 'Demo Day',
     awardNight: 'Award Night',
   },
