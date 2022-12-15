@@ -20,7 +20,11 @@ const ViewAgenda = () => {
   }, [hash, history])
 
   return (
-    <Button size="large" onClick={onClick}>
+    <Button
+      size="large"
+      style={{ textTransform: 'uppercase' }}
+      onClick={onClick}
+    >
       {CTA.curriculum}
     </Button>
   )

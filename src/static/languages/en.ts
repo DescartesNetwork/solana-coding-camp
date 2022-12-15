@@ -23,7 +23,7 @@ export const enLanguage = {
   ],
   CTA: {
     register: 'REGISTER NOW',
-    curriculum: 'Award Night',
+    curriculum: 'VIEW AWARD NIGHT',
     more: 'MORE INFO',
     join: 'Discord',
   },
@@ -33,7 +33,7 @@ export const enLanguage = {
       'A series of technical and business training workshops to kickstart your Web3 project in the Solana ecosystem.',
   },
   timeline: {
-    timeLabel: 'Close the DApp submission portal in',
+    timeLabel: 'DApp Submission Form closes in',
     days: 'Days',
     hours: 'Hours',
     minutes: 'Minutes',
@@ -43,7 +43,7 @@ export const enLanguage = {
     title: 'Timeline',
     registration: 'Registration',
     workshop: 'Workshop Series',
-    dappSubmission: 'DApp Submission',
+    dappSubmission: 'SUBMIT DAAP',
     demoDay: 'Demo Day',
     awardNight: 'Award Night',
   },

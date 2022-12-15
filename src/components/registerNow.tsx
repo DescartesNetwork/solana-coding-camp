@@ -50,7 +50,7 @@ const RegisterNow = ({
       size={size}
       type={type}
       onClick={onClick}
-      style={{ ...fixedStyle, ...style }}
+      style={{ textTransform: 'uppercase', ...fixedStyle, ...style }}
       icon={icon}
     >
       {timeline.dappSubmission}
