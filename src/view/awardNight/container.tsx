@@ -1,4 +1,4 @@
-import { Button, Col, Row } from 'antd'
+import { Button, Col, Row, Space } from 'antd'
 import MaxWidthLayout from 'components/maxWidthLayout'
 import CardTime from './cardTime'
 import CardAwardNight from './cardAwardNight'
@@ -6,6 +6,7 @@ import CardAwardNight from './cardAwardNight'
 import useLanguages from 'hooks/useLanguages'
 import { AwardNightTabs } from 'constant'
 import configs from 'configs'
+import IonIcon from '@sentre/antd-ionicon'
 
 const {
   typeform: { luma },
@@ -38,7 +39,17 @@ const AwardNightContainer = () => {
             size="large"
             style={{ fontSize: 22, fontWeight: 700 }}
             onClick={() => window.open(luma, '_blank')}
-            icon="››› "
+            icon={
+              <Space size={0} style={{ paddingRight: 12 }}>
+                {[1, 2, 3].map((item) => (
+                  <IonIcon
+                    style={{ width: 10 }}
+                    name="chevron-forward-outline"
+                    key={item}
+                  />
+                ))}
+              </Space>
+            }
           >
             {CTA.register}
           </Button>
