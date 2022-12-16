@@ -1,4 +1,4 @@
-import { Typography } from 'antd'
+// import { Typography } from 'antd'
 
 const Banner = () => {
   return (
@@ -11,9 +11,9 @@ const Banner = () => {
         allowFullScreen
         frameBorder={0}
       />
-      <Typography.Title level={1} style={{ fontSize: 92 }}>
+      {/* <Typography.Title level={1} style={{ fontSize: 92 }}>
         Award Night Agenda
-      </Typography.Title>
+      </Typography.Title> */}
     </div>
   )
 }
