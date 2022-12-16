@@ -93,10 +93,15 @@ const SPEAKER_ID: SpeakersData[] = [
     name: 'Nguyen Dinh Khanh',
     position: 'Chief Of Executive at WolfFun',
   },
+  // {
+  //   id: '1TRvD016nPQ3_6W8xIR9L03EXgmws1GtB',
+  //   name: 'Tran Khanh Han',
+  //   position: 'Head of Business Development at Wolffun',
+  // },
   {
-    id: '1TRvD016nPQ3_6W8xIR9L03EXgmws1GtB',
-    name: 'Tran Khanh Han',
-    position: 'Head of Business Development at Wolffun',
+    id: '1bzja2yKN7ijpIpmm_PwSXX589TqpoSt_',
+    name: 'Adrian Latortue',
+    position: 'Portfolio Manager at 500 Startups Vietnam',
   },
   {
     id: '1rAw4B3bmHOkHQpr29Ts0KVgZ4sfO1fbH',
