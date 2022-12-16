@@ -4,6 +4,7 @@ import axios from 'axios'
 import { encode } from 'bs58'
 
 import configs from 'configs'
+import { UNSUPPORT_PROJECT } from 'constant'
 import { normalizeProjectData } from 'helpers/projectParser'
 
 const {
@@ -55,7 +56,8 @@ export const getProjects = createAsyncThunk(`${NAME}/getProjects`, async () => {
   } = await axios.get(projectsApi)
   const projects: ProjectState = {}
   normalizeProjectData(items).forEach((project) => {
-    projects[encode(uid(project.name))] = project
+    const projectKey = encode(uid(project.name))
+    if (!UNSUPPORT_PROJECT.includes(projectKey)) projects[projectKey] = project
   })
   return projects
 })

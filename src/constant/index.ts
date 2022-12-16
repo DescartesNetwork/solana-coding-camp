@@ -34,3 +34,9 @@ export enum AwardNightTabs {
   Time = 'Time',
   Location = 'Location',
 }
+
+export const UNSUPPORT_PROJECT = [
+  '2MDZuyz5NRRLNtauwCUhsrn1VkF9LuzwCEQASFJfegmF',
+  'DxpGAoGNg83gSuzU6GkcM69fDFd6jSrq5sKu5oGyHQDW',
+  'GVSH5qQuMj2o7CG8mTWZg421pkC7bL8WrYUZHFD5Hkzi',
+]
