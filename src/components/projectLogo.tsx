@@ -32,7 +32,11 @@ const ProjectLogo = ({ name, size = 48 }: ProjectLogoProps) => {
           </Avatar>
           <Typography.Paragraph
             type="secondary"
-            style={{ width: size, textAlign: 'center' }}
+            style={{
+              width: size,
+              textAlign: 'center',
+              textTransform: 'capitalize',
+            }}
             ellipsis
           >
             {name}

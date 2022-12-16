@@ -52,7 +52,12 @@ const ProjectCard = ({
               <Row gutter={[8, 8]}>
                 <Col span={24}>
                   <Space size={12}>
-                    <Typography.Title level={4}>{name}</Typography.Title>
+                    <Typography.Title
+                      level={4}
+                      style={{ textTransform: 'capitalize' }}
+                    >
+                      {name}
+                    </Typography.Title>
                     {DEMO_PROJECTS.includes(name) && (
                       <Tag color="#14f195">Demo</Tag>
                     )}

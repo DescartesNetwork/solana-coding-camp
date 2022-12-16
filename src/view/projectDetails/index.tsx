@@ -132,7 +132,10 @@ const ProjectDetails = () => {
                 <Col span={24}>
                   <Row gutter={[12, 12]} align="middle">
                     <Col flex="auto">
-                      <Typography.Title level={1}>
+                      <Typography.Title
+                        level={1}
+                        style={{ textTransform: 'capitalize' }}
+                      >
                         {projectName}
                       </Typography.Title>
                     </Col>

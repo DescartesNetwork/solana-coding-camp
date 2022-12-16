@@ -49,7 +49,9 @@ const LeaderCard = ({
       <Col flex="auto">
         <Row gutter={[4, 4]}>
           <Col span={24}>
-            <Typography.Text>{name}</Typography.Text>
+            <Typography.Text style={{ textTransform: 'capitalize' }}>
+              {name}
+            </Typography.Text>
           </Col>
           <Col span={24}>
             <Typography.Paragraph type="secondary" ellipsis={{ rows: 2 }}>
