@@ -57,6 +57,7 @@ export const getProjects = createAsyncThunk(`${NAME}/getProjects`, async () => {
   const projects: ProjectState = {}
   normalizeProjectData(items).forEach((project) => {
     const projectKey = encode(uid(project.name))
+    // console.log(projectKey, project.name)
     if (!UNSUPPORT_PROJECT.includes(projectKey)) projects[projectKey] = project
   })
   return projects
