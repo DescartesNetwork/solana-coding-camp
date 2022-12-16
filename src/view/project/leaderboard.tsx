@@ -2,7 +2,17 @@ import { Fragment, MouseEvent, useCallback, useMemo } from 'react'
 import { useHistory } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
-import { Avatar, Card, Col, Divider, Empty, Row, Space, Typography } from 'antd'
+import {
+  Avatar,
+  Card,
+  Col,
+  Divider,
+  Empty,
+  Row,
+  Space,
+  Tag,
+  Typography,
+} from 'antd'
 import IonIcon from '@sentre/antd-ionicon'
 
 import { ProjectCardProps } from './projectCard'
@@ -80,7 +90,12 @@ const Leaderboard = () => {
   return (
     <Row gutter={[24, 24]}>
       <Col span={24} style={{ marginTop: 12 }}>
-        <Typography.Title level={4}>{project.leaderboard}</Typography.Title>
+        <Space>
+          <Typography.Title level={4}>{project.leaderboard}</Typography.Title>
+          <Tag color="#80ECFF" style={{ color: '#000000' }}>
+            {Object.keys(allProjects).length}
+          </Tag>
+        </Space>
       </Col>
       <Col span={24}>
         <Card bordered={false}>

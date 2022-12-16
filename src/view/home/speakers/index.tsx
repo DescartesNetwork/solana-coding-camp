@@ -101,7 +101,7 @@ const SPEAKER_ID: SpeakersData[] = [
   {
     id: '1bzja2yKN7ijpIpmm_PwSXX589TqpoSt_',
     name: 'Adrian Latortue',
-    position: 'Portfolio Manager at 500 Startups Vietnam',
+    position: 'Portfolio Manager at Ascend Vietnam Ventures',
   },
   {
     id: '1rAw4B3bmHOkHQpr29Ts0KVgZ4sfO1fbH',
