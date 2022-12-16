@@ -14,7 +14,7 @@ import organizeBg from 'static/images/extra/organizen-partner.png'
 import bgTimeline from 'static/images/extra/bg-timeline.png'
 import useLanguages from 'hooks/useLanguages'
 
-const IMAGE_ID = [
+export const IMAGE_ID = [
   '18pfR8x6yXO0EkXyCpBWBv3rUAnXKkGyQ',
   '1vPCS673oDuFX308htsOhOQ8Lv_tJmmuf',
   '1Svru1Ln-7bcvt6hflQ9FZ2iL_1NmaGDR',

@@ -100,7 +100,7 @@ const CardAwardNight = () => {
         className="wn-timeline"
       >
         {data[language].map((item) => (
-          <div className="wn-timeline-item">
+          <div className="wn-timeline-item" key={item.title}>
             <Typography.Text type="secondary">{item.time}</Typography.Text>{' '}
             <Typography.Text style={{ fontSize: 20 }}>
               {item.title}
