@@ -47,4 +47,6 @@ export const UNSUPPORT_PROJECT = [
   'GvgPrskmxet8UZRXFuTgAbDT3YYYpS5Wvr4bJXGwYFMr',
   '8gnoyvs2jKvCtCNdnHnTZa5eQtdhf683k4azd8Mz199C',
   'BZhsshizXKQeoRZjtcHDhsCsqPjL7DJkaRDBKrcWAJMZ',
+  '7YUZRvfVpUJBZwKS5iCSBoHQuabsyKRJEEZ5GKXnZ6n6',
+  '3qf1jaVBJWrEPvNhL5Aojg1jCWC2R3cMuTCamQ2qUppb',
 ]
