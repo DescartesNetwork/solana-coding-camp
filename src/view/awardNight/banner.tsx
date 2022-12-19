@@ -2,7 +2,7 @@
 
 const Banner = () => {
   return (
-    <div className="wrap-blogs-banner">
+    <div className="wrap-blogs-banner awn">
       <iframe
         className="blogs-banner"
         src="https://www.youtube.com/embed/aRgUx4shcyk?autoplay=1&loop=1&rel=0&controls=0&vq=hd1080&mute=1&playlist=aRgUx4shcyk"
